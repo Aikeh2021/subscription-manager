@@ -5,7 +5,7 @@ const Home = () => {
         <div className="container">
             <div className="row">
                 <div className="col">
-                 {/* <h1></h1>     */}
+                <h1>This is the home page</h1>
                 </div>
             </div>
            
