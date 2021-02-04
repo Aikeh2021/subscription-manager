@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require ('path')
 
 const app = express();
 
@@ -37,6 +38,9 @@ app.get("/api/config", (req, res) => {
 });
 
 app.listen(PORT, () => {
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client/build/index.html"));
+  });
     console.log(`Server is running on http://localhost:${PORT}`)
 });
 
