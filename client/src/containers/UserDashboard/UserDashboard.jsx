@@ -13,9 +13,9 @@ const UserDashboard = () => {
     <br/>
     <br/>
     <div>
-    <div class="container">
-    <div class="row">
-    <div class="col s12">
+    <div className="container">
+    <div className="row">
+    <div className="col s12">
     <table>
         <thead style={styles.thead}>
           <tr>
@@ -32,8 +32,8 @@ const UserDashboard = () => {
             <td>Image</td>
             <td>$13.99</td>
             <td>$1.00</td>
-            <td><a class="waves-effect waves-light btn-small"><i class="material-icons left">update</i>UPDATE</a></td>
-            <td><a class="waves-effect waves-light btn-small"><i class="material-icons left">delete</i>DELETE</a></td>
+            <td><a href="/" className="waves-effect waves-light btn-small"><i className="material-icons left">update</i>UPDATE</a></td>
+            <td><a href="/" className="waves-effect waves-light btn-small"><i className="material-icons left">delete</i>DELETE</a></td>
           </tr>
         </tbody>
       </table>
