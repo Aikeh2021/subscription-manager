@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import axios from 'axios';
+import UserDashboard from './components/UserDashboard/UserDashboard';
 
 function App() {
   useEffect(() => {
@@ -8,7 +9,7 @@ function App() {
     })
   }, [])
   return (
-    "you're ready to rumble!"
+    <UserDashboard />
   );
 }
 
