@@ -5,7 +5,7 @@ const Home = () => {
         <div className="container">
             <div className="row">
                 <div className="col">
-                <h1>This is the home page</h1>
+                This is where the homepage will go
                 </div>
             </div>
            
