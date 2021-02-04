@@ -16,7 +16,7 @@ const navbar = () => {
     <a href="/" class="brand-logo">Subscriptions</a>
     <ul class="right hide-on-med-and-down">
       <li><a href="/">login</a></li>
-      <li><a href="/">signup</a></li>
+      <li><a href="/signup">signup</a></li>
       
  {/* This is a drop down arroww */}
       {/* <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li> */}
