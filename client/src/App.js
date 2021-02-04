@@ -11,10 +11,10 @@ function App() {
   return (
     <Router>
       <Navbar/>
-      <SignUpForm/>
       <Switch>
-        <Route exact path="/signup" component={SignUpForm}></Route>
-        <Route exact path="/dashboard" component={UserDashboard}/>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/signup" component={SignUpForm} />
+        <Route exact path="/dashboard" component={UserDashboard} />
       </Switch>
       
     </Router>
