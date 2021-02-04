@@ -56,7 +56,10 @@ const Subscriptions = () => {
 <option value="3">$25.99</option>
 
 </select>
+
+
 </div>
+
 </div>
 
 
