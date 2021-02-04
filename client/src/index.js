@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 import React from "react";
 import ReactDOM from "react-dom";
 
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+=======
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+>>>>>>> b397be2272922bfadacc417b5ffe2ada30ddc506
 
 ReactDOM.render(
   <React.StrictMode>
