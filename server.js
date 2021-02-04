@@ -1,5 +1,6 @@
-const express = require('express');
-const mongoose = require('mongoose');
+const express = require("express");
+const mongoose = require("mongoose");
+const path = require("path");
 
 const app = express();
 
@@ -9,14 +10,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/subscription-manager",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-      useCreateIndex: true,
-    }
-  );
+  process.env.MONGODB_URI || "mongodb://localhost/subscription-manager",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true,
+  }
+);
 
 const connection = mongoose.connection;
 
@@ -29,14 +30,15 @@ connection.on("error", (err) => {
 });
 
 app.get("/api/config", (req, res) => {
-    res.json(
-        {
-            success: true
-        }
-    )
+  res.json({
+    success: true,
+  });
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build/index.html"));
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`)
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
-
