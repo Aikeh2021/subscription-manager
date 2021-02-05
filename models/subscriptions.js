@@ -6,6 +6,9 @@ const SubscriptionSchema = new Schema ({
         type: String,
         required: 'Choose a subscription'
     },
+    subscription_thumbnail: {
+        type: String
+    },
     subscription_price: [
         {
         type: Number,
