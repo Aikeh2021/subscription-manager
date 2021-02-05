@@ -4,12 +4,13 @@ import React from 'react';
 const SignUpForm = () => {
     return (
         <div>
+          <h1> </h1>
           <div className="container">
              <div class="row">
     <form class="col s12">
       <div class="row">
         <div class="input-field col s6">
-          <input placeholder="Placeholder" id="first_name" type="text" class="validate"/>
+          <input placeholder="" id="first_name" type="text" class="validate"/>
           <label for="first_name">First Name</label>
         </div>
         <div class="input-field col s6">
