@@ -19,12 +19,10 @@ const LoginPage = () => {
       </div>
    </form> 
    <button className="btn waves-effect waves-light" type="submit" name="action">Login
-
    </button>
    </div>
     </div>
-
-
+   
     );
 };
 
