@@ -18,9 +18,12 @@ const UserSchema = new Schema({
         type: String,
         required: 'Password must be at least 5 characters'
     },
-    subscriptions: {
-        type: Array
-    }
+    subscriptions: [
+        {
+        type: Schema.Types.ObjectId,
+        ref:"Subscription"
+        }
+    ]
 });
 
 const User = mongoose.model("User", UserSchema);

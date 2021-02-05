@@ -6,10 +6,17 @@ const SubscriptionSchema = new Schema ({
         type: String,
         required: 'Choose a subscription'
     },
-    subscription_price: {
+    subscription_price: [
+        {
         type: Number,
         required: 'Choose a subscription plan'
-    }
+        }
+    ],
+    userForSubscription: [
+        {
+            type: Schema.Types.ObjectId, ref: 'User'
+        }
+]
 });
 
 const Subscription = mongoose.model("Subscription", SubscriptionSchema);
