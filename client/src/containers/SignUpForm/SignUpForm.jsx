@@ -10,7 +10,7 @@ const SignUpForm = () => {
     <form class="col s12">
       <div class="row">
         <div class="input-field col s6">
-          <input placeholder="" id="first_name" type="text" class="validate"/>
+          <input placeholder="First Name" id="first_name" type="text" class="validate"/>
           <label for="first_name">First Name</label>
         </div>
         <div class="input-field col s6">
