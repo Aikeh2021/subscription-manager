@@ -1,9 +1,13 @@
-import { useState } from "react";
+// import { useState } from "react";
 import React, {useState}from 'react';
+// import e from "express";
+// import { set } from "mongoose";
 
 const Subscriptions = () => {
 
         const [subscription,setSubscription] =useState("");
+        const [price,setPrice] =useState("");
+        const [plan,setPlan] =useState("");
     return (
 <div className="container">    
  <div className="row">
@@ -48,17 +52,25 @@ const Subscriptions = () => {
       {/* </div> */}
       <div className="row">
         <div className="input-field col s6">
-          <input placeholder="Name of Subscription" id="subscription" type="text"/>
+
+                {/* Value comes in from state, a change in the value sets the title on state and triggers a re-render */}
+          <input placeholder="Name of Subscription" id="subscription" type="text" name="subscription" value={subscription} onChange={(e) =>{
+                  setSubscription(e.target.value);
+          }}/>
           <label htmlFor="subscription">Add New Subscription</label>
         </div>
         <div className="input-field col s6">
-        <input placeholder="$ Subscription Price" id="price" type="text"/>
+        <input placeholder="$ Subscription Price" id="price" type="text" name="price" value={price} onChange={(e) =>{
+                  setPrice(e.target.value);
+          }}/>
           <label htmlFor="subscription price">Subscription Price</label>
         </div>
       </div>
       <div className="row">
         <div className="input-field col s6">
-        <input placeholder="Subscription Plan" id="plan" type="text"/>
+        <input placeholder="Subscription Plan" id="plan" type="text" name="plan" value={plan} onChange={(e) =>{
+                  setPlan(e.target.value);
+          }}/>
           <label htmlFor="subscription Plan">Subscription Plan</label>
         </div>
       </div>
