@@ -2,74 +2,74 @@ import React from 'react';
 
 const Subscriptions = () => {
     return (
-      <div>
-<div className="container">
-        <h5> Please select a Subscription </h5>
-<div class="row">
-<label></label>
-<select class="browser-default" enabled>
-<option value="enabled" enabled value></option>
-<option value="1">Hulu</option>
-<option value="2">Netflix</option>
-<option value="3">Amazon</option>
-<option value="3">Apple music</option>
-</select>
-</div>
-</div>
-<div className="container">
-        <h5> Please select a monthly plan </h5>
-<div class="row">
-<label></label>
-<select class="browser-default" enabled>
-<option value="enabled" enabled value>Basic</option>
-<option value="1">$5:99</option>
-<option value="2">$8.99</option>
-<option value="3">$12.99</option>
+<div className="container">    
+ <div className="row">
+<div> <h1 className="center-align">Add a Subscription</h1>
+    <form className="col s12">
+    <div className="row">
+       
+        <div className="input-field col s6">
+        <input id="featured"/>
+        <label htmlFor= "featured Subscriptions">Featured Subscriptions </label>
+  <select className="browser-default">
+    <option value="" disabled selected></option>
+    <option value="1">Hulu</option>
+    <option value="3">Spotify</option>
+    <option value="2">Netflix</option>
+    <option value="3">Amazon</option>
+    <option value="3">Apple Music</option>
 
-</select>
-</div>
-</div>
+  </select>
+    <label></label>
+  
+        </div>
 
-<div className="container">
-        <h5>  </h5>
-<div class="row">
-<label></label>
-<select class="browser-default" enabled>
-<option value="enabled" enabled value>Standard</option>
-<option value="1">$5:99</option>
-<option value="2">$8.99</option>
-<option value="3">$13.99</option>
+        <div className="row">
+       
+        <div className="input-field col s6">
+        <input id="featured"/>
+        <label htmlFor= "featured subscription price">Price</label>
+  <select className="browser-default">
+    <option value="" disabled selected></option>
+    <option value="1">$5.99</option>
+    <option value="3">$8.99</option>
+    <option value="2">$12.99</option>
+    <option value="3">$17.99</option>
+    <option value="3">$25.99</option>
 
-</select>
-</div>
-</div>
-
-
-<div className="container">
-        <h5> </h5>
-<div class="row">
-<label></label>
-<select class="browser-default" enabled>
-<option value="enabled" enabled value>Premium</option>
-<option value="1">$11.99</option>
-<option value="2">$17.99</option>
-<option value="3">$25.99</option>
-
-</select>
-
-
-</div>
-<div>
-  <button className="btn waves-effect waves-light" type="submit" name="action">Add to dashboard
-   
-   </button>
-</div>
-</div>
-
-
+  </select>
+    <label></label>
+  </div>
+        </div>
+        </div>
+      {/* </div> */}
+      <div className="row">
+        <div className="input-field col s6">
+          <input placeholder="Name of Subscription" id="subscription" type="text"/>
+          <label htmlFor="subscription">Add New Subscription</label>
+        </div>
+        <div className="input-field col s6">
+        <input placeholder="Subscription Price" id="price" type="text"/>
+          <label htmlFor="subscription price">Subscription Price</label>
+        </div>
       </div>
-
-      
+      <div className="row">
+        <div className="input-field col s6">
+        <input placeholder="Subscription Plan" id="plan" type="text"/>
+          <label htmlFor="subscription Plan">Subscription Plan</label>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col s12">
+        <button className="btn waves-effect waves-light">Add to dashboard
+   </button>
+        </div>
+       </div>
+    </form>
+    </div>
+    </div>
+       </div>
+       
   );
 };
 
