@@ -5,21 +5,26 @@ import React, {useState}from 'react';
 
 const Subscriptions = () => {
 
+        const [featured, setFeatured]= useState("");
+        const [featuredPrice, setFeaturedPrice]= useState("");
         const [subscription,setSubscription] =useState("");
         const [price,setPrice] =useState("");
         const [plan,setPlan] =useState("");
+
     return (
 <div className="container">    
  <div className="row">
-<div> <h1 className="center-align">Add a Subscription</h1>
-    <form className="col s12">
+<div> <h1 className="center-align">Add a Subscription</h1> 
+    <form className="col s12" >
     <div className="row">
        
         <div className="input-field col s6">
-        <input id="featured"/>
-        <label htmlFor= "featured Subscriptions">Featured Subscriptions </label>
-  <select className="browser-default">
-    <option value="" disabled selected></option>
+        {/* <input id="featured"/> */}
+        <label htmlFor= "featured Subscriptions"></label>
+  <select className="browser-default" id="featured" type="" name="featured" value={featured} onChange={(e) =>{
+                  setFeatured(e.target.value);
+          }}>
+    <option value="" disabled selected>Featured Subscriptions</option>
     <option value="1">Hulu</option>
     <option value="3">Spotify</option>
     <option value="2">Netflix</option>
@@ -34,10 +39,12 @@ const Subscriptions = () => {
         <div className="row">
        
         <div className="input-field col s6">
-        <input id="featured"/>
-        <label htmlFor= "featured subscription price">Price</label>
-  <select className="browser-default">
-    <option value="" disabled selected></option>
+        {/* <input id="featured"/> */}
+        <label htmlFor= "featured subscription price"></label>
+  <select className="browser-default" id="featured price" type="" name="featured price" value={featuredPrice} onChange={(e) =>{
+                  setFeaturedPrice(e.target.value);
+          }}>
+    <option value="" disabled selected>Price</option>
     <option value="1">$5.99</option>
     <option value="3">$8.99</option>
     <option value="2">$12.99</option>
@@ -54,13 +61,13 @@ const Subscriptions = () => {
         <div className="input-field col s6">
 
                 {/* Value comes in from state, a change in the value sets the title on state and triggers a re-render */}
-          <input placeholder="Name of Subscription" id="subscription" type="text" name="subscription" value={subscription} onChange={(e) =>{
+          <input placeholder="" id="subscription" type="text" name="subscription" value={subscription} onChange={(e) =>{
                   setSubscription(e.target.value);
           }}/>
           <label htmlFor="subscription">Add New Subscription</label>
         </div>
         <div className="input-field col s6">
-        <input placeholder="$ Subscription Price" id="price" type="text" name="price" value={price} onChange={(e) =>{
+        <input placeholder="" id="price" type="text" name="price" value={price} onChange={(e) =>{
                   setPrice(e.target.value);
           }}/>
           <label htmlFor="subscription price">Subscription Price</label>
@@ -68,7 +75,7 @@ const Subscriptions = () => {
       </div>
       <div className="row">
         <div className="input-field col s6">
-        <input placeholder="Subscription Plan" id="plan" type="text" name="plan" value={plan} onChange={(e) =>{
+        <input placeholder="" id="plan" type="text" name="plan" value={plan} onChange={(e) =>{
                   setPlan(e.target.value);
           }}/>
           <label htmlFor="subscription Plan">Subscription Plan</label>
