@@ -1,6 +1,9 @@
-import React from 'react';
+import { useState } from "react";
+import React, {useState}from 'react';
 
 const Subscriptions = () => {
+
+        const [subscription,setSubscription] =useState("");
     return (
 <div className="container">    
  <div className="row">
@@ -49,7 +52,7 @@ const Subscriptions = () => {
           <label htmlFor="subscription">Add New Subscription</label>
         </div>
         <div className="input-field col s6">
-        <input placeholder="Subscription Price" id="price" type="text"/>
+        <input placeholder="$ Subscription Price" id="price" type="text"/>
           <label htmlFor="subscription price">Subscription Price</label>
         </div>
       </div>
