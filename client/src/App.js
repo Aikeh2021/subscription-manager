@@ -6,12 +6,10 @@ import SignUpForm from "./containers/SignUpForm/SignUpForm";
 import Subscriptions from "./containers/Subscriptions/Subscriptions";
 import UserDashboard from "./containers/UserDashboard/UserDashboard";
 
-
-
 function App() {
   return (
     <Router>
-      <Navbar/>
+      <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={LoginPage} />
@@ -19,11 +17,8 @@ function App() {
         <Route exact path="/dashboard" component={UserDashboard} />
         <Route exact path="/subscriptions" component={Subscriptions} />
       </Switch>
-      
     </Router>
-
   );
 }
 
 export default App;
-
