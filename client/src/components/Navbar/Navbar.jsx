@@ -19,7 +19,7 @@ const navbar = () => {
       <li><a href="/signup">signup</a></li>
       
  {/* This is a drop down arroww */}
-      {/* <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li> */}
+      {/* <li><a className="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i className="material-icons right">arrow_drop_down</i></a></li> */}
     </ul>
   </div>
 </nav>
