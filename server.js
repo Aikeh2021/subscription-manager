@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("client/build"));
+
 
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/subscription-manager",
@@ -30,11 +30,18 @@ connection.on("error", (err) => {
   console.log("Mongoose connection error: ", err);
 });
 
+const subscriptionsController = require("./controllers/subscriptionsController");
+
+app.use(express.static("client/build"));
+
 app.get("/api/config", (req, res) => {
   res.json({
     success: true,
   });
 });
+
+app.use("/api/subscriptions", subscriptionsController);
+
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build/index.html"));

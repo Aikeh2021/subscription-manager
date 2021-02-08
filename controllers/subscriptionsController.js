@@ -11,4 +11,14 @@ router.get("/", (req, res) => {
     });
 });
 
+router.post("/", (req, res) => {
+    console.log(req.body);
+    Subscription.create(req.body).then((newSubscription) => {
+        console.log(newSubscription);
+        res.json(newSubscription);
+    });
+});
+
+
+
 module.exports = router;
