@@ -22,22 +22,22 @@ const [subscription_category, setSubscription_category] = useState ("");
               <input
                 placeholder="Enter new subscription name"
                 id="subscription_name"
-                type="text"
+                type="text" value={subscription_name} onChange={(e) => {setSubscription_name(e.target.value)}}
               />
               <label htmlFor="subscription_name">Subscription Provider</label>
             </div>
             <div className="row">
               <div className="col s9">
                 <div className="input-field col s3">
-                  <input id="subscription_price1" type="text" />
+                  <input id="subscription_price1" type="text" value={subscription_price1} onChange={(e) => {setSubscription_price1(e.target.value)}} />
                   <label htmlFor="subscription_price1">Plan Pricing #1</label>
                 </div>
                 <div className="input-field col s3">
-                  <input id="subscription_price2" type="text" />
+                  <input id="subscription_price2" type="text" value={subscription_price2} onChange={(e) => {setSubscription_price2(e.target.value)}} />
                   <label htmlFor="subscription_price2">Plan Pricing #2</label>
                 </div>
                 <div className="input-field col s3">
-                  <input id="subscription_price3" type="text" />
+                  <input id="subscription_price3" type="text" value={subscription_price3} onChange={(e) => {setSubscription_price3(e.target.value)}} />
                   <label htmlFor="subscription_price3">Plan Pricing #3</label>
                 </div>
               </div>
@@ -46,13 +46,13 @@ const [subscription_category, setSubscription_category] = useState ("");
           {/* Will need to edit this later to accept a url for when admin wants to add a thumbnail sized logo */}
           <div className="row">
             <div className="input-field col s10">
-              <input id="subscription_thumbnail" type="text" />
+              <input id="subscription_thumbnail" type="text" value={subscription_thumbnail} onChange={(e) => {setSubscription_thumbnail(e.target.value)}} />
               <label htmlFor="subscription_thumbnail">Subscription Logo</label>
             </div>
           </div>
           <div className="row">
             <div className="input-field col s10">
-              <input id="subscription_category" type="text" />
+              <input id="subscription_category" type="text" value={subscription_category} onChange={(e) => {setSubscription_category(e.target.value)}} />
               <label htmlFor="subscription_category">Service Type</label>
             </div>
           </div>
