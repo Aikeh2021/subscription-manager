@@ -6,7 +6,7 @@ const NewSubscription = () => {
 
 const handleFormSubmit = (e, subscriptionData) => {
   e.preventDefault();
-  axios.POST("/api/subscriptions", subscriptionData).then((response) => {
+  axios.post("/api/subscriptions", subscriptionData).then((response) => {
     console.log(response.data)
   }).catch((err) => {
     console.log(err);

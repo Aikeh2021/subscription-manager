@@ -104,15 +104,16 @@ const AdminSubForm = ({ handleFormSubmit }) => {
               <label htmlFor="subscription_category">Service Type</label>
             </div>
           </div>
+          <div className="row">
+            <div className="col s9">
+              <button className="waves-effect waves-light btn-large">
+                <i className="material-icons right">create</i>Add New
+                Subscription
+              </button>
+            </div>
+          </div>
         </form>
       </>
-      <div className="row">
-        <div className="col s9">
-          <button className="waves-effect waves-light btn-large">
-            <i className="material-icons right">create</i>Add New Subscription
-          </button>
-        </div>
-      </div>
     </div>
   );
 };
