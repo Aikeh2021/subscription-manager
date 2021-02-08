@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from 'axios';
 
 const NewSubscription = () => {
 
@@ -9,6 +10,20 @@ const [subscription_price3, setSubscription_price3] = useState ("");
 const [subscription_thumbnail, setSubscription_thumbnail] = useState ("");
 const [subscription_category, setSubscription_category] = useState ("");
 
+const handleFormSubmit = (e) => {
+  e.preventDefault();
+  axios.POST("/api/subscriptions", {
+    "subscription_name": subscription_name,
+    "subscription_price": [subscription_price1, subscription_price2, subscription_price3],
+    "subscription_thumbnail": subscription_thumbnail,
+    "subscription_category": subscription_category
+  }).then((response) => {
+    console.log(response.data)
+  }).catch((err) => {
+    console.log(err);
+  })
+
+}
   return (
     <div>
 
@@ -16,7 +31,7 @@ const [subscription_category, setSubscription_category] = useState ("");
       <div className="divider"></div>
       <h1 className="center-align">Create A New Subscription</h1>
       <div className="row">
-        <form className="col s11 offset-m1">
+        <form className="col s11 offset-m1" onSubmit={handleFormSubmit}>
           <div className="row">
             <div className="input-field col s10">
               <input
@@ -28,6 +43,7 @@ const [subscription_category, setSubscription_category] = useState ("");
             </div>
             <div className="row">
               <div className="col s9">
+                {/* May need to revisit this because price is supposed to be an array */}
                 <div className="input-field col s3">
                   <input id="subscription_price1" type="text" value={subscription_price1} onChange={(e) => {setSubscription_price1(e.target.value)}} />
                   <label htmlFor="subscription_price1">Plan Pricing #1</label>
@@ -58,7 +74,7 @@ const [subscription_category, setSubscription_category] = useState ("");
           </div>
           <div className="row">
             <div className="col s9">
-            <a class="waves-effect waves-light btn-large"><i className="material-icons right">create</i>Add New Subscription</a>
+            <a className="waves-effect waves-light btn-large"><i className="material-icons right">create</i>Add New Subscription</a>
 
             </div>
           </div>
