@@ -19,7 +19,10 @@ const SubscriptionSchema = new Schema ({
         {
             type: Schema.Types.ObjectId, ref: 'User'
         }
-]
+    ], 
+    subscription_category: {
+        type: String
+    }
 });
 
 const Subscription = mongoose.model("Subscription", SubscriptionSchema);
