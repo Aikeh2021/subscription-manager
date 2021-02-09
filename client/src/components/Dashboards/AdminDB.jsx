@@ -11,14 +11,14 @@ const styles = {
 const AdminDB = () => {
 const [subscriptions, setSubscriptions] = useState([]);
 
-axios.get('/api/subscriptions', (req, res) => {
-
-}).then((response) => {
-  console.log(response.data);
-}).catch((err) => {
-console.log(err)
-});
-
+useEffect(() => {
+    axios.get("/api/subscriptions").then((response) => {
+        console.log(response.data);
+        setSubscriptions(response.data)
+    }).catch((err) => {
+        console.log(err);
+    }) 
+}, [])
 
   return (
     <>
@@ -44,7 +44,7 @@ console.log(err)
         </thead>
         <tbody>
             {subscriptions.map(subscription => (
-                <tr>
+                <tr key={subscription._id}>
                 <td>{subscription.subscription_name}</td>
                 <td>{subscription.subscription_thumbnail}</td>
                 {/* May need to ask about how to do a for loop here to create a td for each plan in the price array */}
