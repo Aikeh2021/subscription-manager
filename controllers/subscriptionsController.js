@@ -23,7 +23,13 @@ router.put("/:id", (req, res) => {
     Subscription.findByIdAndUpdate(req.params.id, req.body, {new:true}).then((updatedSubscription) => {
         res.json(updatedSubscription);
     }); 
-})
+});
+
+router.delete("/:id", (req, res) => {
+    Subscription.findByIdAndDelete(req.params.id).then((response) => {
+        res.json(response);
+    });
+});
 
 
 module.exports = router;
