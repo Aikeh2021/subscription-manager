@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import AdminLoginPage from "./containers/AdminLoginPage/AdminLoginPage";
 import Home from "./containers/Home/Home";
 import LoginPage from "./containers/LoginPage/LoginPage";
 import SignUpForm from "./containers/SignUpForm/SignUpForm";
@@ -14,11 +13,16 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
+
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/signup" component={SignUpForm} />
         <Route exact path="/dashboard" component={UserDashboard} />
         <Route exact path="/subscriptions" component={Subscriptions} />
-        <Route exact path="/adminLoginPage" component={AdminLoginPage} />
+        <Route
+          exact
+          path="/admin/new-subscription"
+          component={SubscriptionForm}
+        />
       </Switch>
     </Router>
   );
