@@ -31,6 +31,7 @@ connection.on("error", (err) => {
 });
 
 const subscriptionsController = require("./controllers/subscriptionsController");
+const usersController = require("./controllers/usersController");
 
 app.use(express.static("client/build"));
 
@@ -41,6 +42,7 @@ app.get("/api/config", (req, res) => {
 });
 
 app.use("/api/subscriptions", subscriptionsController);
+app.use("/api/users", usersController);
 
 
 app.get("*", (req, res) => {
