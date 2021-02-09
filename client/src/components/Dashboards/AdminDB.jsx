@@ -9,7 +9,7 @@ const styles = {
 
 
 const AdminDB = () => {
-
+const [subscriptions, setSubscriptions] = useState([]);
 
 axios.get('/api/subscriptions', (req, res) => {
 
@@ -43,17 +43,21 @@ console.log(err)
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Spotify</td>
-            <td>Image</td>
-            <td>4.99</td>
-            <td>9.99</td>
-            <td>12.99</td>
-            <td>14.99</td>
-            <td>Music Streaming</td>
-            <td><button className="waves-effect waves-light btn-small"><i className="material-icons left">update</i>UPDATE</button></td>
-            <td><button className="waves-effect waves-light btn-small"><i className="material-icons left">delete</i>DELETE</button></td>
-          </tr>
+            {subscriptions.map(subscription => (
+                <tr>
+                <td>{subscription.subscription_name}</td>
+                <td>{subscription.subscription_thumbnail}</td>
+                {/* May need to ask about how to do a for loop here to create a td for each plan in the price array */}
+                <td>{subscription.subscription_price[0]}</td>
+                <td>{subscription.subscription_price[1]}</td>
+                <td>{subscription.subscription_price[2]}</td>
+                <td>{subscription.subscription_price[3]}</td>
+                <td>{subscription.subscription_category}</td>
+                <td><button className="waves-effect waves-light btn-small"><i className="material-icons left">update</i>UPDATE</button></td>
+                <td><button className="waves-effect waves-light btn-small"><i className="material-icons left">delete</i>DELETE</button></td>
+              </tr>
+            ))}
+          
         </tbody>
       </table>
     </div>
