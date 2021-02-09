@@ -1,5 +1,5 @@
 import React from 'react';
-import Dashboard from '../../components/Dashboards/Dashboard';
+import AdminDB from '../../components/Dashboards/AdminDB';
 
 const AdminDashboard = () => {
     const styles = {
@@ -11,7 +11,7 @@ const AdminDashboard = () => {
         <div>
             <h1 style={styles.h1}>Admin Subscription Dashboard</h1>
             <br />
-            <Dashboard />
+            <AdminDB />
         </div>
     );
 };
