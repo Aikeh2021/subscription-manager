@@ -25,6 +25,12 @@ useEffect(() => {
     }) 
 }, [])
 
+const deleteSub = (id) => {
+    console.log("You deleted me :(");
+    console.log(id)
+
+}
+
   return (
     <>
     <br/>
@@ -59,7 +65,7 @@ useEffect(() => {
                 <td>{subscription.subscription_price[3]}</td>
                 <td>{subscription.subscription_category}</td>
                 <td><button className="waves-effect waves-light btn-small"><i className="material-icons left">update</i>UPDATE</button></td>
-                <td><button className="waves-effect waves-light btn-small"><i className="material-icons left">delete</i>DELETE</button></td>
+                <td><button className="waves-effect waves-light btn-small" onClick={() => {deleteSub(subscription._id)}}><i className="material-icons left">delete</i>DELETE</button></td>
               </tr>
             ))}
           
