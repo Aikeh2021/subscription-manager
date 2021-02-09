@@ -16,6 +16,8 @@ router.post("/", (req, res) => {
     Subscription.create(req.body).then((newSubscription) => {
         console.log(newSubscription);
         res.json(newSubscription);
+    }).catch((err) => {
+        console.log(err)
     });
 });
 
