@@ -62,6 +62,11 @@ useEffect(() => {
       </table>
     </div>
     </div>
+    <div className="row center">
+        <div className="col s12">
+        <button className="waves-effect waves-light btn-large"><i className="material-icons left">add</i>Add New Subscription</button>
+        </div>
+    </div>
     </div>
     </div>
     </>
