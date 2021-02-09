@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 
+
 const styles = {
   thead: {
     backgroundColor: "#bdbdbd"
+  },
+  img: {
+      height: "2em",
+      width: ""
   }
 }
 
@@ -46,7 +51,7 @@ useEffect(() => {
             {subscriptions.map(subscription => (
                 <tr key={subscription._id}>
                 <td>{subscription.subscription_name}</td>
-                <td>{subscription.subscription_thumbnail}</td>
+                <td><img src={subscription.subscription_thumbnail} alt={subscription.subscription_name} style={styles.img} /></td>
                 {/* May need to ask about how to do a for loop here to create a td for each plan in the price array */}
                 <td>{subscription.subscription_price[0]}</td>
                 <td>{subscription.subscription_price[1]}</td>
