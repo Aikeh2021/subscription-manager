@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 
-
+// Elements in component styles
 const styles = {
   thead: {
     backgroundColor: "#bdbdbd"
   },
   img: {
       height: "2em",
-      width: ""
   }
 }
 
@@ -20,26 +19,30 @@ useEffect(() => {
     getSubs();
 }, [])
 
+// Function def that triggers the API call to get all subs in the sub in the database
 const getSubs = () => {
     axios.get("/api/subscriptions").then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setSubscriptions(response.data)
     }).catch((err) => {
         console.log(err);
     }) 
 };
 
-
+// Function def that triggers the API call to delete sub from database
 const deleteSub = (id) => {
     console.log("You deleted me :(");
     console.log(id);
     axios.delete(`/api/subscriptions/${id}`).then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         getSubs();
-    })
+    }).catch((err) => {
+        console.log(err);
+    });
 
-}
+};
 
+// Creating the admin dashboard table
   return (
     <>
     <br/>
@@ -63,11 +66,11 @@ const deleteSub = (id) => {
           </tr>
         </thead>
         <tbody>
+            {/* Mapping over the subscriptions in the database and creating a row for them in the adminDB */}
             {subscriptions.map(subscription => (
                 <tr key={subscription._id}>
                 <td>{subscription.subscription_name}</td>
                 <td><img src={subscription.subscription_thumbnail} alt={subscription.subscription_name} style={styles.img} /></td>
-                {/* May need to ask about how to do a for loop here to create a td for each plan in the price array */}
                 <td>{subscription.subscription_price[0]}</td>
                 <td>{subscription.subscription_price[1]}</td>
                 <td>{subscription.subscription_price[2]}</td>
@@ -82,6 +85,8 @@ const deleteSub = (id) => {
       </table>
     </div>
     </div>
+
+    {/* Button to add a new subscription to admin dashboard */}
     <div className="row center">
         <div className="col s12">
         <button className="waves-effect waves-light btn-large"><i className="material-icons left">add</i>Add New Subscription</button>
