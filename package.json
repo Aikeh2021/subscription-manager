@@ -8,7 +8,8 @@
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start"
+    "client": "cd client && npm run start",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Aikeh2021/subscription-manager/issues"
+  },
+  "engines":{
+    "node": "12.x" 
   },
   "homepage": "https://github.com/Aikeh2021/subscription-manager#readme",
   "dependencies": {
