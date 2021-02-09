@@ -19,6 +19,11 @@ router.post("/", (req, res) => {
     });
 });
 
+router.put("/:id", (req, res) => {
+    Subscription.findByIdAndUpdate(req.params.id, req.body, {new:true}).then((updatedSubscription) => {
+        res.json(updatedSubscription);
+    }); 
+})
 
 
 module.exports = router;
