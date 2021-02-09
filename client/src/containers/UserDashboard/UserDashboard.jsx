@@ -8,9 +8,11 @@ const UserDashboard = () => {
       textAlign: "center"
     }
   };
+
+  
   return (
     <div>
-      <UserDBGreeting UsersName="Marilyn's"/>
+      <UserDBGreeting UsersName={}/>
       <div className="divider"></div>
       <p style={styles.p}>
         Welcome to your personalized subscription tracker! Update or delete

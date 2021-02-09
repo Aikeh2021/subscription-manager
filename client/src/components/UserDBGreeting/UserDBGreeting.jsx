@@ -8,7 +8,7 @@ const UserDBGreeting = ({UsersName}) => {
       };
     return (
         <div>
-            <h1 style={styles.h1}>{UsersName} Subscription Dashboard</h1>
+            <h1 style={styles.h1}> Subscription Dashboard For: {UsersName}</h1>
         </div>
     );
 };
