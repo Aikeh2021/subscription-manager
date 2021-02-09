@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from 'axios';
 
 const styles = {
   thead: {
@@ -10,7 +11,15 @@ const styles = {
 const UserDashboard = () => {
 const [subscription_thumbnail, setSubcription_thumbnail] = useState("");
 const [subscription_price, setSubscription_price] = useState("");
-const 
+
+axios.get('/api/subscriptions', (req, res) => {
+
+}).then((response) => {
+  console.log(response.data);
+}).catch((err) => {
+console.log(err)
+});
+
 
   return (
     <>
@@ -23,7 +32,8 @@ const
     <table>
         <thead style={styles.thead}>
           <tr>
-            <th>Subscriptions</th>
+            <th>Subscription Name</th>
+            <th>Image</th>
             <th>Current Amount</th>
             <th>Subscription Price Change</th>
             <th>Update Subscription</th>
@@ -32,6 +42,7 @@ const
         </thead>
         <tbody>
           <tr>
+            <td>Name</td>
             <td>Image</td>
             <td>$13.99</td>
             <td>$1.00</td>
