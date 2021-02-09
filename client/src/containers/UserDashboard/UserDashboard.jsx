@@ -8,6 +8,10 @@ const styles = {
 
 
 const UserDashboard = () => {
+const [subscription_thumbnail, setSubcription_thumbnail] = useState("");
+const [subscription_price, setSubscription_price] = useState("");
+const 
+
   return (
     <>
     <br/>
