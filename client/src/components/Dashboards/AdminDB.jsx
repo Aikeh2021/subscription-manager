@@ -33,18 +33,24 @@ console.log(err)
           <tr>
             <th>Subscription Name</th>
             <th>Image</th>
-            <th>Current Amount</th>
-            <th>Subscription Price Change</th>
+            <th>Plan 1</th>
+            <th>Plan 2</th>
+            <th>Plan 3</th>
+            <th>Plan 4</th>
+            <th>Category</th>
             <th>Update Subscription</th>
             <th>Delete Subscription</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Name</td>
+            <td>Spotify</td>
             <td>Image</td>
-            <td>$13.99</td>
-            <td>$1.00</td>
+            <td>4.99</td>
+            <td>9.99</td>
+            <td>12.99</td>
+            <td>14.99</td>
+            <td>Music Streaming</td>
             <td><button className="waves-effect waves-light btn-small"><i className="material-icons left">update</i>UPDATE</button></td>
             <td><button className="waves-effect waves-light btn-small"><i className="material-icons left">delete</i>DELETE</button></td>
           </tr>
