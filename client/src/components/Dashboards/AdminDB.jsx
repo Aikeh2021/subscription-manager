@@ -17,17 +17,26 @@ const AdminDB = () => {
 const [subscriptions, setSubscriptions] = useState([]);
 
 useEffect(() => {
+    getSubs();
+}, [])
+
+const getSubs = () => {
     axios.get("/api/subscriptions").then((response) => {
         console.log(response.data);
         setSubscriptions(response.data)
     }).catch((err) => {
         console.log(err);
     }) 
-}, [])
+};
+
 
 const deleteSub = (id) => {
     console.log("You deleted me :(");
-    console.log(id)
+    console.log(id);
+    axios.delete(`/api/subscriptions/${id}`).then((response) => {
+        console.log(response.data);
+        getSubs();
+    })
 
 }
 
