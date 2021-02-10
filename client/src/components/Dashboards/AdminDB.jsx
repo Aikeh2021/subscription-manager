@@ -90,7 +90,7 @@ const deleteSub = (id) => {
     {/* Button to add a new subscription to admin dashboard */}
     <div className="row center">
         <div className="col s12">
-        <button className="waves-effect waves-light btn-large"><i className="material-icons left">add</i>Add New Subscription</button>
+        <Link to="/admin/new-subscription"><button className="waves-effect waves-light btn-large"><i className="material-icons left">add</i>Add New Subscription</button></Link>
         </div>
     </div>
     </div>
