@@ -20,8 +20,8 @@ const UserSchema = new Schema({
     },
     subscriptions: [
         {
-        type: Schema.Types.ObjectId,
-        ref:"Subscription"
+        subscription_name: String,
+        subscription_price: Number
         }
     ]
 });

@@ -20,6 +20,7 @@ const handleFormSubmit = (e, subscriptionData) => {
       <div className="divider"></div>
       <h1 className="center-align">Create A New Subscription</h1>
       <div className="row">
+        <br />
         <AdminSubForm handleFormSubmit={handleFormSubmit}/>
 
       </div>
