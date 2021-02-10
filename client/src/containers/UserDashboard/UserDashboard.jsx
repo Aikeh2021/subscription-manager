@@ -1,6 +1,6 @@
 import React from "react";
 import Dashboard from "../../components/Dashboards/UsersDB";
-import UserDBGreeting from "../../components/UserDBGreeting/UserDBGreeting"
+// import UserDBGreeting from "../../components/UserDBGreeting/UserDBGreeting"
 
 const UserDashboard = () => {
   const styles = {
@@ -12,7 +12,7 @@ const UserDashboard = () => {
   
   return (
     <div>
-      <UserDBGreeting UsersName={}/>
+      {/* <UserDBGreeting UsersName={}/> */}
       <div className="divider"></div>
       <p style={styles.p}>
         Welcome to your personalized subscription tracker! Update or delete
