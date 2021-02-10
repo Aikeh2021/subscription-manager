@@ -1,7 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
-import AdminSubForm from '../../components/AdminSubForms/AdminNewSubForm';
+import AdminNewSubForm from '../../components/AdminSubForms/AdminNewSubForm';
 
 
 
@@ -27,7 +27,7 @@ const handleFormSubmit = (e, subscriptionData) => {
       <h1 className="center-align">Create A New Subscription</h1>
       <div className="row">
         <br />
-        <AdminSubForm handleFormSubmit={handleFormSubmit}/>
+        <AdminNewSubForm handleFormSubmit={handleFormSubmit}/>
 
       </div>
 

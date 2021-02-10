@@ -7,9 +7,9 @@ const AdminEditSub = () => {
 
 const history = useHistory();
 
-const handleFormSubmit = (e, subscriptionData) => {
+const handleFormSubmit = (e, subscriptionData, id) => {
   e.preventDefault();
-  axios.post("/api/subscriptions", subscriptionData).then((response) => {
+  axios.put(`/api/subscriptions/${id}`, subscriptionData).then((response) => {
     // console.log(response.data)
     history.push("/admin/dashboard")
   }).catch((err) => {
@@ -26,7 +26,7 @@ const handleFormSubmit = (e, subscriptionData) => {
       <div className="row">
         <br />
         <div>
-            <AdminEditSubForm />
+            <AdminEditSubForm handleFormSubmit={handleFormSubmit}/>
         </div>
 
       </div>
