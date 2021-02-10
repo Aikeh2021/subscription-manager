@@ -1,11 +1,11 @@
 import React from 'react';
 
-const AdminEditSub = () => {
+const AdminEditSubForm = () => {
     return (
         <div>
-            
+            <h1>Hello World</h1>
         </div>
     );
 };
 
-export default AdminEditSub;
+export default AdminEditSubForm;
