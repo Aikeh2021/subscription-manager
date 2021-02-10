@@ -22,8 +22,8 @@ function App() {
         <Route exact path="/dashboard" component={UserDashboard} />
         <Route exact path="/subscriptions" component={Subscriptions} />
         <Route exact path="/admin/new-subscription" component={AdminNewSub} />
-        <Route exact path="/admin/edit-subscription" component={AdminEditSub} />
         <Route exact path="/admin/dashboard" component={AdminDashboard} />
+        <Route exact path="/admin/:id" component={AdminEditSub} />
       </Switch>
     </Router>
   );

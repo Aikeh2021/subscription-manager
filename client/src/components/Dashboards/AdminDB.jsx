@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from 'axios';
 
 // Elements in component styles
@@ -76,7 +77,7 @@ const deleteSub = (id) => {
                 <td>{subscription.subscription_price[2]}</td>
                 <td>{subscription.subscription_price[3]}</td>
                 <td>{subscription.subscription_category}</td>
-                <td><button className="waves-effect waves-light btn-small"><i className="material-icons left">update</i>UPDATE</button></td>
+                <td><Link to={`/admin/${subscription._id}`}><button className="waves-effect waves-light btn-small"><i className="material-icons left">update</i>UPDATE</button></Link></td>
                 <td><button className="waves-effect waves-light btn-small" onClick={() => {deleteSub(subscription._id)}}><i className="material-icons left">delete</i>DELETE</button></td>
               </tr>
             ))}
