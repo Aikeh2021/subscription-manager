@@ -1,13 +1,17 @@
+import React from "react";
 import axios from 'axios';
-import AdminSubForm from '../AdminSubForm/AdminSubForm';
+import AdminSubForm from '../../components/AdminSubForms/AdminNewSubForm';
 
-const NewSubscription = () => {
+
+
+const NewSubscription = (props) => {
 
 
 const handleFormSubmit = (e, subscriptionData) => {
   e.preventDefault();
   axios.post("/api/subscriptions", subscriptionData).then((response) => {
-    console.log(response.data)
+    // console.log(response.data)
+    props.history.push("/admin/dashboard")
   }).catch((err) => {
     console.log(err);
   })
