@@ -21,10 +21,18 @@ const Subscriptions = () => {
 subscription_name=userData.featured
         }
         else {subscription_name = userData.subscription};
+
+        // if input box is empty, use the drop down options
+        let subscription_price;
+        if (userData.price === "") 
+        {
+subscription_price=userData.featuredPrice
+        }
+        else {subscription_price = userData.price};
         
 // axios post 
 // Updated the axios post
-        axios.post("/api/users", userData)
+        axios.post("/api/users", {subscription_name, subscription_plan:userData.plan, subscription_price})
         // Added axios promise
         .then((response)=> {
                 console.log(response.data);
