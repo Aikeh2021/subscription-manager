@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 
-const AdminSubForm = ({ handleFormSubmit }) => {
+
+const AdminNewSubForm = ({ handleFormSubmit }) => {
   const [subscription_name, setSubscription_name] = useState("");
   const [subscription_price1, setSubscription_price1] = useState("");
   const [subscription_price2, setSubscription_price2] = useState("");
   const [subscription_price3, setSubscription_price3] = useState("");
   const [subscription_thumbnail, setSubscription_thumbnail] = useState("");
   const [subscription_category, setSubscription_category] = useState("");
+
+  
   return (
     <div>
       <>
@@ -118,4 +121,4 @@ const AdminSubForm = ({ handleFormSubmit }) => {
   );
 };
 
-export default AdminSubForm;
+export default AdminNewSubForm;
