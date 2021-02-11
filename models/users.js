@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { stringify } = require('querystring');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
@@ -20,8 +21,12 @@ const UserSchema = new Schema({
     },
     subscriptions: [
         {
-        subscription_name: String,
-        subscription_price: Number
+        // subscription_name: String,
+        // subscription_price: Number,
+        featured:stringify,
+        subscription: stringify,
+        // price: Number,
+        plan: String
         }
     ]
 });

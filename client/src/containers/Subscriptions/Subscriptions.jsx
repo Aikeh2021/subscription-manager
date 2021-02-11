@@ -10,10 +10,21 @@ const Subscriptions = () => {
 
         // Added custom methods bt preventing default
 
-        const handleFormSubmit=(e, subscriptionsData) =>{
+        const handleFormSubmit=(e, userData) =>{
         e.preventDefault();
+
+        // Adding a conditional statement
+        
+        let subscription_name;
+        if (userData.subscription === "") 
+        {
+subscription_name=userData.featured
+        }
+        else {subscription_name = userData.subscription};
+        
 // axios post 
-        axios.post("api/subscriptions", subscriptionsData)
+// Updated the axios post
+        axios.post("/api/users", userData)
         // Added axios promise
         .then((response)=> {
                 console.log(response.data);
