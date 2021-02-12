@@ -13,7 +13,7 @@ const LoginPage = () => {
       <div className="row">
         <div className="input-field col s12">
           <input id="password" type="password"/>
-          <label htmlFor="email">Password</label>
+          <label htmlFor="password">Password</label>
         </div>
       </div>
       </div>
