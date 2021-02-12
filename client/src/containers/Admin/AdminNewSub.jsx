@@ -5,7 +5,7 @@ import AdminNewSubForm from '../../components/AdminSubForms/AdminNewSubForm';
 
 
 
-const NewSubscription = (props) => {
+const NewSubscription = () => {
 
 const history = useHistory();
 
