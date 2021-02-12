@@ -23,8 +23,8 @@ const UserSchema = new Schema({
         {
         // subscription_name: String,
         // subscription_price: Number,
-        featured:stringify,
-        subscription: stringify,
+        // featured:stringify,
+        // subscription: stringify,
         // price: Number,
         plan: String
         }
