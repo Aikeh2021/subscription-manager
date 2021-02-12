@@ -12,8 +12,9 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-    Subscription.findById(req.params.id).then((foundSubscription) => {
-        res.json(foundSubscription)
+    // Update foundSubscription to featuredSubscription
+    Subscription.findById(req.params.id).then((featuredSubscription) => {
+        res.json(featuredSubscription)
     }).catch((err) => {
         console.log(err);
         res.status(404).end();

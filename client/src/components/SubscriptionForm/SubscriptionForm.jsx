@@ -56,6 +56,10 @@ const SubscriptionForm = ({handleFormSubmit}) => {
        </div>
      {/* </div> */}
      <div className="row">
+{/****Add a conditional rendering for the price and subscription if the user doesn't select them *****/}
+      
+
+
        {/* conditional rendering for the forms */}
        { featured === "ADD NEW SUBSCRIPTIONS" && (
           <div className="input-field col s6">
