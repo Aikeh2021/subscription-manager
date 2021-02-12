@@ -72,10 +72,13 @@ const deleteSub = (id) => {
                 <tr key={subscription._id}>
                 <td>{subscription.subscription_name}</td>
                 <td><img src={subscription.subscription_thumbnail} alt={subscription.subscription_name} style={styles.img} /></td>
-                <td>{subscription.subscription_price[0]}</td>
-                <td>{subscription.subscription_price[1]}</td>
+                {subscription.subscription_price.map(price => (
+                                  <td>{price}</td>
+                ))}
+                {/* <td>{subscription.subscription_price[0]}</td> */}
+                {/* <td>{subscription.subscription_price[1]}</td>
                 <td>{subscription.subscription_price[2]}</td>
-                <td>{subscription.subscription_price[3]}</td>
+                <td>{subscription.subscription_price[3]}</td> */}
                 <td>{subscription.subscription_category}</td>
                 <td><Link to={`/admin/${subscription._id}`}><button className="waves-effect waves-light btn-small"><i className="material-icons left">update</i>UPDATE</button></Link></td>
                 <td><button className="waves-effect waves-light btn-small" onClick={() => {deleteSub(subscription._id)}}><i className="material-icons left">delete</i>DELETE</button></td>
