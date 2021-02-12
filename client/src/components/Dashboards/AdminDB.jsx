@@ -57,28 +57,18 @@ const deleteSub = (id) => {
           <tr>
             <th>Subscription Name</th>
             <th>Image</th>
-            <th>Plan 1</th>
-            <th>Plan 2</th>
-            <th>Plan 3</th>
-            <th>Plan 4</th>
+            <th>Plan Pricing</th>
             <th>Category</th>
             <th>Update Subscription</th>
             <th>Delete Subscription</th>
           </tr>
         </thead>
         <tbody>
-            {/* Mapping over the subscriptions in the database and creating a row for them in the adminDB */}
             {subscriptions.map(subscription => (
                 <tr key={subscription._id}>
                 <td>{subscription.subscription_name}</td>
                 <td><img src={subscription.subscription_thumbnail} alt={subscription.subscription_name} style={styles.img} /></td>
-                {subscription.subscription_price.map(price => (
-                                  <td>{price}</td>
-                ))}
-                {/* <td>{subscription.subscription_price[0]}</td> */}
-                {/* <td>{subscription.subscription_price[1]}</td>
-                <td>{subscription.subscription_price[2]}</td>
-                <td>{subscription.subscription_price[3]}</td> */}
+                <td>{subscription.subscription_price}</td>
                 <td>{subscription.subscription_category}</td>
                 <td><Link to={`/admin/${subscription._id}`}><button className="waves-effect waves-light btn-small"><i className="material-icons left">update</i>UPDATE</button></Link></td>
                 <td><button className="waves-effect waves-light btn-small" onClick={() => {deleteSub(subscription._id)}}><i className="material-icons left">delete</i>DELETE</button></td>

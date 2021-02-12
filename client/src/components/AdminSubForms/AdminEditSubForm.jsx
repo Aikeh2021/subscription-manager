@@ -6,10 +6,7 @@ const AdminEditSubForm = ({ handleFormSubmit }) => {
 
 
 const [subscription_name, setSubscription_name] = useState("");
-const [subscription_price1, setSubscription_price1] = useState("");
-const [subscription_price2, setSubscription_price2] = useState("");
-const [subscription_price3, setSubscription_price3] = useState("");
-const [subscription_price4, setSubscription_price4] = useState("");
+const [subscription_price, setSubscription_price] = useState("");
 const [subscription_thumbnail, setSubscription_thumbnail] = useState("");
 const [subscription_category, setSubscription_category] = useState("");
 
@@ -22,10 +19,7 @@ useEffect(() => {
         axios.get(`/api/subscriptions/${id}`).then((response) => {
             console.log(response.data);
             setSubscription_name(response.data.subscription_name);
-            setSubscription_price1(response.data.subscription_price[0]);
-            setSubscription_price2(response.data.subscription_price[1]);
-            setSubscription_price3(response.data.subscription_price[2]);
-            setSubscription_price4(response.data.subscription_price[3]);
+            setSubscription_price(response.data.subscription_price);
             setSubscription_thumbnail(response.data.subscription_thumbnail);
             setSubscription_category(response.data.subscription_category);
         }).catch((err) => {
@@ -42,12 +36,8 @@ return (
           onSubmit={(e) => {
             handleFormSubmit(e, {
               subscription_name: subscription_name,
-              subscription_price: [
-                subscription_price1,
-                subscription_price2,
-                subscription_price3,
-                subscription_price4
-              ],
+              subscription_price: 
+                subscription_price,
               subscription_thumbnail: subscription_thumbnail,
               subscription_category: subscription_category,
             }, id);
@@ -70,57 +60,17 @@ return (
             <div className="col s10">
               <div className="input-field col s5">
                 <input
-                  id="subscription_price1"
+                  id="subscription_price"
                   type="text"
-                  value={subscription_price1}
+                  value={subscription_price}
                   onChange={(e) => {
-                    setSubscription_price1(e.target.value);
+                    setSubscription_price(e.target.value);
                   }}
                 />
-                <label htmlFor="subscription_price1">Plan Pricing #1</label>
-              </div>
-              <div className="input-field col s5">
-                <input
-                  id="subscription_price2"
-                  type="text"
-                  value={subscription_price2}
-                  onChange={(e) => {
-                    setSubscription_price2(e.target.value);
-                  }}
-                />
-                <label htmlFor="subscription_price2">Plan Pricing #2</label>
+                <label htmlFor="subscription_price">Plan Pricing #1</label>
               </div>
             </div>
           </div>
-
-          <div className="row">
-            <div className="col s10">
-              <div className="input-field col s5">
-                <input
-                  id="subscription_price3"
-                  type="text"
-                  value={subscription_price3}
-                  onChange={(e) => {
-                    setSubscription_price3(e.target.value);
-                  }}
-                />
-                <label htmlFor="subscription_price3">Plan Pricing #3</label>
-              </div>
-              <div className="input-field col s5">
-                <input
-                  id="subscription_price4"
-                  type="text"
-                  value={subscription_price4}
-                  onChange={(e) => {
-                    setSubscription_price4(e.target.value);
-                  }}
-                />
-                <label htmlFor="subscription_price4">Plan Pricing #4</label>
-              </div>
-            </div>
-          </div>
-
-
         </div>
         {/* Will need to edit this later to accept a url for when admin wants to add a thumbnail sized logo */}
         <div className="row">
