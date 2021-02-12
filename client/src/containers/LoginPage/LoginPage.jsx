@@ -16,12 +16,13 @@ const LoginPage = () => {
          }}/>
           <label for="Email">Email</label>
       </div>
-      <div classNameName="row">
+      <div className="row">
         <div className="input-field col s12">
           <input id="password" type="password" value={password} onChange={(e) =>{
                  setPassword(e.target.value);
          }}/>
           <label for="email">Password</label>
+
         </div>
       </div>
       </div>

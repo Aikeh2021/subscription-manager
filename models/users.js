@@ -14,9 +14,7 @@ const UserSchema = new Schema({
     subscription_price: {
         type: String,
   
-    },
-    
-    
+    }
 });
 
 const User = mongoose.model("User", UserSchema);
