@@ -24,7 +24,7 @@ const [firstName, setFirstName]= useState("");
         </div>
 
         <div className="input-field col s6">
-          <input id="last_name" type="text" className="validate" value={lastName} onChange={(e) =>{
+          <input placeholder="Last Name" id="last_name" type="text" className="validate" value={lastName} onChange={(e) =>{
                  setLastName(e.target.value);
          }}/>
           <label for="last_name">{props.last_name}</label>
@@ -33,7 +33,7 @@ const [firstName, setFirstName]= useState("");
     
       <div className="row">
         <div className="input-field col s12">
-          <input id="email" type="email" className="validate" value={email} onChange={(e) =>{
+          <input placeholder="Email" id="email" type="email" className="validate" value={email} onChange={(e) =>{
                  setEmail(e.target.value);
          }}/>
           <label for="email">{props.email}</label>
@@ -41,16 +41,14 @@ const [firstName, setFirstName]= useState("");
       </div>
       <div className="row">
         <div className="input-field col s12">
-          <input id="password" type="password" className="validate" value={password} onChange={(e) =>{
+          <input placeholder="Password" id="password" type="password" className="validate" value={password} onChange={(e) =>{
                  setPassword(e.target.value);
          }}/>
           <label for="password">{props.password}</label>
         </div>
       </div>
       <button className="btn waves-effect waves-light" type="submit" name="action">Add to Dashboard
-   
   </button>
-      
     </form>
   </div>
         </div>
