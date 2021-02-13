@@ -27,9 +27,9 @@ const Home = () => {
             <p style={{fontFamily: 'Roboto', fontSize: "20px", textAlign:"center"}}>Create an account to start tracking subscriptions. Already have an account? Login to alter your tracked subscriptions. </p>
             <div className="row">
             <div className="col s8 center m12">
-            <Link to="/login" class="waves-effect waves-light btn-large" style={{borderRadius: 30, backgroundColor: "#008000", fontFamily: 'Roboto'}}>Login to Account</Link>
+            <Link to="/login" className="waves-effect waves-light btn-large" style={{borderRadius: 30, backgroundColor: "#008000", fontFamily: 'Roboto'}}>Login to Account</Link>
             <span style={{padding: 100}}></span>
-            <Link to="/signup" class="waves-effect waves-light btn-large" style={{borderRadius: 30, backgroundColor: "#008000", fontFamily: 'Roboto'}}>Create an Account</Link>
+            <Link to="/signup" className="waves-effect waves-light btn-large" style={{borderRadius: 30, backgroundColor: "#008000", fontFamily: 'Roboto'}}>Create an Account</Link>
             </div>
             </div>
         
