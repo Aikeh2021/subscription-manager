@@ -84,7 +84,7 @@ const AdminDB = () => {
                           style={styles.img}
                         />
                       </td>
-                      <td>{subscription.subscription_price}</td>
+                      <td>{`$ ${subscription.subscription_price}`}</td>
                       <td>{subscription.subscription_category}</td>
                       <td>
                         <Link to={`/admin/${subscription._id}`}>

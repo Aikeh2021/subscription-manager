@@ -1,9 +1,14 @@
-import { Dropdown } from 'materialize-css';
+// import { Dropdown } from 'materialize-css';
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+// import M from 'materialize-css';
 
 
 const navbar = () => {
+
+
+
+
     return (
         <div>
           {/* <!-- Dropdown Structure --> */}
@@ -17,11 +22,11 @@ const navbar = () => {
 <nav style={{backgroundColor: "#4B0082", fontFamily: 'Roboto'}}>
   <div className="nav-wrapper">
     <Link to="/" style={{fontFamily: 'Monoton'}}>Sub Manny</Link>
-    <ul className="right hide-on-med-and-down">
+    <ul className="right hide-on-med-and-down" id="dropdown2">
       <li><NavLink to="/login">Login</NavLink></li>
       <li><NavLink to="/signup">Signup</NavLink></li>
       {/* <!-- Dropdown Trigger --> */}
-      <li><a id="dropdown1" className="dropdown-trigger" onClick={() => {Dropdown()}} href="#!" data-target="dropdown1">Options<i className="material-icons right">arrow_drop_down</i></a></li>
+      <li><a className="dropdown-trigger" href="#!" data-target="dropdown2">Options<i className="material-icons right">arrow_drop_down</i></a></li>
     </ul>
   </div>
 </nav>
