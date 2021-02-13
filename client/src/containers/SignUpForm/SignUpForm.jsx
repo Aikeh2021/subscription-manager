@@ -2,12 +2,11 @@ import React from "react";
 import axios from "axios";
 
 const SignUpForm = () => {
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
     axios
       .post("/api/users", {
-        // TODO: Add state to this component and pull values from state into this POST body. 
+        // TODO: Add state to this component and pull values from state into this POST body.
         firstName: "Beyonce",
         lastName: "Knowels",
         email: "yonce@gmail.com",
@@ -75,6 +74,6 @@ const SignUpForm = () => {
       </div>
     </div>
   );
-
+};
 
 export default SignUpForm;
