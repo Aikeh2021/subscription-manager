@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from 'axios';
+import React from "react";
 
 const styles = {
   thead: {
@@ -10,14 +9,14 @@ const styles = {
 
 const Dashboard = () => {
 
+// FIX ME: Once the routes are working, put this into a useEffect Hook.
+// axios.get('/api/subscriptions', (req, res) => {
 
-axios.get('/api/subscriptions', (req, res) => {
-
-}).then((response) => {
-  console.log(response.data);
-}).catch((err) => {
-console.log(err)
-});
+// }).then((response) => {
+//   console.log(response.data);
+// }).catch((err) => {
+// console.log(err)
+// });
 
 
   return (

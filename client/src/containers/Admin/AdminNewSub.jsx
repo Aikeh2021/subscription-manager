@@ -24,7 +24,7 @@ const handleFormSubmit = (e, subscriptionData) => {
 
       <div className="container">
       <div className="divider"></div>
-      <h1 className="center-align">Create A New Subscription</h1>
+      <h1 className="center m12" style={{textAlign:"center", fontFamily: 'Monoton'}}>CREATE A NEW SUBSCRIPTION</h1>
       <div className="row">
         <br />
         <AdminNewSubForm handleFormSubmit={handleFormSubmit}/>

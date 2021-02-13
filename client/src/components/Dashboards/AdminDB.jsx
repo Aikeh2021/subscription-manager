@@ -15,7 +15,7 @@ const styles = {
     borderRadius: 30,
     backgroundColor: "#008000",
     fontFamily: "Roboto",
-  },
+  }
 };
 
 const AdminDB = () => {
@@ -59,7 +59,7 @@ const AdminDB = () => {
       <br />
       <br />
       <div>
-        <div className="container">
+        <div className="container" style={{fontFamily: 'Roboto'}}>
           <div className="row">
             <div className="col s12">
               <table>

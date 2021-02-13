@@ -1,6 +1,12 @@
 import React, { useState} from 'react';
 
 const SubscriptionForm = ({handleFormSubmit}) => {
+const styles={
+  fnt:{
+    fontFamily: 'Roboto'
+  }
+}
+
 
     const [featured, setFeatured]= useState("");
         const [featuredPrice, setFeaturedPrice]= useState("");
@@ -9,7 +15,7 @@ const SubscriptionForm = ({handleFormSubmit}) => {
         const [plan,setPlan] =useState("");
     return (
         <>
-        <form className="col s12" onSubmit= {(e)=>  {handleFormSubmit (e, {featured,featuredPrice,subscription,price, plan,
+        <form className="col s12" style={styles.fnt} onSubmit= {(e)=>  {handleFormSubmit (e, {featured,featuredPrice,subscription,price, plan,
         });
         } } >
         <div className="row">
@@ -93,7 +99,7 @@ const SubscriptionForm = ({handleFormSubmit}) => {
      </div>
      <div className="row">
         <div className="col s12">
-        <button className="btn waves-effect waves-light">Add to dashboard
+        <button className="btn waves-effect waves-light" style={{borderRadius: 30, backgroundColor: "#008000", fontFamily: 'Roboto'}}>Add to dashboard
    </button>
         </div>
        </div>

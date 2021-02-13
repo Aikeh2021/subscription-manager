@@ -23,7 +23,7 @@ const AdminNewSubForm = ({ handleFormSubmit }) => {
             });
           }}
         >
-          <div className="row">
+          <div className="row" style={{fontFamily: 'Roboto'}}>
             <div className="input-field col s10">
               <input
                 placeholder="Enter new subscription name"
@@ -81,7 +81,7 @@ const AdminNewSubForm = ({ handleFormSubmit }) => {
           </div>
           <div className="row">
             <div className="col s9">
-              <button className="waves-effect waves-light btn-large">
+              <button className="waves-effect waves-light btn-large" style={{borderRadius: 30, backgroundColor: "#008000", fontFamily: 'Roboto'}}>
                 <i className="material-icons right">create</i>Add New
                 Subscription
               </button>

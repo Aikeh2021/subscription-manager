@@ -1,44 +1,65 @@
 import React from "react";
+import axios from "axios";
 
 const SignUpForm = () => {
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("/api/users", {
+        // TODO: Add state to this component and pull values from state into this POST body. 
+        firstName: "Beyonce",
+        lastName: "Knowels",
+        email: "yonce@gmail.com",
+        password: "password",
+      })
+      .then((response) => {
+        //redirect to another page
+        alert("User was created!");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div>
       <h1 style={{ textAlign: "center", fontFamily: "Monoton" }}>
         CREATE AN ACCOUNT
       </h1>
-      <div className="container" style={{fontFamily: "Roboto"}}>
-        <div class="row">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s6">
+      <div className="container" style={{ fontFamily: "Roboto" }}>
+        <div className="row">
+          <form className="col s12" onSubmit={handleFormSubmit}>
+            <div className="row">
+              <div className="input-field col s6">
                 <input
                   placeholder="First Name"
                   id="first_name"
                   type="text"
-                  class="validate"
+                  className="validate"
                 />
-                <label for="first_name">First Name</label>
+                <label htmlFor="first_name">First Name</label>
               </div>
-              <div class="input-field col s6">
-                <input id="last_name" type="text" class="validate" />
-                <label for="last_name">Last Name</label>
+              <div className="input-field col s6">
+                <input id="last_name" type="text" className="validate" />
+                <label htmlFor="last_name">Last Name</label>
               </div>
             </div>
 
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="email" type="email" class="validate" />
-                <label for="email">Email</label>
+            <div className="row">
+              <div className="input-field col s12">
+                <input id="email" type="email" className="validate" />
+                <label htmlFor="email">Email</label>
               </div>
             </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="password" type="password" class="validate" />
-                <label for="password">Password</label>
+            <div className="row">
+              <div className="input-field col s12">
+                <input id="password" type="password" className="validate" />
+                <label htmlFor="password">Password</label>
               </div>
             </div>
             <button
-              class="btn waves-effect waves-light"
+              className="btn waves-effect waves-light"
               type="submit"
               name="action"
               style={{
@@ -47,7 +68,7 @@ const SignUpForm = () => {
                 fontFamily: "Roboto",
               }}
             >
-              Submit
+              Create Account
             </button>
           </form>
         </div>
