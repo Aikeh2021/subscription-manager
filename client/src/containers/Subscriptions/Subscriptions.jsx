@@ -47,7 +47,7 @@ subscription_price=userData.featuredPrice
 <div className="container">    
  <div className="row">
          <div className="col"> 
-<h1 className="center-align"> Add a Subscription </h1> 
+<h1 className="center-align" style={{textAlign:"center", fontFamily: 'Monoton'}}> ADD A SUBSCRIPTION </h1> 
 {/* Added a handle form submit */}
     {/* removed the form */}
 

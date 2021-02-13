@@ -1,26 +1,27 @@
+import { Dropdown } from 'materialize-css';
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 
 const navbar = () => {
     return (
         <div>
-           {/* <!-- Dropdown Structure --> */}
-<ul id="dropdown1" class="dropdown-content">
-  <li><a href="/">one</a></li>
-  <li><a href="/">two</a></li>
-  <li class="divider"></li>
-  <li><a href="/">signout</a></li>
+          {/* <!-- Dropdown Structure --> */}
+<ul id="dropdown1" className="dropdown-content">
+  <li><NavLink to="/">About</NavLink></li>
+  <li className="divider"></li>
+  <li><NavLink to="/">Contact Us</NavLink></li>
+  <li className="divider"></li>
+  <li><NavLink to="/">Sign Out</NavLink></li>
 </ul>
-<nav>
-  <div class="nav-wrapper">
-    <a href="/" class="brand-logo">Subscriptions</a>
-    <ul class="right hide-on-med-and-down">
-      {/* loads each page individually */}
-      <li><a href="/login">login</a></li>
-      <li><a href="/signup">signup</a></li>
-      
- {/* This is a drop down arroww */}
-      {/* <li><a className="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i className="material-icons right">arrow_drop_down</i></a></li> */}
+<nav style={{backgroundColor: "#4B0082", fontFamily: 'Roboto'}}>
+  <div className="nav-wrapper">
+    <Link to="/" style={{fontFamily: 'Monoton'}}>Sub Manny</Link>
+    <ul className="right hide-on-med-and-down">
+      <li><NavLink to="/login">Login</NavLink></li>
+      <li><NavLink to="/signup">Signup</NavLink></li>
+      {/* <!-- Dropdown Trigger --> */}
+      <li><a id="dropdown1" className="dropdown-trigger" onClick={() => {Dropdown()}} href="#!" data-target="dropdown1">Options<i className="material-icons right">arrow_drop_down</i></a></li>
     </ul>
   </div>
 </nav>

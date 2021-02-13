@@ -22,7 +22,7 @@ const handleFormSubmit = (e, subscriptionData, id) => {
 
       <div className="container">
       <div className="divider"></div>
-      <h1 className="center-align">Edit An Existing Subscription</h1>
+      <h1 className="center m12" style={{textAlign:"center", fontFamily: 'Monoton'}}>EDIT A SUBSCRIPTION</h1>
       <div className="row">
         <br />
         <div>
