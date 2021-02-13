@@ -1,37 +1,37 @@
 import React from 'react';
 
 
-const SignUpForm = () => {
+const SignUpForm = (props) => {
     return (
         <div>
           <h1> </h1>
           <div className="container">
-             <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="First Name" id="first_name" type="text" class="validate"/>
-          <label for="first_name">First Name</label>
+             <div className="row">
+    <form className="col s12">
+      <div className="row">
+        <div className="input-field col s6">
+          <input placeholder="First Name" id="first_name" type="text" className="validate"/>
+          <label for="first_name">{props.first_name}</label>
         </div>
-        <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate"/>
-          <label for="last_name">Last Name</label>
+        <div className="input-field col s6">
+          <input id="last_name" type="text" className="validate"/>
+          <label for="last_name">{props.last_name}</label>
         </div>
       </div>
     
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate"/>
-          <label for="email">Email</label>
+      <div className="row">
+        <div className="input-field col s12">
+          <input id="email" type="email" className="validate"/>
+          <label for="email">{props.email}</label>
         </div>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate"/>
-          <label for="password">Password</label>
+      <div className="row">
+        <div className="input-field col s12">
+          <input id="password" type="password" className="validate"/>
+          <label for="password">{props.password}</label>
         </div>
       </div>
-      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+      <button className="btn waves-effect waves-light" type="submit" name="action">{props.submit}
    
   </button>
       

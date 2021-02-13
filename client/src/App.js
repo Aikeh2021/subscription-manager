@@ -16,7 +16,6 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
-
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/signup" component={SignUpForm} />
         <Route exact path="/dashboard" component={UserDashboard} />
@@ -26,6 +25,7 @@ function App() {
         <Route exact path="/admin/:id" component={AdminEditSub} />
       </Switch>
     </Router>
+  
   );
 }
 
