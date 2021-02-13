@@ -13,9 +13,9 @@ const navbar = () => {
   <li class="divider"></li>
   <li><NavLink to="/">Sign Out</NavLink></li>
 </ul>
-<nav>
+<nav style={{backgroundColor: "#4B0082", fontFamily: 'Roboto'}}>
   <div class="nav-wrapper">
-    <Link to="/">Sub Manny</Link>
+    <Link to="/" style={{fontFamily: 'Monoton'}}>Sub Manny</Link>
     <ul class="right hide-on-med-and-down">
       <li><NavLink to="/login">Login</NavLink></li>
       <li><NavLink to="/signup">Signup</NavLink></li>

@@ -38,12 +38,13 @@ import Netflix from '../../assets/logos/Netflix.jpeg';
 import Spotify from '../../assets/logos/Spotify.jpeg';
 import SubscriptionBox from '../../assets/logos/SubscriptionBox.jpeg';
 import VideoGames2 from '../../assets/logos/VideoGames2.jpeg';
+import {Link} from 'react-router-dom';
 
 const Home = () => {
     
     return (
         <div>
-            <h1 style={{textAlign:"center", fontFamily: 'Roboto'}}>Welcome To Sub Manny</h1>
+            <h1 style={{textAlign:"center", fontFamily: 'Monoton'}}>WELCOME TO SUB MANNY</h1>
             <div className="divider"></div>
             <br />
             <div className="container">
@@ -54,7 +55,16 @@ const Home = () => {
                 </div>
             </div>
     <div className="divider"></div>
-            <h1 style={{textAlign:"center", fontFamily: 'Roboto'}}>To Get Started</h1>
+            <h2 style={{textAlign:"center", fontFamily: 'Monoton'}}>TO GET STARTED</h2>
+            <p style={{fontFamily: 'Roboto', fontSize: "20px", textAlign:"center"}}>Create an account to start tracking subscriptions. Already have an account? Login to alter your tracked subscriptions. </p>
+            <div className="row">
+            <div className="col s8 center m12">
+            <Link to="/login" class="waves-effect waves-light btn-large" style={{borderRadius: 30, backgroundColor: "#008000"}}>Login to Account</Link>
+            <span style={{padding: 100}}></span>
+            <Link to="/signup" class="waves-effect waves-light btn-large" style={{borderRadius: 30, backgroundColor: "#008000"}}>Create an Account</Link>
+            </div>
+            </div>
+        
         </div>
     );
 };
