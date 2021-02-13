@@ -20,7 +20,7 @@ const LoginPage = () => {
                   setEmail(e.target.value);
                 }}
               />
-              <label for="Email">Email</label>
+              <label htmlFor="Email">Email</label>
             </div>
             <div className="row">
               <div className="input-field col s12">
@@ -32,7 +32,7 @@ const LoginPage = () => {
                     setPassword(e.target.value);
                   }}
                 />
-                <label for="email">Password</label>
+                <label htmlFor="email">Password</label>
               </div>
             </div>
           </div>
@@ -53,4 +53,6 @@ const LoginPage = () => {
     </div>
     </>
   );
+};
 
+export default LoginPage;

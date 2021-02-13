@@ -10,7 +10,7 @@ const AdminLoginPage = () => {
                     <input id="email" type="email"/>
                     <label for="Email">Email</label>
                 </div>
-            <div classNameName="row">
+            <div className="row">
                 <div className="input-field col s12">
                     <input id="password" type="password"/>
                     <label for="email">Password</label>

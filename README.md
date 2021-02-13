@@ -17,5 +17,3 @@
 * [Monoton Google Fonts](https://fonts.google.com/specimen/Monoton?sidebar.open=true&preview.text_type=custom&selection.family=Monoton|Montserrat+Alternates:wght@500&category=Sans+Serif,Display,Monospace&query=monoton)
 * [React Responsive Carousel Tutorial](https://www.positronx.io/react-responsive-carousel-tutorial/)
 * [React Responsive Carousel Properties](https://www.freakyjolly.com/react-responsive-carousel-image-gallery-with-thumbnails-using-components/#.YCeTzBNKiOQ)
-
-
