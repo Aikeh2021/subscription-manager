@@ -13,8 +13,9 @@ const LoginPage = (props) => {
           <div className="row">
             <div className="input-field col s12">
               <input
+              placeholder="Email"
                 id="email"
-                type="email"
+                type="Email"
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
@@ -25,8 +26,9 @@ const LoginPage = (props) => {
            
               <div className="input-field col s12">
                 <input
+                placeholder="Password"
                   id="password"
-                  type="password\"
+                  type="text"
                   value={password}
                   onChange={(e) => {
                     setPassword(e.target.value);
