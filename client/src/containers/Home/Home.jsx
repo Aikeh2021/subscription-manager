@@ -43,6 +43,9 @@ const Home = () => {
     
     return (
         <div>
+            <h1 style={{textAlign:"center", fontFamily: 'Roboto'}}>Welcome To Sub Manny</h1>
+            <div className="divider"></div>
+            <br />
             <div className="container">
                 <div className="row">
                     <div className="col s12">
@@ -50,8 +53,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-    
-            <h1 style={{textAlign:"center"}}>Welcome To The Subscription Manager</h1>
+    <div className="divider"></div>
+            <h1 style={{textAlign:"center", fontFamily: 'Roboto'}}>To Get Started</h1>
         </div>
     );
 };

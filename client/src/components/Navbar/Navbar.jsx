@@ -1,26 +1,26 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 
 const navbar = () => {
     return (
         <div>
-           {/* <!-- Dropdown Structure --> */}
+          {/* <!-- Dropdown Structure --> */}
 <ul id="dropdown1" class="dropdown-content">
-  <li><a href="/">one</a></li>
-  <li><a href="/">two</a></li>
+  <li><NavLink to="/">About</NavLink></li>
   <li class="divider"></li>
-  <li><a href="/">signout</a></li>
+  <li><NavLink to="/">Contact Us</NavLink></li>
+  <li class="divider"></li>
+  <li><NavLink to="/">Sign Out</NavLink></li>
 </ul>
 <nav>
   <div class="nav-wrapper">
-    <a href="/" class="brand-logo">Subscriptions</a>
+    <Link to="/">Sub Manny</Link>
     <ul class="right hide-on-med-and-down">
-      {/* loads each page individually */}
-      <li><a href="/login">login</a></li>
-      <li><a href="/signup">signup</a></li>
-      
- {/* This is a drop down arroww */}
-      {/* <li><a className="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i className="material-icons right">arrow_drop_down</i></a></li> */}
+      <li><NavLink to="/login">Login</NavLink></li>
+      <li><NavLink to="/signup">Signup</NavLink></li>
+      {/* <!-- Dropdown Trigger --> */}
+      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Options<i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>
   </div>
 </nav>
