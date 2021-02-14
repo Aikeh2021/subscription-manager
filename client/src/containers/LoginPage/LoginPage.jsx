@@ -7,8 +7,6 @@ const LoginPage = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-
-  
   const handleFormSubmit = (e) => {
 
     e.preventDefault();
@@ -21,7 +19,7 @@ const LoginPage = (props) => {
       })
       .then((response) => {
         //redirect to another page
-        console.log(email,password) 
+        // console.log(email,password) 
         alert("User has returned!");
       })
       .catch((err) => {
