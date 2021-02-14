@@ -13,7 +13,7 @@ const LoginPage = (props) => {
 
     e.preventDefault();
     axios
-      .post("/api/users", {
+      .get("/api/subscriptions", {
         
       //  Added state to this component and pulled values from state into the POST body.
         email,
