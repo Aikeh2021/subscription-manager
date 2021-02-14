@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const LoginPage = () => {
+const LoginPage = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -13,30 +13,33 @@ const LoginPage = () => {
           <div className="row">
             <div className="input-field col s12">
               <input
+              placeholder="Email"
                 id="email"
-                type="email"
+                type="Email"
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
               />
-              <label htmlFor="Email">Email</label>
+              <label for="Email">{props.email}</label>
             </div>
-            <div className="row">
+           
               <div className="input-field col s12">
                 <input
+                placeholder="Password"
                   id="password"
-                  type="password"
+                  type="text"
                   value={password}
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
                 />
-                <label htmlFor="email">Password</label>
+              <label for="Email">{props.password}</label>
               </div>
             </div>
-          </div>
+         
         </form>
+         </div>
         <button
           className="btn waves-effect waves-light"
           type="submit"
@@ -50,7 +53,6 @@ const LoginPage = () => {
           Login
         </button>
       </div>
-    </div>
     </>
   );
 };
