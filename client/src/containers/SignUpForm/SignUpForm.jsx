@@ -13,12 +13,13 @@ const SignUpForm = (props) => {
             e.preventDefault();
             axios
               .post("/api/users", {
-                // TODO: Add state to this component and pull values from state into this POST body.
                 
-                firstName: "Beyonce",
-                lastName: "Knowels",
-                email: "yonce@gmail.com",
-                password: "password",
+              //  Added state to this component and pull values from state into the POST body.
+                
+                firstName,
+                lastName,
+                email,
+                password,
               })
               .then((response) => {
                 //redirect to another page
