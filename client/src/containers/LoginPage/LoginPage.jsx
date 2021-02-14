@@ -21,6 +21,7 @@ const LoginPage = (props) => {
       })
       .then((response) => {
         //redirect to another page
+        console.log(email,password) 
         alert("User has returned!");
       })
       .catch((err) => {
@@ -71,6 +72,9 @@ const LoginPage = (props) => {
             borderRadius: 30,
             backgroundColor: "#008000",
             fontFamily: "Roboto",
+          }}
+          onClick={(e) => {
+            handleFormSubmit(e);
           }}
         >
           Login
