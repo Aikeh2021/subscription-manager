@@ -1,12 +1,12 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import M from "materialize-css";
 
-
-
-
 const Navbar = () => {
 
+const [open, setOpen] = useState(false);
+
+  // Regular nav's initialization and options
 useEffect(() => {
   let elems = document.querySelectorAll('.dropdown-trigger');
   let options = {
@@ -14,18 +14,21 @@ useEffect(() => {
         hover: true,
         coverTrigger: false
   };
-  M.Dropdown.init(elems, options);
+  let properties = {
+    isOpen: false,
+  }
+  M.Dropdown.init(elems, options, properties);
 }, []);
 
+// Side nav's initialization and options
 useEffect(() => {
-let sidePiece = document.querySelectorAll('sidenav-trigger');
+let sidePiece = document.querySelectorAll('.sidenav');
 let options2 = {
   edge: 'right',
-
 };
-M.Dropdown.init(sidePiece, options2);
+M.Sidenav.init(sidePiece, options2);
 }, []);
- 
+
 
     return (
         <div>
@@ -40,7 +43,7 @@ M.Dropdown.init(sidePiece, options2);
 {/* Main Navbar */}
 <nav style={{backgroundColor: "#4B0082", fontFamily: 'Roboto'}}>
   <div className="nav-wrapper">
-  <a href="/" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  <a href="#" data-target="slide-out" className="sidenav-trigger" onClick={() => setOpen(open => !open)}><i className="material-icons">menu</i></a>
     <Link to="/" style={{fontFamily: 'Monoton', fontSize: 32}}>Sub Manny</Link>
     <ul className="right hide-on-med-and-down">
       <li><NavLink to="/login">Login</NavLink></li>
@@ -51,20 +54,20 @@ M.Dropdown.init(sidePiece, options2);
   </div>
 </nav>
 {/* Side Nav Pieces */}
-<ul id="slide-out" class="sidenav">
-    <li><div class="user-view">
-      <div class="background">
+<ul id="slide-out" className="sidenav">
+    <li><div className="user-view">
+      <div className="background">
         <img src="images/office.jpg" />
       </div>
-      <a href="#user"><img class="circle" src="images/yuna.jpg" /></a>
-      <a href="#name"><span class="white-text name">John Doe</span></a>
-      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      <a href="#user"><img className="circle" src="images/yuna.jpg" /></a>
+      <a href="#name"><span className="white-text name">John Doe</span></a>
+      <a href="#email"><span className="white-text email">jdandturk@gmail.com</span></a>
     </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!"><i className="material-icons">cloud</i>First Link With Icon</a></li>
     <li><a href="#!">Second Link</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    <li><div className="divider"></div></li>
+    <li><a className="subheader">Subheader</a></li>
+    <li><a className="waves-effect" href="#!">Third Link With Waves</a></li>
   </ul>
         </div>
     );
