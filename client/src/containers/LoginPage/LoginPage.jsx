@@ -1,15 +1,38 @@
 import React, { useState } from "react";
+import axios from "axios";
+
+
 
 const LoginPage = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+
+  
+  const handleFormSubmit = (e) => {
+
+    e.preventDefault();
+    axios
+      .post("/api/users", {
+        
+      //  Added state to this component and pulled values from state into the POST body.
+        email,
+        password,
+      })
+      .then((response) => {
+        //redirect to another page
+        alert("User has returned!");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <>
     <h1 style={{textAlign: 'center', fontFamily: 'Monoton'}}>LOGIN TO YOUR ACCOUNT</h1>
     <div className="container" style={{fontFamily: "Roboto"}}>
       <div className="row">
-        <form className="col s12">
+        <form className="col s12" onSubmit={handleFormSubmit}>
           <div className="row">
             <div className="input-field col s12">
               <input
@@ -21,7 +44,7 @@ const LoginPage = (props) => {
                   setEmail(e.target.value);
                 }}
               />
-              <label for="Email">{props.email}</label>
+              <label htmlFor="Email">{props.email}</label>
             </div>
            
               <div className="input-field col s12">
@@ -34,7 +57,7 @@ const LoginPage = (props) => {
                     setPassword(e.target.value);
                   }}
                 />
-              <label for="Email">{props.password}</label>
+              <label htmlFor="Email">{props.password}</label>
               </div>
             </div>
          

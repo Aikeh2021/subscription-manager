@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+// import { Component } from "materialize-css";
 
 
 const SignUpForm = (props) => {
@@ -9,12 +10,15 @@ const SignUpForm = (props) => {
       const [email, setEmail]= useState("");
       const [password, setPassword]= useState("");
 
+    
+
       const handleFormSubmit = (e) => {
+
             e.preventDefault();
             axios
               .post("/api/users", {
                 
-              //  Added state to this component and pull values from state into the POST body.
+              //  Added state to this component and pulled values from state into the POST body.
                 
                 firstName,
                 lastName,
@@ -74,6 +78,7 @@ const SignUpForm = (props) => {
           <button className="btn waves-effect waves-light"
           type="submit"
           name="action"
+
           style={{
             borderRadius: 30,
             backgroundColor: "#008000",
@@ -87,6 +92,8 @@ const SignUpForm = (props) => {
             </div>
             </div>
         );
+
+        
     };
     
     export default SignUpForm;
