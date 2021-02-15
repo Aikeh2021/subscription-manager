@@ -57,10 +57,13 @@ const AdminDB = () => {
   return (
     <>
       <br />
-      <br />
+      <div className="divider"></div>
       <div>
         <div className="container" style={{fontFamily: 'Roboto'}}>
           <div className="row">
+            <br />
+          <div style={{paddingTop: 15, paddingBottom: 20, backgroundColor: "green", borderRadius: 30}}></div>
+          <br />
             <div className="col s12">
               <table>
                 <thead style={styles.thead}>
@@ -84,7 +87,7 @@ const AdminDB = () => {
                           style={styles.img}
                         />
                       </td>
-                      <td>{subscription.subscription_price}</td>
+                      <td>{`$ ${subscription.subscription_price}`}</td>
                       <td>{subscription.subscription_category}</td>
                       <td>
                         <Link to={`/admin/${subscription._id}`}>

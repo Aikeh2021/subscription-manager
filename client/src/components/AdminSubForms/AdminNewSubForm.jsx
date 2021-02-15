@@ -34,12 +34,12 @@ const AdminNewSubForm = ({ handleFormSubmit }) => {
                   setSubscription_name(e.target.value);
                 }}
               />
-              <label htmlFor="subscription_name">Subscription Provider</label>
             </div>
             <div className="row">
               <div className="col s9">
-                <div className="input-field col s3">
+                <div className="input-field col s4">
                   <input
+                  placeholder="Plan pricing"
                     id="subscription_price"
                     type="text"
                     value={subscription_price}
@@ -47,7 +47,6 @@ const AdminNewSubForm = ({ handleFormSubmit }) => {
                       setSubscription_price(e.target.value);
                     }}
                   />
-                  <label htmlFor="subscription_price">Plan Pricing</label>
                 </div>
               </div>
             </div>
@@ -56,6 +55,7 @@ const AdminNewSubForm = ({ handleFormSubmit }) => {
           <div className="row">
             <div className="input-field col s10">
               <input
+              placeholder="Subscription Logo"
                 id="subscription_thumbnail"
                 type="text"
                 value={subscription_thumbnail}
@@ -63,12 +63,12 @@ const AdminNewSubForm = ({ handleFormSubmit }) => {
                   setSubscription_thumbnail(e.target.value);
                 }}
               />
-              <label htmlFor="subscription_thumbnail">Subscription Logo</label>
             </div>
           </div>
           <div className="row">
             <div className="input-field col s10">
               <input
+              placeholder="Service Type"
                 id="subscription_category"
                 type="text"
                 value={subscription_category}
@@ -76,7 +76,6 @@ const AdminNewSubForm = ({ handleFormSubmit }) => {
                   setSubscription_category(e.target.value);
                 }}
               />
-              <label htmlFor="subscription_category">Service Type</label>
             </div>
           </div>
           <div className="row">
