@@ -8,6 +8,7 @@ import UserDashboard from "./containers/UserDashboard/UserDashboard";
 import AdminDashboard from "./containers/Admin/AdminDashboard";
 import AdminNewSub from '../src/containers/Admin/AdminNewSub';
 import AdminEditSub from '../src/containers/Admin/AdminEditSub';
+import Contact from './containers/Contact/Contact';
 
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
         <Route exact path="/signup" component={SignUpForm} />
         <Route exact path="/dashboard" component={UserDashboard} />
         <Route exact path="/subscriptions" component={Subscriptions} />
+        <Route exact path="/contact" component={Contact} />
+
         <Route exact path="/admin/new-subscription" component={AdminNewSub} />
         <Route exact path="/admin/dashboard" component={AdminDashboard} />
         <Route exact path="/admin/:id" component={AdminEditSub} />
