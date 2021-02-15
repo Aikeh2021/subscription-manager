@@ -48,8 +48,9 @@ subscription_price=userData.featuredPrice
 <h1 className="center-align" style={{textAlign:"center", fontFamily: 'Monoton'}}> ADD A SUBSCRIPTION </h1> 
 <div className="divider"></div>
 <br />
-<div style={{paddingTop: 15, paddingBottom: 20, backgroundColor: "green", borderRadius: 30}}></div>
-<div className="container">    
+
+<div className="container"> 
+<div style={{paddingTop: 15, paddingBottom: 20, backgroundColor: "green", borderRadius: 30}}></div>   
  <div className="row">
          <div className="col"> 
 {/* Added a handle form submit */}

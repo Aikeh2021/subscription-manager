@@ -32,7 +32,6 @@ M.Sidenav.init(sidePiece, options2);
 // Customizing the sidenav
 
 
-
     return (
 <div>
 {/* <!-- Dropdown Structure --> */}
@@ -65,7 +64,7 @@ M.Sidenav.init(sidePiece, options2);
       {/* TODO: Come back and customize this later. Commented out for now to get rid of the errors in console */}
       <Link to="/"><img className="circle sidenav-close card-content valign center-block" src={logo} alt="Sub Manny Logo" style={{height: 200, width: 200}}/></Link>
     </div></li>
-    <li><Link to="/dashboard" className="sidenav-close"><i className="material-icons">person</i>PUT USER'S NAME HERE</Link></li>
+    <li><Link to="/dashboard" className="sidenav-close"><i className="material-icons">person</i>Go to My Dashboard</Link></li>
     <li><div className="divider"></div></li>
     <li><Link to="/login" className="sidenav-close">Login</Link></li>
     <li><Link to="/signup" className="sidenav-close">Signup</Link></li>
