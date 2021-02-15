@@ -38,7 +38,10 @@ const SignUpForm = (props) => {
             <h1 style={{ textAlign: "center", fontFamily: "Monoton" }}>
        CREATE AN ACCOUNT
        </h1>
+       <div className="divider"></div>
        <div className="container" style={{ fontFamily: "Roboto" }}>
+         <br />
+         <div style={{paddingTop: 15, paddingBottom: 20, backgroundColor: "green", borderRadius: 30}}></div>
                 <div className="row">
                 <form className="col s12" onSubmit={handleFormSubmit}>
            <div className="row">

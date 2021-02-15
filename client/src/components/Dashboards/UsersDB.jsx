@@ -1,10 +1,5 @@
 import React from "react";
-
-const styles = {
-  thead: {
-    backgroundColor: "#bdbdbd"
-  }
-}
+import {Link} from 'react-router-dom';
 
 
 const Dashboard = () => {
@@ -18,6 +13,21 @@ const Dashboard = () => {
 // console.log(err)
 // });
 
+// Elements in component styles
+const styles = {
+  thead: {
+    backgroundColor: "#DCDCDC",
+    fontFamily: "Roboto",
+  },
+  img: {
+    height: "2em",
+  },
+  buttons: {
+    borderRadius: 30,
+    backgroundColor: "#008000",
+    fontFamily: "Roboto",
+  }
+};
 
   return (
     <>
@@ -41,15 +51,25 @@ const Dashboard = () => {
         <tbody>
           <tr>
             <td>Name</td>
-            <td>Image</td>
+            <td style={styles.img}>Image</td>
             <td>$13.99</td>
             <td>$1.00</td>
-            <td><button className="waves-effect waves-light btn-small"><i className="material-icons left">update</i>UPDATE</button></td>
-            <td><button className="waves-effect waves-light btn-small"><i className="material-icons left">delete</i>DELETE</button></td>
+            <td><button className="waves-effect waves-light btn-small" style={styles.buttons}><i className="material-icons left">update</i>UPDATE</button></td>
+            <td><button className="waves-effect waves-light btn-small" style={styles.buttons}><i className="material-icons left">delete</i>DELETE</button></td>
           </tr>
         </tbody>
       </table>
     </div>
+    </div>
+    <div className="row center valign">
+    <Link to="/subscriptions">
+                <button
+                  className="waves-effect waves-light btn-large"
+                  style={styles.buttons}
+                >
+                  <i className="material-icons left">add</i>Add New Subscription
+                </button>
+              </Link>
     </div>
     </div>
     </div>
