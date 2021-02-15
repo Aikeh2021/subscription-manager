@@ -6,7 +6,6 @@ const AdminDashboard = () => {
     return (
         <div>
             <h1 style={{textAlign: "center", fontFamily: "Monoton"}}>ADMIN SUB DASH</h1>
-            <br />
             <AdminDB />
         </div>
     );
