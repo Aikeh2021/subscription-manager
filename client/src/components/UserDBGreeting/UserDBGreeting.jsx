@@ -1,10 +1,34 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
+import {useParams} from 'react-router-dom';
 
-const UserDBGreeting = ({UsersName}) => {
+const UserDBGreeting = () => {
+
+const [firstName, setFirstName] = useState("");
+
+const {email} = useParams();
+
+useEffect(() => {
+    axios.get(`/api/users/${email}`).then((response) => {
+        console.log(response.data);
+        setFirstName(response.data.firstName);
+    }).catch((err) => {
+        console.log(err);
+    });
+}, [email]);
+
+// useEffect(() => {
+//     axios.get(`/api/users/${id}`).then((response) => {
+//         console.log(response.data);
+//         setFirstName(response.data.firstName);
+//     }).catch((err) => {
+//         console.log(err);
+//     });
+// }, []);
 
     return (
         <div>
-            <h1 style={{textAlign: "center", fontFamily: "Monoton"}}> Subscription Dashboard For: {UsersName}</h1>
+            <h1 style={{textAlign: "center", fontFamily: "Monoton"}}> Subscription Dashboard For: {firstName}</h1>
         </div>
     );
 };

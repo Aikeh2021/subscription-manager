@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import M from "materialize-css";
-
+// import axios from 'axios';
 
 const Navbar = ({logo}) => {
 
@@ -28,6 +28,9 @@ let options2 = {
 };
 M.Sidenav.init(sidePiece, options2);
 }, []);
+
+// Customizing the sidenav
+
 
 
     return (
@@ -58,9 +61,9 @@ M.Sidenav.init(sidePiece, options2);
 </nav>
 {/* Side Nav Pieces */}
 <ul id="slide-out" className="sidenav">
-    <li><div className="user-view center">
+    <li><div className="user-view">
       {/* TODO: Come back and customize this later. Commented out for now to get rid of the errors in console */}
-      <Link to="/"><img className="circle sidenav-close" src={logo} alt="Sub Manny Logo" style={{height: 200, width: 200}}/></Link>
+      <Link to="/"><img className="circle sidenav-close card-content valign center-block" src={logo} alt="Sub Manny Logo" style={{height: 200, width: 200}}/></Link>
     </div></li>
     <li><Link to="/dashboard" className="sidenav-close"><i className="material-icons">person</i>PUT USER'S NAME HERE</Link></li>
     <li><div className="divider"></div></li>
