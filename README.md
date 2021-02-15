@@ -19,3 +19,5 @@
 * [React Responsive Carousel Properties](https://www.freakyjolly.com/react-responsive-carousel-image-gallery-with-thumbnails-using-components/#.YCeTzBNKiOQ)
 * [StackOverflow: Materialize Dropdown in Navbar](https://stackoverflow.com/questions/58539860/materialize-dropdown-not-working-in-navbar-react)
 * [Materialize Dropdown Documentation](https://materializecss.com/dropdown.html#methods)
+* [Canva for Logo Design](https://www.canva.com/)
+

@@ -19,6 +19,8 @@ const Home = () => {
       <div className="container">
         <div className="row">
           <div className="col s12">
+          <div style={{paddingTop: 15, paddingBottom: 20, backgroundColor: "green", borderRadius: 30}}></div>
+      <br />
             <CarouselComp
               image1={VideoGames}
               image2={Audiobook}
@@ -27,6 +29,8 @@ const Home = () => {
               image5={SubscriptionBox}
               image6={VideoGames2}
             />
+            <br />
+            <div style={{paddingTop: 15, paddingBottom: 20, backgroundColor: "green", borderRadius: 30}}></div>
           </div>
         </div>
       </div>

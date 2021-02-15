@@ -2,7 +2,8 @@ import React, {useEffect} from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import M from "materialize-css";
 
-const Navbar = () => {
+
+const Navbar = ({logo}) => {
 
 
   // Regular nav's initialization and options
@@ -57,14 +58,9 @@ M.Sidenav.init(sidePiece, options2);
 </nav>
 {/* Side Nav Pieces */}
 <ul id="slide-out" className="sidenav">
-    <li><div className="user-view">
-      <div className="background">
-        <img src="images/office.jpg" alt="default from materialize"/>
-      </div>
+    <li><div className="user-view center">
       {/* TODO: Come back and customize this later. Commented out for now to get rid of the errors in console */}
-      {/* <a href="#user"><img className="circle" src="images/yuna.jpg" alt="Sub Manny Logo"/></a>
-      <a href="#name"><span className="white-text name">John Doe</span></a>
-      <a href="#email"><span className="white-text email">jdandturk@gmail.com</span></a> */}
+      <Link to="/"><img className="circle sidenav-close" src={logo} alt="Sub Manny Logo" style={{height: 200, width: 200}}/></Link>
     </div></li>
     <li><Link to="/dashboard" className="sidenav-close"><i className="material-icons">person</i>PUT USER'S NAME HERE</Link></li>
     <li><div className="divider"></div></li>
