@@ -1,42 +1,67 @@
 import React, { useState } from "react";
+import axios from "axios";
 
-const LoginPage = () => {
+
+
+const LoginPage = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleFormSubmit = (e) => {
+
+    e.preventDefault();
+    axios
+      .get("/api/subscriptions", {
+        
+      //  Added state to this component and pulled values from state into the POST body.
+        email,
+        password,
+      })
+      .then((response) => {
+        //redirect to another page
+        // console.log(email,password) 
+        alert("User has returned!");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <>
     <h1 style={{textAlign: 'center', fontFamily: 'Monoton'}}>LOGIN TO YOUR ACCOUNT</h1>
     <div className="container" style={{fontFamily: "Roboto"}}>
       <div className="row">
-        <form className="col s12">
+        <form className="col s12" onSubmit={handleFormSubmit}>
           <div className="row">
             <div className="input-field col s12">
               <input
+              placeholder="Email"
                 id="email"
-                type="email"
+                type="Email"
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
               />
-              <label htmlFor="Email">Email</label>
+              <label htmlFor="Email">{props.email}</label>
             </div>
-            <div className="row">
+           
               <div className="input-field col s12">
                 <input
+                placeholder="Password"
                   id="password"
-                  type="password"
+                  type="text"
                   value={password}
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
                 />
-                <label htmlFor="email">Password</label>
+              <label htmlFor="Email">{props.password}</label>
               </div>
             </div>
-          </div>
+         
         </form>
+         </div>
         <button
           className="btn waves-effect waves-light"
           type="submit"
@@ -46,11 +71,13 @@ const LoginPage = () => {
             backgroundColor: "#008000",
             fontFamily: "Roboto",
           }}
+          onClick={(e) => {
+            handleFormSubmit(e);
+          }}
         >
           Login
         </button>
       </div>
-    </div>
     </>
   );
 };
