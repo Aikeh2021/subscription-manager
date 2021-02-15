@@ -41,9 +41,10 @@ const styles = {
         <thead style={styles.thead}>
           <tr>
             <th>Subscription Name</th>
-            <th>Image</th>
-            <th>Current Amount</th>
-            <th>Subscription Price Change</th>
+            <th>Logo</th>
+            <th>Current Plan</th>
+            <th>Plan Price Change</th>
+            <th>Category</th>
             <th>Update Subscription</th>
             <th>Delete Subscription</th>
           </tr>
@@ -54,6 +55,7 @@ const styles = {
             <td style={styles.img}>Image</td>
             <td>$13.99</td>
             <td>$1.00</td>
+            <td>Music Streaming</td>
             <td><button className="waves-effect waves-light btn-small" style={styles.buttons}><i className="material-icons left">update</i>UPDATE</button></td>
             <td><button className="waves-effect waves-light btn-small" style={styles.buttons}><i className="material-icons left">delete</i>DELETE</button></td>
           </tr>
