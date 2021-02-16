@@ -10,10 +10,29 @@ const Subscriptions = () => {
 
         // Added custom methods bt preventing default
 
-        const handleFormSubmit=(e, subscriptionsData) =>{
+        const handleFormSubmit=(e, userData) =>{
         e.preventDefault();
+
+        // Adding a conditional statement
+        
+        let subscription_name;
+        if (userData.subscription === "") 
+        {
+subscription_name=userData.featured
+        }
+        else {subscription_name = userData.subscription};
+
+        // if input box is empty, use the drop down options
+        let subscription_price;
+        if (userData.price === "") 
+        {
+subscription_price=userData.featuredPrice
+        }
+        else {subscription_price = userData.price};
+        
 // axios post 
-        axios.post("api/subscriptions", subscriptionsData)
+// Updated the axios post
+        axios.post("/api/users", {subscription_name, subscription_plan:userData.plan, subscription_price})
         // Added axios promise
         .then((response)=> {
                 console.log(response.data);
@@ -28,7 +47,7 @@ const Subscriptions = () => {
 <div className="container">    
  <div className="row">
          <div className="col"> 
-<h1 className="center-align"> Add a Subscription </h1> 
+<h1 className="center-align" style={{textAlign:"center", fontFamily: 'Monoton'}}> ADD A SUBSCRIPTION </h1> 
 {/* Added a handle form submit */}
     {/* removed the form */}
 

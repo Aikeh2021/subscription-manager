@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
-const AdminSubForm = ({ handleFormSubmit }) => {
+
+const AdminNewSubForm = ({ handleFormSubmit }) => {
   const [subscription_name, setSubscription_name] = useState("");
-  const [subscription_price1, setSubscription_price1] = useState("");
-  const [subscription_price2, setSubscription_price2] = useState("");
-  const [subscription_price3, setSubscription_price3] = useState("");
+  const [subscription_price, setSubscription_price] = useState("");
   const [subscription_thumbnail, setSubscription_thumbnail] = useState("");
   const [subscription_category, setSubscription_category] = useState("");
+
+  
   return (
     <div>
       <>
@@ -15,17 +16,14 @@ const AdminSubForm = ({ handleFormSubmit }) => {
           onSubmit={(e) => {
             handleFormSubmit(e, {
               subscription_name: subscription_name,
-              subscription_price: [
-                subscription_price1,
-                subscription_price2,
-                subscription_price3,
-              ],
+              subscription_price: 
+                subscription_price,
               subscription_thumbnail: subscription_thumbnail,
               subscription_category: subscription_category,
             });
           }}
         >
-          <div className="row">
+          <div className="row" style={{fontFamily: 'Roboto'}}>
             <div className="input-field col s10">
               <input
                 placeholder="Enter new subscription name"
@@ -40,39 +38,16 @@ const AdminSubForm = ({ handleFormSubmit }) => {
             </div>
             <div className="row">
               <div className="col s9">
-                {/* May need to revisit this because price is supposed to be an array */}
                 <div className="input-field col s3">
                   <input
-                    id="subscription_price1"
+                    id="subscription_price"
                     type="text"
-                    value={subscription_price1}
+                    value={subscription_price}
                     onChange={(e) => {
-                      setSubscription_price1(e.target.value);
+                      setSubscription_price(e.target.value);
                     }}
                   />
-                  <label htmlFor="subscription_price1">Plan Pricing #1</label>
-                </div>
-                <div className="input-field col s3">
-                  <input
-                    id="subscription_price2"
-                    type="text"
-                    value={subscription_price2}
-                    onChange={(e) => {
-                      setSubscription_price2(e.target.value);
-                    }}
-                  />
-                  <label htmlFor="subscription_price2">Plan Pricing #2</label>
-                </div>
-                <div className="input-field col s3">
-                  <input
-                    id="subscription_price3"
-                    type="text"
-                    value={subscription_price3}
-                    onChange={(e) => {
-                      setSubscription_price3(e.target.value);
-                    }}
-                  />
-                  <label htmlFor="subscription_price3">Plan Pricing #3</label>
+                  <label htmlFor="subscription_price">Plan Pricing</label>
                 </div>
               </div>
             </div>
@@ -106,7 +81,7 @@ const AdminSubForm = ({ handleFormSubmit }) => {
           </div>
           <div className="row">
             <div className="col s9">
-              <button className="waves-effect waves-light btn-large">
+              <button className="waves-effect waves-light btn-large" style={{borderRadius: 30, backgroundColor: "#008000", fontFamily: 'Roboto'}}>
                 <i className="material-icons right">create</i>Add New
                 Subscription
               </button>
@@ -118,4 +93,4 @@ const AdminSubForm = ({ handleFormSubmit }) => {
   );
 };
 
-export default AdminSubForm;
+export default AdminNewSubForm;

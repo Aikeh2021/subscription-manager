@@ -2,14 +2,10 @@ import React from 'react';
 import AdminDB from '../../components/Dashboards/AdminDB';
 
 const AdminDashboard = () => {
-    const styles = {
-        h1: {
-            textAlign: "center"
-        }
-    }
+
     return (
         <div>
-            <h1 style={styles.h1}>Admin Subscription Dashboard</h1>
+            <h1 style={{textAlign: "center", fontFamily: "Monoton"}}>ADMIN SUB DASH</h1>
             <br />
             <AdminDB />
         </div>

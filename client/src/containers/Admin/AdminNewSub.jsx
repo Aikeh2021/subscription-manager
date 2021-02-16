@@ -1,13 +1,19 @@
+import React from "react";
 import axios from 'axios';
-import AdminSubForm from '../AdminSubForm/AdminSubForm';
+import { useHistory } from "react-router-dom";
+import AdminNewSubForm from '../../components/AdminSubForms/AdminNewSubForm';
+
+
 
 const NewSubscription = () => {
 
+const history = useHistory();
 
 const handleFormSubmit = (e, subscriptionData) => {
   e.preventDefault();
   axios.post("/api/subscriptions", subscriptionData).then((response) => {
-    console.log(response.data)
+    // console.log(response.data)
+    history.push("/admin/dashboard")
   }).catch((err) => {
     console.log(err);
   })
@@ -18,10 +24,10 @@ const handleFormSubmit = (e, subscriptionData) => {
 
       <div className="container">
       <div className="divider"></div>
-      <h1 className="center-align">Create A New Subscription</h1>
+      <h1 className="center m12" style={{textAlign:"center", fontFamily: 'Monoton'}}>CREATE A NEW SUBSCRIPTION</h1>
       <div className="row">
         <br />
-        <AdminSubForm handleFormSubmit={handleFormSubmit}/>
+        <AdminNewSubForm handleFormSubmit={handleFormSubmit}/>
 
       </div>
 
