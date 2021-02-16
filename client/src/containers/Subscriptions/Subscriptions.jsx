@@ -44,10 +44,15 @@ subscription_price=userData.featuredPrice
         // Make API call to the backend
 
     return (
-<div className="container">    
+<>
+<h1 className="center-align" style={{textAlign:"center", fontFamily: 'Monoton'}}> ADD A SUBSCRIPTION </h1> 
+<div className="divider"></div>
+<br />
+
+<div className="container"> 
+<div style={{paddingTop: 15, paddingBottom: 20, backgroundColor: "green", borderRadius: 30}}></div>   
  <div className="row">
          <div className="col"> 
-<h1 className="center-align" style={{textAlign:"center", fontFamily: 'Monoton'}}> ADD A SUBSCRIPTION </h1> 
 {/* Added a handle form submit */}
     {/* removed the form */}
 
@@ -56,7 +61,8 @@ subscription_price=userData.featuredPrice
     <div className="row">
             <SubscriptionForm handleFormSubmit={handleFormSubmit}/>
        </div>
-      </div> 
+      </div>
+      </> 
   );
 };
 

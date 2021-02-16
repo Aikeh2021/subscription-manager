@@ -97,7 +97,7 @@ const styles={
          <label htmlFor="subscription Plan">Subscription Plan</label>
        </div>
      </div>
-     <div className="row">
+     <div className="row center valign">
         <div className="col s12">
         <button className="btn waves-effect waves-light" style={{borderRadius: 30, backgroundColor: "#008000", fontFamily: 'Roboto'}}>Add to dashboard
    </button>
