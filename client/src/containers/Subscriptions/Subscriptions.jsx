@@ -3,10 +3,13 @@
 import React from 'react';
 import SubscriptionForm from "../../components/SubscriptionForm/SubscriptionForm";
 import axios from "axios";
+import { useHistory } from 'react-router-dom';
 // import e from "express";
 // import { set } from "mongoose";
 
 const Subscriptions = () => {
+
+        const history = useHistory();
 
         // Added custom methods bt preventing default
 
@@ -36,6 +39,7 @@ subscription_price=userData.featuredPrice
         // Added axios promise
         .then((response)=> {
                 console.log(response.data);
+                history.push("/dashboard");
         })
         .catch((err) => {
                 console.log(err);
