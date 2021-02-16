@@ -28,8 +28,10 @@ router.post("/user", (req, res) => {
     });
 });
 
-router.get("/populated", (req, res) => {
-    User.find({}).populate("subscriptions")
+router.get("/populated/:id", (req, res) => {
+
+    // Added the findById of the user to get the users information including the subscriptions 
+    User.findById(req.params.id).populate("subscriptions")
     //To return the subscriptions a single user is tracking
     .then(dbUser => {
         res.json(dbUser);
