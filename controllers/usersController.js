@@ -43,7 +43,7 @@ router.get("/populated", (req, res) => {
 router.post("/submit", ({body}, res) => {
     //To push a new subscription into a User's array of subscriptions
     Subscription.create(body)
-    .then(({_id}) => User.findOneAndUpdate({}, { $push: {subscriptions: _id} }, { new: true }))
+    .then(({_id}) => User.findByIdAndUpdate(id, { $push: {subscriptions: _id} }, { new: true }))
     .then(user => {
         res.json(user);
         res.status(400).end();
