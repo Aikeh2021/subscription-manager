@@ -32,10 +32,11 @@ subscription_name=userData.featured
 subscription_price=userData.featuredPrice
         }
         else {subscription_price = userData.price};
+        const id=localStorage.getItem("currentUserId")
         
 // axios post 
 // Updated the axios post
-        axios.post("api/users/submit", {subscription_name, subscription_plan:userData.plan, subscription_price})
+        axios.post("api/users/submit", {subscription_name, id, subscription_plan:userData.plan, subscription_price})
         // Added axios promise
         .then((response)=> {
                 console.log(response.data);
