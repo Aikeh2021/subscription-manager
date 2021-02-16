@@ -29,6 +29,7 @@ const SignUpForm = (props) => {
               .then((response) => {
                 //redirect to another page
                 // alert("Welcome to Sub Manny");
+                localStorage.setItem("currentUserId", response.data._id)
                 history.push("/dashboard");
               })
               .catch((err) => {
