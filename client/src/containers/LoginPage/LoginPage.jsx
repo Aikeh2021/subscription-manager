@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
+import {useHistory} from 'react-router-dom';
 
 
 
 const LoginPage = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const history = useHistory();
 
   const handleFormSubmit = (e) => {
 
@@ -20,7 +23,8 @@ const LoginPage = (props) => {
       .then((response) => {
         //redirect to another page
         // console.log(email,password) 
-        alert("User has returned!");
+        alert("Welcome back!");
+        history.push("/dashboard");
       })
       .catch((err) => {
         console.log(err);
@@ -54,7 +58,7 @@ const LoginPage = (props) => {
                 <input
                 placeholder="Password"
                   id="password"
-                  type="text"
+                  type="password"
                   value={password}
                   onChange={(e) => {
                     setPassword(e.target.value);
