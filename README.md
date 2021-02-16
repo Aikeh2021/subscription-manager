@@ -78,6 +78,7 @@ After you have been informed, it is up to you to access your personal subscripti
 * [StackOverflow: Materialize Dropdown in Navbar](https://stackoverflow.com/questions/58539860/materialize-dropdown-not-working-in-navbar-react)
 * [Materialize Dropdown Documentation](https://materializecss.com/dropdown.html#methods)
 * [Canva for Logo Design](https://www.canva.com/)
+* [Link Type No Opener](https://html.spec.whatwg.org/multipage/links.html#link-type-noopener)
 
 ## License
 
