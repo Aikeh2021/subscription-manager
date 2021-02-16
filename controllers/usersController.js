@@ -4,8 +4,9 @@ const router = express.Router();
 const User = require("../models/users");
 
 
-router.post("/:email", (req, res) => {
+router.post("/login/:email", (req, res) => {
     //Getting a user by their email
+    console.log("login")
     User.findOne({ email: {$eq: req.body.email}}).then((foundUser) => {
         res.json(foundUser);
     }).catch((err) => {
@@ -27,8 +28,6 @@ router.post("/user", (req, res) => {
     });
 });
 
-
-
 router.get("/populated", (req, res) => {
     User.find({}).populate("subscriptions")
     //To return the subscriptions a single user is tracking
@@ -42,9 +41,11 @@ router.get("/populated", (req, res) => {
 
 router.post("/submit", ({body}, res) => {
     //To push a new subscription into a User's array of subscriptions
+    console.log("Hello")
     Subscription.create(body)
-    .then(({_id}) => User.findByIdAndUpdate(id, { $push: {subscriptions: _id} }, { new: true }))
+    .then(({_id}) => User.findByIdAndUpdate(body.id, { $push: {subscriptions: _id} }, { new: true }))
     .then(user => {
+        console.log(user)
         res.json(user);
         res.status(400).end();
     })
