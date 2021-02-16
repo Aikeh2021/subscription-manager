@@ -36,6 +36,7 @@ router.get("/populated", (req, res) => {
         res.json(dbUser);
     }).catch(err => {
         res.json(err);
+        res.status(500).end();
     });
 });
 
@@ -45,9 +46,11 @@ router.post("/submit", ({body}, res) => {
     .then(({_id}) => User.findOneAndUpdate({}, { $push: {subscriptions: _id} }, { new: true }))
     .then(user => {
         res.json(user);
+        res.status(400).end();
     })
     .catch(err => {
         res.json(err);
+
     });
 });
 
