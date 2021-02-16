@@ -78,6 +78,7 @@ const SignUpForm = (props) => {
               <label htmlFor="password">{props.password}</label>
             </div>
           </div>
+          <div className="row center valign">
           <button className="btn waves-effect waves-light"
           type="submit"
           name="action"
@@ -90,6 +91,7 @@ const SignUpForm = (props) => {
         >
           Continue To Subscriptions
       </button>
+          </div>
         </form>
       </div>
             </div>

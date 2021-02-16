@@ -66,7 +66,8 @@ const LoginPage = (props) => {
          
         </form>
          </div>
-        <button
+         <div className="row center valign">
+         <button
           className="btn waves-effect waves-light"
           type="submit"
           name="action"
@@ -81,6 +82,8 @@ const LoginPage = (props) => {
         >
           Login
         </button>
+         </div>
+        
       </div>
     </>
   );
