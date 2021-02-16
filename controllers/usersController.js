@@ -14,17 +14,8 @@ router.get("/:email", (req, res) => {
     })
 })
 
-// router.get("/:id", (req, res) => {
-//     //Getting a user by their id
-//     User.findById(req.params.id).then((foundUser) => {
-//         res.json(foundUser);
-//     }).catch((err) => {
-//         console.log(err);
-//         res.status(404).end();
-//     })
-// })
 
-router.post("/", (req, res) => {
+router.post("/user", (req, res) => {
     //Creating a new user
     // console.log(req.body);
     User.create(req.body).then((newUser) => {
@@ -32,35 +23,11 @@ router.post("/", (req, res) => {
         res.json(newUser);
     }).catch((err) => {
         console.log(err)
+        res.status(400).end();
     });
 });
 
 
-
-// app.post("/submit", ({body}, res) => {
-//     db.Book.create(body)
-//       .then(({_id}) => db.Library.findOneAndUpdate({}, { $push: { books: _id } }, { new: true }))
-//       .then(dbLibrary => {
-//         res.json(dbLibrary);
-//       })
-//       .catch(err => {
-//         res.json(err);
-//       });
-//   });
-
-
-
-// router.post("/submitNew", ({body}, res) => {
-//     Subscription.create(body).then(({_id} => db.User.findOneAndUPdate({}, { $push: {subscriptions: _id} }, {new:true})))
-//     .then((usersNewSub) => {
-//         res.json(usersNewSub);
-//     }).catch((err) => {
-//         console.log(err);
-//     })
-// })
-// router.post("/submitNew", ({body}, res) => {
-//     User.create(body).then(({_id}) => db.)
-// })
 
 router.get("/populated", (req, res) => {
     User.find({}).populate("subscriptions")
@@ -73,6 +40,7 @@ router.get("/populated", (req, res) => {
 });
 
 router.post("/submit", ({body}, res) => {
+    //To push a new subscription into a User's array of subscriptions
     Subscription.create(body)
     .then(({_id}) => User.findOneAndUpdate({}, { $push: {subscriptions: _id} }, { new: true }))
     .then(user => {
@@ -83,6 +51,6 @@ router.post("/submit", ({body}, res) => {
     });
 });
 
-//To push a new subscription into a User's array of subscriptions
+
 
 module.exports = router;

@@ -17,7 +17,7 @@ const SignUpForm = (props) => {
 
             e.preventDefault();
             axios
-              .post("/api/users", {
+              .post("/api/users/user", {
                 
               //  Added state to this component and pulled values from state into the POST body.
                 
