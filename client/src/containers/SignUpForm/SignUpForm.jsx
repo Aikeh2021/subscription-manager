@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 // import { Component } from "materialize-css";
+import { useHistory } from "react-router-dom";
 
 
 const SignUpForm = (props) => {
@@ -10,7 +11,7 @@ const SignUpForm = (props) => {
       const [email, setEmail]= useState("");
       const [password, setPassword]= useState("");
 
-    
+    const history = useHistory();
 
       const handleFormSubmit = (e) => {
 
@@ -27,7 +28,8 @@ const SignUpForm = (props) => {
               })
               .then((response) => {
                 //redirect to another page
-                alert("User was created!");
+                alert("Welcome to Sub Manny");
+                history.push("/dashboard");
               })
               .catch((err) => {
                 console.log(err);
@@ -78,6 +80,7 @@ const SignUpForm = (props) => {
               <label htmlFor="password">{props.password}</label>
             </div>
           </div>
+          <div className="row center valign">
           <button className="btn waves-effect waves-light"
           type="submit"
           name="action"
@@ -90,6 +93,7 @@ const SignUpForm = (props) => {
         >
           Continue To Subscriptions
       </button>
+          </div>
         </form>
       </div>
             </div>
