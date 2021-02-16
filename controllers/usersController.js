@@ -4,7 +4,7 @@ const router = express.Router();
 const User = require("../models/users");
 
 
-router.get("/:email", (req, res) => {
+router.post("/:email", (req, res) => {
     //Getting a user by their email
     User.findOne({ email: {$eq: req.body.email}}).then((foundUser) => {
         res.json(foundUser);

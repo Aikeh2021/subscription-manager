@@ -28,7 +28,7 @@ const SignUpForm = (props) => {
               })
               .then((response) => {
                 //redirect to another page
-                alert("Welcome to Sub Manny");
+                // alert("Welcome to Sub Manny");
                 history.push("/dashboard");
               })
               .catch((err) => {

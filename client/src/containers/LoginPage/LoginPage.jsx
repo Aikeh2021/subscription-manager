@@ -15,7 +15,7 @@ const LoginPage = (props) => {
 
     e.preventDefault();
     axios
-      .get(`/api/users/${email}`, {
+      .post(`/api/users/${email}`, {
         
       //  Added state to this component and pulled values from state into the POST body.
         email,
@@ -23,8 +23,10 @@ const LoginPage = (props) => {
       })
       .then((response) => {
         //redirect to another page
-        // console.log(email,password) 
-        alert("Welcome back!");
+        console.log(response) 
+        // Storing logged in user id in local storage 
+        localStorage.setItem("currentUserId", response.data._id)
+        // alert("Welcome back!");
         history.push("/dashboard");
       })
       .catch((err) => {
