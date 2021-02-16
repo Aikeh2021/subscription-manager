@@ -26,7 +26,7 @@ const styles={
  <select className="browser-default" id="featured" type="" name="featured" value={featured} onChange={(e) =>{
                  setFeatured(e.target.value);
          }}>
-   <option value="" disabled selected>Featured Subscriptions</option>
+   <option value="" defaultValue>Featured Subscriptions</option>
    <option value="ADD NEW SUBSCRIPTIONS">ADD NEW SUBSCRIPTIONS</option>
    <option value="Hulu">Hulu</option>
    <option value="Spotify">Spotify</option>
@@ -47,7 +47,7 @@ const styles={
  <select className="browser-default" id="featured price" type="" name="featured price" value={featuredPrice} onChange={(e) =>{
                  setFeaturedPrice(e.target.value);
          }}>
-   <option value="" disabled selected>Price</option>
+   <option value="" defaultValue>Price</option>
    <option value="ADD A CUSTOM PRICE">ADD A CUSTOM PRICE</option>
    <option value="$5.99">$5.99</option>
    <option value="$8.99">$8.99</option>
