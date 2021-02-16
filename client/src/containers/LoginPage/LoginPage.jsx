@@ -8,13 +8,14 @@ const LoginPage = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+
   const history = useHistory();
 
   const handleFormSubmit = (e) => {
 
     e.preventDefault();
     axios
-      .get("/api/subscriptions", {
+      .get(`/api/users/${email}`, {
         
       //  Added state to this component and pulled values from state into the POST body.
         email,

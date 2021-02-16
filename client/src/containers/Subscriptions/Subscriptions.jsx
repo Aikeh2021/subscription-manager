@@ -32,7 +32,7 @@ subscription_price=userData.featuredPrice
         
 // axios post 
 // Updated the axios post
-        axios.post("/api/users", {subscription_name, subscription_plan:userData.plan, subscription_price})
+        axios.post("api/users/submit", {subscription_name, subscription_plan:userData.plan, subscription_price})
         // Added axios promise
         .then((response)=> {
                 console.log(response.data);

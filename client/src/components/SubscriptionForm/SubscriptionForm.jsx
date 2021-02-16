@@ -49,11 +49,11 @@ const styles={
          }}>
    <option value="" defaultValue>Price</option>
    <option value="ADD A CUSTOM PRICE">ADD A CUSTOM PRICE</option>
-   <option value="$5.99">$5.99</option>
-   <option value="$8.99">$8.99</option>
-   <option value="$12.99">$12.99</option>
-   <option value="$17.99">$17.99</option>
-   <option value="2$5.99">$25.99</option>
+   <option value="5.99">5.99</option>
+   <option value="8.99">8.99</option>
+   <option value="12.99">12.99</option>
+   <option value="17.99">17.99</option>
+   <option value="25.99">25.99</option>
 
  </select>
    <label></label>
