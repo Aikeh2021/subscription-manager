@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import UploadComponent from '../Upload/UploadComponent';
+import {Image} from 'cloudinary-react';
+import axios from "axios";
 
 
 const AdminNewSubForm = ({ handleFormSubmit }) => {
@@ -7,6 +8,25 @@ const AdminNewSubForm = ({ handleFormSubmit }) => {
   const [subscription_price, setSubscription_price] = useState("");
   const [subscription_thumbnail, setSubscription_thumbnail] = useState("");
   const [subscription_category, setSubscription_category] = useState("");
+  const [publicIds, setPublicIds] = useState("");
+  const [fileSelection, setFileSelection] = useState("");
+
+  let fileInput = React.createRef();
+
+  const uploadImage = () => {
+    // console.log(files[0]);
+    const formData = new FormData();
+    formData.append("file", fileSelection);
+    formData.append("upload_preset", "ovmknpts");
+
+    axios.post("https://api.cloudinary.com/v1_1/elephante-freshamonte/image/upload", formData).then((response) => {
+      console.log(response.data);
+      setPublicIds(response.data.public_id);
+      console.log(response.data.secure_url);
+      setSubscription_thumbnail("" + response.data.secure_url);
+    })
+    
+  };
 
   
   return (
@@ -22,6 +42,7 @@ const AdminNewSubForm = ({ handleFormSubmit }) => {
               subscription_thumbnail: subscription_thumbnail,
               subscription_category: subscription_category,
             });
+            uploadImage();
           }}
         >
           <div className="row" style={{fontFamily: 'Roboto'}}>
@@ -52,8 +73,14 @@ const AdminNewSubForm = ({ handleFormSubmit }) => {
               </div>
             </div>
           </div>
-          {/* Will need to edit this later to accept a url for when admin wants to add a thumbnail sized logo */}
           <div className="row">
+            <input type="file" ref={fileInput} onChange={(e) => {setFileSelection(e.target.files[0])}}/>
+            <Image style={{height: 200}}
+            cloudName="elephante-freshamonte" publicId={publicIds} src={subscription_thumbnail} />
+
+          </div>
+          {/* Will need to edit this later to accept a url for when admin wants to add a thumbnail sized logo */}
+          {/* <div className="row">
             <div className="input-field col s10">
               <input
               placeholder="Subscription Logo"
@@ -65,12 +92,12 @@ const AdminNewSubForm = ({ handleFormSubmit }) => {
                 }}
               />
             </div>
-          </div>
-          <div className="row">
+          </div> */}
+          {/* <div className="row">
             <div className="col s10">
               <UploadComponent />
             </div>
-          </div>
+          </div> */}
           {/* Original code in case this doesn't work */}
           {/* <div className="row">
             <div className="input-field col s10">

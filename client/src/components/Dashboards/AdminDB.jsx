@@ -9,7 +9,7 @@ const styles = {
     fontFamily: "Roboto",
   },
   img: {
-    height: "2em",
+    height: "3em",
   },
   buttons: {
     borderRadius: 30,
@@ -40,7 +40,7 @@ const AdminDB = () => {
 
   // Function def that triggers the API call to delete sub from database
   const deleteSub = (id) => {
-    console.log("You deleted me :(");
+    // console.log("You deleted me :(");
     console.log(id);
     axios
       .delete(`/api/subscriptions/${id}`)
