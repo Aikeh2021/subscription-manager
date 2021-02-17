@@ -1,52 +1,68 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 const UserNewSub = () => {
-    const [subscriptions, setSubscriptions] = useState([]);
+  const [subs, setSubs] = useState([]);
+  const styles = {
+    thead: {
+      backgroundColor: "#DCDCDC",
+      fontFamily: "Roboto",
+    },
+    img: {
+      height: "2em",
+    },
+    buttons: {
+      borderRadius: 30,
+      backgroundColor: "#008000",
+      fontFamily: "Roboto",
+    }
+  };
+
 
   //Axios call to get the subscriptions from the database:
-    useEffect(() => {
-      getAdminSubs();
-    }, []);
+  useEffect(() => {
+    getAdminSubs();
+  }, []);
 
-    const getAdminSubs = () => {
-      axios
-        .get("/api/subscriptions")
-        .then((response) => {
-          console.log(response.data);
-          setSubscriptions(response.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
+  const getAdminSubs = () => {
+    axios
+      .get("/api/subscriptions")
+      .then((response) => {
+        console.log(response.data);
+        setSubs(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
-    <div className="container">
-      <br />
-      <br />
+    <div>
+      <form action="" className="col s12">
+      <label style={{ fontFamily: "Roboto", fontSize: 30, color: "black"}}>
+        Select A Subscription To Track
+      </label>
+      <select className="browser-default">
+        <option value="" disabled selected>
+          Choose your subscription
+        </option>
+        {subs.map((sub) => (
+          <option
+            data-icon={sub.subscription_thumbnail}
+            className="left"
+            key={sub._id}
+          >
+            {sub.subscription_name}--{`$${sub.subscription_price}`}
+          </option>
+        ))}
+      </select>
       <div className="row">
-        {subscriptions.map(subscription => 
-        <div className="col s3">
-          <div className="card">
-            <div className="card-image">
-              <img
-                src={subscription.subscription_thumbnail}
-                alt={subscription.subscription_name}
-              />
-              <button className="btn-floating halfway-fab waves-effect waves-light red">
-                <i className="material-icons">add</i>
-              </button>
-            </div>
-            <div className="card-content">
-              <h5>{subscription.subscription_name}</h5>
-              <p>Price: {`$${subscription.subscription_price}`}/month</p>
-              <p>Type: {subscription.subscription_category}</p>
-            </div>
-          </div>
-        </div>
-        )}
+        <Link className="col s12 center valign" to="/dashboard">
+        <button class="waves-effect waves-light btn-large" style={styles.buttons}><i class="material-icons left">add</i>Add to my dashboard</button>
+        </Link>
       </div>
+      </form>
     </div>
   );
 };

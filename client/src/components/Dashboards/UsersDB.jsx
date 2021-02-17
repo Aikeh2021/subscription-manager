@@ -64,7 +64,7 @@ const styles = {
     </div>
     </div>
     <div className="row center valign">
-    <Link to="/subscriptions">
+    <Link to="/newsub">
                 <button
                   className="waves-effect waves-light btn-large"
                   style={styles.buttons}
