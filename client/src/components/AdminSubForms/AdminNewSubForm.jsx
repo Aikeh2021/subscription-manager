@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import UploadComponent from '../Upload/UploadComponent';
 
 
 const AdminNewSubForm = ({ handleFormSubmit }) => {
@@ -65,6 +66,25 @@ const AdminNewSubForm = ({ handleFormSubmit }) => {
               />
             </div>
           </div>
+          <div className="row">
+            <div className="col s10">
+              <UploadComponent />
+            </div>
+          </div>
+          {/* Original code in case this doesn't work */}
+          {/* <div className="row">
+            <div className="input-field col s10">
+              <input
+              placeholder="Subscription Logo"
+                id="subscription_thumbnail"
+                type="text"
+                value={subscription_thumbnail}
+                onChange={(e) => {
+                  setSubscription_thumbnail(e.target.value);
+                }}
+              />
+            </div>
+          </div> */}
           <div className="row">
             <div className="input-field col s10">
               <input
