@@ -1,17 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {Link} from 'react-router-dom';
+// import axios from "axios";
 
 
 const Dashboard = () => {
 
-// FIX ME: Once the routes are working, put this into a useEffect Hook.
-// axios.get('/api/subscriptions', (req, res) => {
+    const [subscriptions, setSubscriptions] = useState([]);
+  
+    // useEffect(() => {
+    //   addSubs();
+    // }, []);
+  
+    // Function def that triggers the API call to get all subs in the sub in the database
+  // const addSubs = () => {
+  //   axios
+    // .post(`/api/users/login/${id}`)
+      // .then((response) => {
+        // console.log(response.data);
+  //       setSubscriptions(response.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
-// }).then((response) => {
-//   console.log(response.data);
-// }).catch((err) => {
-// console.log(err)
-// });
+// FIX ME: Once the routes are working, put this into a useEffect Hook.
+// add the id variable later
+
+// Add a useState for subscription
+// Add a useEffect
+
+// axios
+// .post(`/api/users/login/${id}`, {
+  
+// //  Added state to this component and pulled values from state into the POST body.
+  
+// })
+// const [subscriptions,setSubscriptions] =useState([]);
+
 
 // Elements in component styles
 const styles = {
@@ -28,7 +54,6 @@ const styles = {
     fontFamily: "Roboto",
   }
 };
-
   return (
     <>
     <br/>
@@ -50,20 +75,21 @@ const styles = {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Name</td>
+{subscriptions.map(subscription=>(
+<tr key={subscription._id} >
+            <td>{subscription.subscription_name}</td>
             <td style={styles.img}>Image</td>
-            <td>$13.99</td>
-            <td>$1.00</td>
+            <td>{subscription.subscription_price}</td>
             <td>Music Streaming</td>
             <td><button className="waves-effect waves-light btn-small" style={styles.buttons}><i className="material-icons left">update</i>UPDATE</button></td>
             <td><button className="waves-effect waves-light btn-small" style={styles.buttons}><i className="material-icons left">delete</i>DELETE</button></td>
           </tr>
+))}
         </tbody>
       </table>
     </div>
     </div>
-    <div className="row center valign">
+    <div className="row center align">
     <Link to="/subscriptions">
                 <button
                   className="waves-effect waves-light btn-large"

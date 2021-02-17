@@ -13,6 +13,11 @@ const styles={
         const [subscription,setSubscription] =useState("");
         const [price,setPrice] =useState("");
         const [plan,setPlan] =useState("");
+
+         {/* MAPPING IS PENDING */}
+
+        // const featuredSubscriptions= ["Hulu","Spotify","Netflix","Amazon","Apple Music"]
+
     return (
         <>
         <form className="col s12" style={styles.fnt} onSubmit= {(e)=>  {handleFormSubmit (e, {featured,featuredPrice,subscription,price, plan,
@@ -21,6 +26,12 @@ const styles={
         <div className="row">
        
        <div className="input-field col s6">
+
+         {/* MAPPING IS PENDING */}
+         {/* featuredSubscriptions.map((featuredsubscription) => {
+      
+    }) */}
+    
        {/* <input id="featured"/> */}
        <label htmlFor= "featured Subscriptions"></label>
  <select className="browser-default" id="featured" type="" name="featured" value={featured} onChange={(e) =>{

@@ -40,7 +40,7 @@ subscription_price=userData.featuredPrice
         // Added axios promise
         .then((response)=> {
                 console.log(response);
-                // history.push("/dashboard");
+                history.push("/dashboard");
         })
         .catch((err) => {
                 console.log(err);

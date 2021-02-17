@@ -27,7 +27,7 @@ const LoginPage = (props) => {
         // Storing logged in user id in local storage 
         localStorage.setItem("currentUserId", response.data._id)
         // alert("Welcome back!");
-        // history.push("/dashboard");
+        history.push("/dashboard");
       })
       .catch((err) => {
         console.log(err);
