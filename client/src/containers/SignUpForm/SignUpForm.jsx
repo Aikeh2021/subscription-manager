@@ -29,7 +29,7 @@ const SignUpForm = (props) => {
               .then((response) => {
                 //redirect to another page
                 alert("Welcome to Sub Manny");
-                history.push("/dashboard");
+                history.push("/login");
               })
               .catch((err) => {
                 console.log(err);
@@ -91,7 +91,7 @@ const SignUpForm = (props) => {
             fontFamily: "Roboto",
           }}
         >
-          Continue To Subscriptions
+          Create My Account
       </button>
           </div>
         </form>

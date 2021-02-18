@@ -1,17 +1,18 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 
 const Dashboard = () => {
 
 // FIX ME: Once the routes are working, put this into a useEffect Hook.
-// axios.get('/api/subscriptions', (req, res) => {
+axios.get('/api/users/populated', (req, res) => {
 
-// }).then((response) => {
-//   console.log(response.data);
-// }).catch((err) => {
-// console.log(err)
-// });
+}).then((response) => {
+  console.log(response.data);
+}).catch((err) => {
+console.log(err)
+});
 
 // Elements in component styles
 const styles = {
