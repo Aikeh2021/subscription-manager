@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 // import M from "materialize-css";
+
 
 const UserNewSub = () => {
   const [subs, setSubs] = useState([]);
-  // const [valueState, setValueState] = useState("");
+  const [valueState, setValueState] = useState("");
   const styles = {
     thead: {
       backgroundColor: "#DCDCDC",
@@ -39,47 +40,53 @@ const UserNewSub = () => {
       });
   };
 
-  // To set the selection the user chooses
-  // useEffect(() => {
-  //   let elems = document.querySelectorAll('select');
-  //   M.FormSelect.init(elems);
-  // }, []);
+  const history = useHistory();
 
-//To Accept whatever input the user choose from the dropdown
-// const handleChange = (e) => {
-//   console.log("we're trying to change something");
+  //Function to submit a subscription to the user's dashboard
+  const addSubscription = (e) => {
+    e.preventDefault();
+    console.log(valueState);
+    axios.post("/api/users/subscriptions", {subscriptionId: valueState}).then(() => {
+      history.push("/dashboard");
+    })
 
-// }
+  }
+  
+
 
   return (
     <div>
-      <form action="" className="col s12">
+      <form onSubmit={addSubscription} className="col s12">
       <label style={{ fontFamily: "Roboto", fontSize: 30, color: "black"}}>
         Select A Subscription To Track
       </label>
-      <select className="browser-default">
-        <option value="" disabled selected>
+      <select className="browser-default" defaultValue={'DEFAULT'} value={valueState} onChange={(e) => {
+        const selectedSub=e.target.value;
+        setValueState(selectedSub);
+      }} >
+        <option value="DEFAULT" disabled selected>
           Choose your subscription
         </option>
         {subs.map((sub) => (
           <option
-            // data-icon={sub.subscription_thumbnail}
             className="left"
             key={sub._id}
-            value={`${sub.subscription_name} ${sub.subscription_price}`}
+            value={sub._id}
           >
             {sub.subscription_name}--{`$${sub.subscription_price}`}
           </option>
         ))}
       </select>
+      {/* Checking to make sure the correct option is being selected and set onChange */}
+      {/* {valueState} */}
       <br />
       <br />
       <br />
       <br />
       <div className="row">
-        <Link className="col s12 center valign" to="/dashboard">
-        <button className="waves-effect waves-light btn-large" style={styles.buttons}><i className="material-icons left">add</i>Add to my dashboard</button>
-        </Link>
+        {/* <Link className="col s12 center valign" to="/dashboard"> */}
+        <button className="waves-effect waves-light btn-large" style={styles.buttons} type="submit"><i className="material-icons left">add</i>Add to my dashboard</button>
+        {/* </Link> */}
       </div>
       </form>
     </div>

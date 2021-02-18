@@ -10,6 +10,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
+//Creating a way (for now) to authenticate a user: DELETE THIS WHEN YOU SET UP JASON WEB TOKENS
+app.use((req, res, next)=>{
+	req.user = {id: '602e91146f880678205413b8'}; 
+    next()
+});
+
+
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/subscription-manager",
   {

@@ -19,8 +19,10 @@ const styles = {
 };
 
 const AdminDB = () => {
+  // Defining the state for the subscriptions in the database to live on
   const [subscriptions, setSubscriptions] = useState([]);
 
+  //useEffect with function call to get the subscriptions from database
   useEffect(() => {
     getSubs();
   }, []);
@@ -76,6 +78,7 @@ const AdminDB = () => {
                     <th>Delete Subscription</th>
                   </tr>
                 </thead>
+                {/* Mapping over the table body to create a row for each subscription in the database */}
                 <tbody>
                   {subscriptions.map((subscription) => (
                     <tr key={subscription._id}>
@@ -89,6 +92,7 @@ const AdminDB = () => {
                       </td>
                       <td>{`$ ${subscription.subscription_price}`}</td>
                       <td>{subscription.subscription_category}</td>
+                      {/* Linking the id to the buttons and taking them to the correct page on the button click to either update/delete a subscription */}
                       <td>
                         <Link to={`/admin/${subscription._id}`}>
                           <button

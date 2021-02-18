@@ -1,17 +1,26 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Dashboard = () => {
-  // FIX ME: Once the routes are working, put this into a useEffect Hook.
-  axios
-    .get("/api/users/populated", (req, res) => {})
-    .then((response) => {
-      console.log(response.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  //Defining User's Subscription array on state and It's setState
+  const [usersSubs, setUsersSubs] = useState([]);
+
+  // Getting a single user's array of subscriptions from the database:
+const getUsersSubs = () => {
+  axios.get("/api/users/subscriptions").then((response) => {
+    console.log(response);
+    setUsersSubs(response.data);
+  });
+}
+
+//Calling the getUsersSubs function when the component mounts
+  useEffect(() => {
+    getUsersSubs();
+  }, []);
+
+
+
 
   // Elements in component styles
   const styles = {
@@ -20,7 +29,7 @@ const Dashboard = () => {
       fontFamily: "Roboto",
     },
     img: {
-      height: "2em",
+      height: "3em",
     },
     buttons: {
       borderRadius: 30,
@@ -42,21 +51,21 @@ const Dashboard = () => {
                   <tr>
                     <th>Subscription Name</th>
                     <th>Logo</th>
-                    <th>Current Plan</th>
+                    <th>Current Price</th>
                     {/* <th>Plan Price Change</th> */}
                     <th>Category</th>
                     {/* <th>Update Subscription</th> */}
                     <th>Delete Subscription</th>
                   </tr>
                 </thead>
+                {/* Mapping over the usersSubs and creating a row for each subscription in the user's array */}
                 <tbody>
-                  <tr>
-                    <td>Name</td>
-                    <td style={styles.img}>Image</td>
-                    <td>$13.99</td>
-                    {/* <td>$1.00</td> */}
-                    <td>Music Streaming</td>
-                    {/* <td><button className="waves-effect waves-light btn-small" style={styles.buttons}><i className="material-icons left">update</i>UPDATE</button></td> */}
+                  {usersSubs.map((usersSub) =>(
+                    <tr key={usersSub._id}>
+                    <td>{usersSub.subscription_name}</td>
+                    <td><img src={usersSub.subscription_thumbnail} alt={usersSub.subscription_name} style={styles.img}/></td>
+                    <td>{usersSub.subscription_price}</td>
+                    <td>{usersSub.subscription_category}</td>
                     <td>
                       <button
                         className="waves-effect waves-light btn-small"
@@ -66,10 +75,12 @@ const Dashboard = () => {
                       </button>
                     </td>
                   </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
           </div>
+          {/* Button for user to add new subscription */}
           <div className="row center valign">
             <Link to="/newsub">
               <button

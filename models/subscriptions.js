@@ -17,12 +17,6 @@ const SubscriptionSchema = new Schema ({
         required: 'Choose a subscription price'
         
     },
-    //COMMENTING THIS OUT FOR NOW TO HELP ME THINK. DO NOT DELETE THIS!!!
-    // userForSubscription: [
-    //     {
-    //         type: Schema.Types.ObjectId, ref: 'User'
-    //     }
-    // ], 
     subscription_category: {
         trim:true,
         type: String

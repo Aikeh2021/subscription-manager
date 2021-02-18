@@ -16,7 +16,6 @@ View the live Sub Manny site [here](https://boiling-journey-74144.herokuapp.com/
 - Materialize
 - React
 - React Responsive Carousel
-- Nodemailer
 - Axios
 - React-Router-Dom
 - Express

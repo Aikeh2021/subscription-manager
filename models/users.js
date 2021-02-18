@@ -15,31 +15,13 @@ const UserSchema = new Schema({
   password: {
     type: String,
   },
+
   subscriptions: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Subscription"
-    }
+
   ]
-  // books: [
-  //   {
-  //     type: Schema.Types.ObjectId,
-  //     ref: "Book"
-  //   }
-  // ]
-  // subscription_name: {
-  //     type: String,
-
-  // },
-  // subscription_plan: {
-  //     type: String,
-
-  // },
-  // subscription_price: {
-  //     type: String,
-
-  // }
+  
 });
+
 
 const User = mongoose.model("User", UserSchema);
 
