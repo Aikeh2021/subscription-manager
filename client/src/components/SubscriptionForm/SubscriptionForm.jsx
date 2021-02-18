@@ -7,7 +7,6 @@ const styles={
   }
 }
 
-
     const [featured, setFeatured]= useState("");
         const [featuredPrice, setFeaturedPrice]= useState("");
         const [subscription,setSubscription] =useState("");
@@ -16,9 +15,26 @@ const styles={
 
          {/* MAPPING IS PENDING */}
 
-        // const featuredSubscriptions= ["Hulu","Spotify","Netflix","Amazon","Apple Music"]
+        const subscriptions= ["Hulu","Spotify","Netflix","Amazon","Apple Music"]
+        subscriptions.map((subscription) => {
+          return (
+            <select className="list-group">
+                 {subscriptions.map(featuredSubscriptions => (
+                    <option className="list-group-item" key={featuredSubscriptions} >
+                      {featuredSubscriptions.name}
+                    </option>
+                  ))}
+                </select>
+          )
+          
+        })
+
+
+
 
     return (
+
+   
         <>
         <form className="col s12" style={styles.fnt} onSubmit= {(e)=>  {handleFormSubmit (e, {featured,featuredPrice,subscription,price, plan,
         });
@@ -28,10 +44,13 @@ const styles={
        <div className="input-field col s6">
 
          {/* MAPPING IS PENDING */}
-         {/* featuredSubscriptions.map((featuredsubscription) => {
+         {/* featuredSubscriptions.map((featuredSubscription) => { */}
+
+
+          {/* //  console.log(featuredSubscription) */}
       
-    }) */}
-    
+    {/* }); */}
+
        {/* <input id="featured"/> */}
        <label htmlFor= "featured Subscriptions"></label>
  <select className="browser-default" id="featured" type="" name="featured" value={featured} onChange={(e) =>{
@@ -116,7 +135,9 @@ const styles={
        </div>
     </form>
     </>
-    )
-};
+    ) 
+;
+    
+        }
 
 export default SubscriptionForm;
