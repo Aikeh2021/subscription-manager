@@ -1,20 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./Footer.css";
-// import SubMannyLogo from "client/src/assets/logos/SubMannyLogo.png";
 
 const Footer = ({ logo }) => {
   return (
-    // <footer>
-    //     <div className="footer-nav">Copyright© Subscription Manager</div>
-    //     <h1>
-    //         Privacy Statement: We take steps to protect your Personal Information from unauthorized access and against unlawful processing, accidental loss, destruction and damage.
-    //     </h1>
-    // </footer>
     <footer
       className="page-footer"
       id="site-footer"
-      style={{ fontSize: 10, font: "Roboto", backgroundColor: "#4B0082" }}
+      style={{ fontSize: 11, font: "Roboto", backgroundColor: "#4B0082" }}
     >
       <div className="container">
         <div className="row">
@@ -23,7 +15,7 @@ const Footer = ({ logo }) => {
             <div className="row">
               <div className="col s12">
                 <div className="col s4">
-                  <img id="footer-logo" src={logo} alt="Site Logo" />
+                  <img id="footer-logo" src={logo} alt="Site Logo" style={{ height: '60%', width: '60%', borderRadius: 30}}/>
                 </div>
                 <p className="col s2">
                   <NavLink to="/login" style={{ color: "white" }}>
@@ -55,9 +47,8 @@ const Footer = ({ logo }) => {
         </div>
       </div>
       <div className="footer-copyright">
-        <div className="container">
+        <div className="container center valign">
           © 2021 Copyright
-          {/* <a class="grey-text text-lighten-4 right" href="#!">More Links</a> */}
         </div>
       </div>
     </footer>
