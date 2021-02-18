@@ -43,13 +43,6 @@ const styles={
        
        <div className="input-field col s6">
 
-         {/* MAPPING IS PENDING */}
-         {/* featuredSubscriptions.map((featuredSubscription) => { */}
-
-
-          {/* //  console.log(featuredSubscription) */}
-      
-    {/* }); */}
 
        {/* <input id="featured"/> */}
        <label htmlFor= "featured Subscriptions"></label>
