@@ -1,17 +1,18 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 
 const Dashboard = () => {
 
 // FIX ME: Once the routes are working, put this into a useEffect Hook.
-// axios.get('/api/subscriptions', (req, res) => {
+axios.get('/api/users/populated', (req, res) => {
 
-// }).then((response) => {
-//   console.log(response.data);
-// }).catch((err) => {
-// console.log(err)
-// });
+}).then((response) => {
+  console.log(response.data);
+}).catch((err) => {
+console.log(err)
+});
 
 // Elements in component styles
 const styles = {
@@ -43,9 +44,9 @@ const styles = {
             <th>Subscription Name</th>
             <th>Logo</th>
             <th>Current Plan</th>
-            <th>Plan Price Change</th>
+            {/* <th>Plan Price Change</th> */}
             <th>Category</th>
-            <th>Update Subscription</th>
+            {/* <th>Update Subscription</th> */}
             <th>Delete Subscription</th>
           </tr>
         </thead>
@@ -54,9 +55,9 @@ const styles = {
             <td>Name</td>
             <td style={styles.img}>Image</td>
             <td>$13.99</td>
-            <td>$1.00</td>
+            {/* <td>$1.00</td> */}
             <td>Music Streaming</td>
-            <td><button className="waves-effect waves-light btn-small" style={styles.buttons}><i className="material-icons left">update</i>UPDATE</button></td>
+            {/* <td><button className="waves-effect waves-light btn-small" style={styles.buttons}><i className="material-icons left">update</i>UPDATE</button></td> */}
             <td><button className="waves-effect waves-light btn-small" style={styles.buttons}><i className="material-icons left">delete</i>DELETE</button></td>
           </tr>
         </tbody>
@@ -64,7 +65,7 @@ const styles = {
     </div>
     </div>
     <div className="row center valign">
-    <Link to="/subscriptions">
+    <Link to="/newsub">
                 <button
                   className="waves-effect waves-light btn-large"
                   style={styles.buttons}

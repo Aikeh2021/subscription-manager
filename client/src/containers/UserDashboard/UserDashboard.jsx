@@ -1,6 +1,7 @@
 import React from 'react';
 import Dashboard from "../../components/Dashboards/UsersDB";
 import UserDBGreeting from "../../components/UserDBGreeting/UserDBGreeting";
+import SubMannyLogo from '../../assets/logos/SubMannyLogo.png';
 
 
 
@@ -15,6 +16,7 @@ const UserDashboard = () => {
   
   return (
     <div>
+      <img src={SubMannyLogo} alt="Sub Manny Logo" className="center valign center-block" style={{width: 400, height: 400, borderRadius: 30}}/>
       <UserDBGreeting />
       <div className="divider"></div>
       <div className="container">
