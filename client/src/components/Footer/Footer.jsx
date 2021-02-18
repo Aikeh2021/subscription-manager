@@ -54,8 +54,8 @@ const Footer = ({ logo }) => {
           </div>
         </div>
       </div>
-      <div class="footer-copyright">
-        <div class="container">
+      <div className="footer-copyright">
+        <div className="container">
           © 2021 Copyright
           {/* <a class="grey-text text-lighten-4 right" href="#!">More Links</a> */}
         </div>
