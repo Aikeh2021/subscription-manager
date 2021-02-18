@@ -56,7 +56,7 @@ const styles = {
             <td>$13.99</td>
             <td>$1.00</td>
             <td>Music Streaming</td>
-            <td><button className="waves-effect waves-light btn-small" style={styles.buttons}><i className="material-icons left">update</i>UPDATE</button></td>
+            {/* <td><button className="waves-effect waves-light btn-small" style={styles.buttons}><i className="material-icons left">update</i>UPDATE</button></td> */}
             <td><button className="waves-effect waves-light btn-small" style={styles.buttons}><i className="material-icons left">delete</i>DELETE</button></td>
           </tr>
         </tbody>
