@@ -11,7 +11,7 @@ const Footer = ({ logo }) => {
       <div className="container">
         <div className="row">
           <div className="col s12">
-            <h5 className="white-text">Privacy Statement</h5>
+            <h5 className="white-text" style={{fontFamily: 'Monoton', }}>Privacy Statement</h5>
             <div className="row">
               <div className="col s12">
                 <div className="col s4">
@@ -21,6 +21,11 @@ const Footer = ({ logo }) => {
                   <NavLink to="/login" style={{ color: "white" }}>
                     Admin Portal
                   </NavLink>
+                  <br/>
+                  <br/>
+                  <a href="https://mailchimp.com/features/email/" target="_blank" rel="noopener noreferrer" style={{ color: "white" }}>
+                    Need to Contact Users?
+                  </a>
                 </p>
                 <p className="white-text text-lighten-4 col s3">
                   We take steps to protect your Personal Information from
