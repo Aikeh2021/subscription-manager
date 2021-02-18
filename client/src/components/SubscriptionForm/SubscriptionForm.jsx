@@ -41,10 +41,7 @@ const styles={
     };
 
   
-    // return (
-
-   
-     
+    return (
         <form className="col s12" style={styles.fnt} onSubmit= {(e)=>  {handleFormSubmit (e, {featured,featuredPrice,subscription,price, plan,
         });
         } } >
@@ -134,9 +131,8 @@ const styles={
        </div>
     </form>
   
-    // ) 
-;
-    
-        }
+        );
 
+        }  
+      
 export default SubscriptionForm;
