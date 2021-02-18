@@ -14,9 +14,12 @@ const styles={
         const [price,setPrice] =useState("");
         const [plan,setPlan] =useState("");
 
-         {/* MAPPING IS PENDING */}
-      function featuredSubscription(props) {
-        // Correct! There is no need to specify the key here:
+        const subscriptions= ["Hulu","Spotify","Netflix","Amazon","Apple Music"];
+      const prices =["8.99","12.99","17.99", "25.99"];
+
+         {/* Subscription mapping */}
+      function Sub (props) {
+        
         return <option>{props.value}</option>;
       }
       function DropSubs(props) {
@@ -34,11 +37,35 @@ const styles={
             );
       };
       
-      const subscriptions= ["Hulu","Spotify","Netflix","Amazon","Apple Music"];
-      ReactDOM.render(<Subscriptions />, document.getElementById('main-root'))
-        // <subscriptions subscriptions={subscriptions} />,
+
+      // Prices mapping
+
+      function SubPrice(props) {
         
-    };
+        return <option>{props.value}</option>;
+      }
+      function DropArrow(props) {
+        const Prices = props.prices;
+        return (
+          <>
+          <select>
+            {price.map((prices) => 
+         <option key={price.toString ()}
+         value={price} />
+
+            )}
+          </select>
+          </>
+            );
+      };
+     
+      
+
+      // Removed this.Already in Index.js.
+    //   ReactDOM.render(<Subscriptions />, document.getElementById('main-root'))
+    //     // <subscriptions subscriptions={subscriptions} />,
+        
+    // };
 
   
     return (
@@ -57,11 +84,18 @@ const styles={
          }}>
    <option value="" defaultValue>Featured Subscriptions</option>
    <option value="ADD NEW SUBSCRIPTIONS">ADD NEW SUBSCRIPTIONS</option>
-   <option value="Hulu">Hulu</option>
+  
+
+  { subscriptions.map(s => {
+return <option value={s}>{s}</option>
+  })};
+
+{/* Mapped Out */}
+   {/* <option value="Hulu">Hulu</option>
    <option value="Spotify">Spotify</option>
    <option value="Netflix">Netflix</option>
    <option value="Amazon">Amazon</option>
-   <option value="Apple Music">Apple Music</option>
+   <option value="Apple Music">Apple Music</option> */}
    
  </select>
    <label></label>
@@ -78,11 +112,16 @@ const styles={
          }}>
    <option value="" defaultValue>Price</option>
    <option value="ADD A CUSTOM PRICE">ADD A CUSTOM PRICE</option>
-   <option value="5.99">5.99</option>
-   <option value="8.99">8.99</option>
-   <option value="12.99">12.99</option>
-   <option value="17.99">17.99</option>
-   <option value="25.99">25.99</option>
+
+   {/* Mapped out */}
+   {/* <option value="$5.99">5.99</option>
+   <option value="$8.99">8.99</option>
+   <option value="$12.99">12.99</option>
+   <option value="$17.99">17.99</option>
+   <option value="$25.99">25.99</option> */}
+   { prices.map(s => {
+return <option value={s}>{s}</option>
+  })};
 
  </select>
    <label></label>
