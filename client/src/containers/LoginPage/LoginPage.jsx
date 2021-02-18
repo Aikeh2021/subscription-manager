@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import {useHistory} from 'react-router-dom';
+
+
 
 const LoginPage = (props) => {
   const [email, setEmail] = useState("");
@@ -11,8 +13,9 @@ const LoginPage = (props) => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     axios
-      .get("/api/subscriptions", {
-        //  Added state to this component and pulled values from state into the POST body.
+      .get(`/api/users/${email}`, {
+        
+      //  Added state to this component and pulled values from state into the POST body.
         email,
         password,
       })

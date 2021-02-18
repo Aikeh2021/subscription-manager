@@ -17,7 +17,7 @@ const SignUpForm = (props) => {
 
             e.preventDefault();
             axios
-              .post("/api/users", {
+              .post("/api/users/user", {
                 
               //  Added state to this component and pulled values from state into the POST body.
                 
@@ -29,7 +29,7 @@ const SignUpForm = (props) => {
               .then((response) => {
                 //redirect to another page
                 alert("Welcome to Sub Manny");
-                history.push("/dashboard");
+                history.push("/login");
               })
               .catch((err) => {
                 console.log(err);
@@ -91,7 +91,7 @@ const SignUpForm = (props) => {
             fontFamily: "Roboto",
           }}
         >
-          Continue To Subscriptions
+          Create My Account
       </button>
           </div>
         </form>
