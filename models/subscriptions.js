@@ -17,18 +17,12 @@ const SubscriptionSchema = new Schema ({
         required: 'Choose a subscription price'
         
     },
-    // subscription_plan: [
+    //COMMENTING THIS OUT FOR NOW TO HELP ME THINK. DO NOT DELETE THIS!!!
+    // userForSubscription: [
     //     {
-    //     type: Number,
-    //     trim:true,
-    //     required: 'Choose a subscription plan'
+    //         type: Schema.Types.ObjectId, ref: 'User'
     //     }
-    // ],
-    userForSubscription: [
-        {
-            type: Schema.Types.ObjectId, ref: 'User'
-        }
-    ], 
+    // ], 
     subscription_category: {
         trim:true,
         type: String

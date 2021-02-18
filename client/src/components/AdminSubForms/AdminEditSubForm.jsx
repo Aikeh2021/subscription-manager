@@ -7,7 +7,7 @@ const AdminEditSubForm = ({ handleFormSubmit }) => {
 
 const [subscription_name, setSubscription_name] = useState("");
 const [subscription_price, setSubscription_price] = useState("");
-const [subscription_thumbnail, setSubscription_thumbnail] = useState("");
+// const [subscription_thumbnail, setSubscription_thumbnail] = useState("");
 const [subscription_category, setSubscription_category] = useState("");
 
 
@@ -20,7 +20,7 @@ useEffect(() => {
             console.log(response.data);
             setSubscription_name(response.data.subscription_name);
             setSubscription_price(response.data.subscription_price);
-            setSubscription_thumbnail(response.data.subscription_thumbnail);
+            // setSubscription_thumbnail(response.data.subscription_thumbnail);
             setSubscription_category(response.data.subscription_category);
         }).catch((err) => {
             console.log(err);
@@ -38,7 +38,7 @@ return (
               subscription_name: subscription_name,
               subscription_price: 
                 subscription_price,
-              subscription_thumbnail: subscription_thumbnail,
+              // subscription_thumbnail: subscription_thumbnail,
               subscription_category: subscription_category,
             }, id);
           }}
@@ -54,12 +54,12 @@ return (
                 setSubscription_name(e.target.value);
               }}
             />
-            <label htmlFor="subscription_name">Subscription Provider</label>
           </div>
           <div className="row">
             <div className="col s10">
-              <div className="input-field col s5">
+              <div className="input-field col s4">
                 <input
+                placeholder="Plan pricing"
                   id="subscription_price"
                   type="text"
                   value={subscription_price}
@@ -67,15 +67,15 @@ return (
                     setSubscription_price(e.target.value);
                   }}
                 />
-                <label htmlFor="subscription_price">Plan Pricing #1</label>
               </div>
             </div>
           </div>
         </div>
-        {/* Will need to edit this later to accept a url for when admin wants to add a thumbnail sized logo */}
-        <div className="row">
+        {/* This is the old input for the original edit page */}
+        {/* <div className="row">
           <div className="input-field col s10">
             <input
+            placeholder="Subscription Logo"
               id="subscription_thumbnail"
               type="text"
               value={subscription_thumbnail}
@@ -83,12 +83,12 @@ return (
                 setSubscription_thumbnail(e.target.value);
               }}
             />
-            <label htmlFor="subscription_thumbnail">Subscription Logo</label>
           </div>
-        </div>
+        </div> */}
         <div className="row">
           <div className="input-field col s10">
             <input
+            placeholder="Subscription Category"
               id="subscription_category"
               type="text"
               value={subscription_category}
@@ -96,7 +96,6 @@ return (
                 setSubscription_category(e.target.value);
               }}
             />
-            <label htmlFor="subscription_category">Service Type</label>
           </div>
         </div>
         <div className="row">

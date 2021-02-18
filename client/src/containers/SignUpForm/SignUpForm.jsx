@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 // import { Component } from "materialize-css";
+import { useHistory } from "react-router-dom";
 
 
 const SignUpForm = (props) => {
@@ -10,13 +11,13 @@ const SignUpForm = (props) => {
       const [email, setEmail]= useState("");
       const [password, setPassword]= useState("");
 
-    
+    const history = useHistory();
 
       const handleFormSubmit = (e) => {
 
             e.preventDefault();
             axios
-              .post("/api/users", {
+              .post("/api/users/user", {
                 
               //  Added state to this component and pulled values from state into the POST body.
                 
@@ -27,7 +28,8 @@ const SignUpForm = (props) => {
               })
               .then((response) => {
                 //redirect to another page
-                alert("User was created!");
+                alert("Welcome to Sub Manny");
+                history.push("/login");
               })
               .catch((err) => {
                 console.log(err);
@@ -38,7 +40,10 @@ const SignUpForm = (props) => {
             <h1 style={{ textAlign: "center", fontFamily: "Monoton" }}>
        CREATE AN ACCOUNT
        </h1>
+       <div className="divider"></div>
        <div className="container" style={{ fontFamily: "Roboto" }}>
+         <br />
+         <div style={{paddingTop: 15, paddingBottom: 20, backgroundColor: "green", borderRadius: 30}}></div>
                 <div className="row">
                 <form className="col s12" onSubmit={handleFormSubmit}>
            <div className="row">
@@ -75,6 +80,7 @@ const SignUpForm = (props) => {
               <label htmlFor="password">{props.password}</label>
             </div>
           </div>
+          <div className="row center valign">
           <button className="btn waves-effect waves-light"
           type="submit"
           name="action"
@@ -85,8 +91,9 @@ const SignUpForm = (props) => {
             fontFamily: "Roboto",
           }}
         >
-          Continue To Subscriptions
+          Create My Account
       </button>
+          </div>
         </form>
       </div>
             </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import {useHistory} from 'react-router-dom';
 
 
 
@@ -7,11 +8,14 @@ const LoginPage = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+
+  const history = useHistory();
+
   const handleFormSubmit = (e) => {
 
     e.preventDefault();
     axios
-      .get("/api/subscriptions", {
+      .get(`/api/users/${email}`, {
         
       //  Added state to this component and pulled values from state into the POST body.
         email,
@@ -20,7 +24,8 @@ const LoginPage = (props) => {
       .then((response) => {
         //redirect to another page
         // console.log(email,password) 
-        alert("User has returned!");
+        alert("Welcome back!");
+        history.push("/dashboard");
       })
       .catch((err) => {
         console.log(err);
@@ -29,7 +34,11 @@ const LoginPage = (props) => {
   return (
     <>
     <h1 style={{textAlign: 'center', fontFamily: 'Monoton'}}>LOGIN TO YOUR ACCOUNT</h1>
+    <div className="divider"></div>
+    <br />
+    
     <div className="container" style={{fontFamily: "Roboto"}}>
+    <div style={{paddingTop: 15, paddingBottom: 20, backgroundColor: "green", borderRadius: 30}}></div>
       <div className="row">
         <form className="col s12" onSubmit={handleFormSubmit}>
           <div className="row">
@@ -50,7 +59,7 @@ const LoginPage = (props) => {
                 <input
                 placeholder="Password"
                   id="password"
-                  type="text"
+                  type="password"
                   value={password}
                   onChange={(e) => {
                     setPassword(e.target.value);
@@ -62,7 +71,8 @@ const LoginPage = (props) => {
          
         </form>
          </div>
-        <button
+         <div className="row center valign">
+         <button
           className="btn waves-effect waves-light"
           type="submit"
           name="action"
@@ -77,6 +87,8 @@ const LoginPage = (props) => {
         >
           Login
         </button>
+         </div>
+        
       </div>
     </>
   );
