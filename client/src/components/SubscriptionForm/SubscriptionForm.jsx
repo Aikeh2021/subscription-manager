@@ -1,4 +1,6 @@
 import React, { useState} from 'react';
+import ReactDOM from 'react-dom';
+
 
 const SubscriptionForm = ({handleFormSubmit}) => {
 const styles={
@@ -13,34 +15,36 @@ const styles={
         const [plan,setPlan] =useState("");
 
          {/* MAPPING IS PENDING */}
-      function SubscriptionItem(props) {
+      function featuredSubscription(props) {
         // Correct! There is no need to specify the key here:
         return <option>{props.value}</option>;
       }
-      function subscriptionList(props) {
-        const subscriptions = props.subscriptions;
+      function DropSubs(props) {
+        const Subscriptions = props.subscriptions;
         return (
+          <>
           <select>
-            {subscriptionsItems.map((subscriptions) => subscriptions.map ((subscription, index) =>
-         <option key={index.toString ()}
+            {subscription.map((subscriptions) => 
+         <option key={subscription.toString ()}
          value={subscription} />
 
-         )}
+            )}
           </select>
+          </>
             );
-      }
+      };
       
-      const featuredSubscriptions= ["Hulu","Spotify","Netflix","Amazon","Apple Music"];
-      ReactDOM.render(
-        <subscriptionList featuredSubscriptions={featuredSubscriptions} />,
-        document.getElementById('root')
-      );
+      const subscriptions= ["Hulu","Spotify","Netflix","Amazon","Apple Music"];
+      ReactDOM.render(<Subscriptions />, document.getElementById('main-root'))
+        // <subscriptions subscriptions={subscriptions} />,
+        
+    };
 
-    
-    return (
+  
+    // return (
 
    
-        <>
+     
         <form className="col s12" style={styles.fnt} onSubmit= {(e)=>  {handleFormSubmit (e, {featured,featuredPrice,subscription,price, plan,
         });
         } } >
@@ -91,9 +95,6 @@ const styles={
      {/* </div> */}
      <div className="row">
 {/****Add a conditional rendering for the price and subscription if the user doesn't select them *****/}
-      
-
-
        {/* conditional rendering for the forms */}
        { featured === "ADD NEW SUBSCRIPTIONS" && (
           <div className="input-field col s6">
@@ -125,15 +126,15 @@ const styles={
          <label htmlFor="subscription Plan">Subscription Plan</label>
        </div>
      </div>
-     <div className="row center valign">
+     <div className="row center align">
         <div className="col s12">
         <button className="btn waves-effect waves-light" style={{borderRadius: 30, backgroundColor: "#008000", fontFamily: 'Roboto'}}>Add to dashboard
    </button>
         </div>
        </div>
     </form>
-    </>
-    ) 
+  
+    // ) 
 ;
     
         }
