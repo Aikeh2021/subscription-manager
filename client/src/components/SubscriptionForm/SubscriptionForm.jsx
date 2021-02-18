@@ -6,7 +6,6 @@ const styles={
     fontFamily: 'Roboto'
   }
 }
-
     const [featured, setFeatured]= useState("");
         const [featuredPrice, setFeaturedPrice]= useState("");
         const [subscription,setSubscription] =useState("");
@@ -14,24 +13,30 @@ const styles={
         const [plan,setPlan] =useState("");
 
          {/* MAPPING IS PENDING */}
+      function SubscriptionItem(props) {
+        // Correct! There is no need to specify the key here:
+        return <option>{props.value}</option>;
+      }
+      function subscriptionList(props) {
+        const subscriptions = props.subscriptions;
+        return (
+          <select>
+            {subscriptionsItems.map((subscriptions) => subscriptions.map ((subscription, index) =>
+         <option key={index.toString ()}
+         value={subscription} />
 
-        const subscriptions= ["Hulu","Spotify","Netflix","Amazon","Apple Music"]
-        subscriptions.map((subscription) => {
-          return (
-            <select className="list-group">
-                 {subscriptions.map(featuredSubscriptions => (
-                    <option className="list-group-item" key={featuredSubscriptions} >
-                      {featuredSubscriptions.name}
-                    </option>
-                  ))}
-                </select>
-          )
-          
-        })
+         )}
+          </select>
+            );
+      }
+      
+      const featuredSubscriptions= ["Hulu","Spotify","Netflix","Amazon","Apple Music"];
+      ReactDOM.render(
+        <subscriptionList featuredSubscriptions={featuredSubscriptions} />,
+        document.getElementById('root')
+      );
 
-
-
-
+    
     return (
 
    
