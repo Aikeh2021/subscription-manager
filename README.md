@@ -26,6 +26,7 @@ View the live Sub Manny site [here](https://boiling-journey-74144.herokuapp.com/
 * Heroku
 * Canva
 * Cloudinary
+* Cloudinary React
 
 
 
@@ -79,6 +80,10 @@ After you have been informed, it is up to you to access your personal subscripti
 * [Materialize Dropdown Documentation](https://materializecss.com/dropdown.html#methods)
 * [Canva for Logo Design](https://www.canva.com/)
 * [Link Type No Opener](https://html.spec.whatwg.org/multipage/links.html#link-type-noopener)
+* [Uploading Images to Cloudinary](https://www.youtube.com/watch?v=Y-VgaRwWS3o)
+* [FileInput in React](https://reactjs.org/docs/uncontrolled-components.html#the-file-input-tag)
+* [Cloudinary-React NPM](https://www.npmjs.com/package/cloudinary-react)
+
 
 ## License
 

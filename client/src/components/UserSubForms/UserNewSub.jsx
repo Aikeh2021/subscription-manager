@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
+// import M from "materialize-css";
 
 const UserNewSub = () => {
   const [subs, setSubs] = useState([]);
+  // const [valueState, setValueState] = useState("");
   const styles = {
     thead: {
       backgroundColor: "#DCDCDC",
@@ -37,6 +39,18 @@ const UserNewSub = () => {
       });
   };
 
+  // To set the selection the user chooses
+  // useEffect(() => {
+  //   let elems = document.querySelectorAll('select');
+  //   M.FormSelect.init(elems);
+  // }, []);
+
+//To Accept whatever input the user choose from the dropdown
+// const handleChange = (e) => {
+//   console.log("we're trying to change something");
+
+// }
+
   return (
     <div>
       <form action="" className="col s12">
@@ -49,17 +63,22 @@ const UserNewSub = () => {
         </option>
         {subs.map((sub) => (
           <option
-            data-icon={sub.subscription_thumbnail}
+            // data-icon={sub.subscription_thumbnail}
             className="left"
             key={sub._id}
+            value={`${sub.subscription_name} ${sub.subscription_price}`}
           >
             {sub.subscription_name}--{`$${sub.subscription_price}`}
           </option>
         ))}
       </select>
+      <br />
+      <br />
+      <br />
+      <br />
       <div className="row">
         <Link className="col s12 center valign" to="/dashboard">
-        <button class="waves-effect waves-light btn-large" style={styles.buttons}><i class="material-icons left">add</i>Add to my dashboard</button>
+        <button className="waves-effect waves-light btn-large" style={styles.buttons}><i className="material-icons left">add</i>Add to my dashboard</button>
         </Link>
       </div>
       </form>

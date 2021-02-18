@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./containers/Home/Home";
 import LoginPage from "./containers/LoginPage/LoginPage";
 import SignUpForm from "./containers/SignUpForm/SignUpForm";
-// import Subscriptions from "./containers/Subscriptions/Subscriptions";
 import UserNewSubForm from './containers/UserNewSubForm/UserNewSubForm';
 import UserDashboard from "./containers/UserDashboard/UserDashboard";
 import AdminDashboard from "./containers/Admin/AdminDashboard";
