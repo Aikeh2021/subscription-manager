@@ -8,11 +8,9 @@ const LoginPage = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-
   const history = useHistory();
 
   const handleFormSubmit = (e) => {
-
     e.preventDefault();
     axios
       .get(`/api/users/${email}`, {
@@ -23,9 +21,14 @@ const LoginPage = (props) => {
       })
       .then((response) => {
         //redirect to another page
-        // console.log(email,password) 
-        alert("Welcome back!");
-        history.push("/dashboard");
+        // console.log(email,password)
+        if (email === "submannysupport@gmail.com" && password === "admin") {
+          alert("Welcome back, Admin!");
+          history.push("/admin/dashboard");
+        } else {
+          alert("Welcome back!");
+          history.push("/dashboard");
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -33,31 +36,40 @@ const LoginPage = (props) => {
   };
   return (
     <>
-    <h1 style={{textAlign: 'center', fontFamily: 'Monoton'}}>LOGIN TO YOUR ACCOUNT</h1>
-    <div className="divider"></div>
-    <br />
-    
-    <div className="container" style={{fontFamily: "Roboto"}}>
-    <div style={{paddingTop: 15, paddingBottom: 20, backgroundColor: "green", borderRadius: 30}}></div>
-      <div className="row">
-        <form className="col s12" onSubmit={handleFormSubmit}>
-          <div className="row">
-            <div className="input-field col s12">
-              <input
-              placeholder="Email"
-                id="email"
-                type="Email"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-              />
-              <label htmlFor="Email">{props.email}</label>
-            </div>
-           
+      <h1 style={{ textAlign: "center", fontFamily: "Monoton" }}>
+        LOGIN TO YOUR ACCOUNT
+      </h1>
+      <div className="divider"></div>
+      <br />
+
+      <div className="container" style={{ fontFamily: "Roboto" }}>
+        <div
+          style={{
+            paddingTop: 15,
+            paddingBottom: 20,
+            backgroundColor: "green",
+            borderRadius: 30,
+          }}
+        ></div>
+        <div className="row">
+          <form className="col s12" onSubmit={handleFormSubmit}>
+            <div className="row">
               <div className="input-field col s12">
                 <input
-                placeholder="Password"
+                  placeholder="Email"
+                  id="email"
+                  type="Email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
+                <label htmlFor="Email">{props.email}</label>
+              </div>
+
+              <div className="input-field col s12">
+                <input
+                  placeholder="Password"
                   id="password"
                   type="password"
                   value={password}
@@ -65,30 +77,28 @@ const LoginPage = (props) => {
                     setPassword(e.target.value);
                   }}
                 />
-              <label htmlFor="Email">{props.password}</label>
+                <label htmlFor="Email">{props.password}</label>
               </div>
             </div>
-         
-        </form>
-         </div>
-         <div className="row center valign">
-         <button
-          className="btn waves-effect waves-light"
-          type="submit"
-          name="action"
-          style={{
-            borderRadius: 30,
-            backgroundColor: "#008000",
-            fontFamily: "Roboto",
-          }}
-          onClick={(e) => {
-            handleFormSubmit(e);
-          }}
-        >
-          Login
-        </button>
-         </div>
-        
+          </form>
+        </div>
+        <div className="row center valign">
+          <button
+            className="btn waves-effect waves-light"
+            type="submit"
+            name="action"
+            style={{
+              borderRadius: 30,
+              backgroundColor: "#008000",
+              fontFamily: "Roboto",
+            }}
+            onClick={(e) => {
+              handleFormSubmit(e);
+            }}
+          >
+            Login
+          </button>
+        </div>
       </div>
     </>
   );

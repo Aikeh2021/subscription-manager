@@ -36,9 +36,10 @@ const AdminNewSubForm = ({ handleFormSubmit }) => {
       <>
         <p>
           Begin by choosing a file logo to upload for the subscription you want
-          to create. Click 'Add New Subscription' to view the image on the screen.
-          Then add the details of the subscription to the form. When finished, click 'Add New
-          Subscription again' to have the information displayed on the dashboard.
+          to create. Click 'Add New Subscription' to view the image on the
+          screen. Then add the details of the subscription to the form. When
+          finished, click 'Add New Subscription again' to have the information
+          displayed on the dashboard.
         </p>
         <form
           className="col s11 offset-m1"

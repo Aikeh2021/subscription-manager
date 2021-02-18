@@ -3,20 +3,20 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./containers/Home/Home";
 import LoginPage from "./containers/LoginPage/LoginPage";
 import SignUpForm from "./containers/SignUpForm/SignUpForm";
-import UserNewSubForm from './containers/UserNewSubForm/UserNewSubForm';
+import UserNewSubForm from "./containers/UserNewSubForm/UserNewSubForm";
 import UserDashboard from "./containers/UserDashboard/UserDashboard";
 import AdminDashboard from "./containers/Admin/AdminDashboard";
-import AdminNewSub from '../src/containers/Admin/AdminNewSub';
-import AdminEditSub from '../src/containers/Admin/AdminEditSub';
-import Contact from './containers/Contact/Contact';
-import SubMannyLogo from './assets/logos/SubMannyLogo.png';
-import About from './containers/About/About';
-
+import AdminNewSub from "../src/containers/Admin/AdminNewSub";
+import AdminEditSub from "../src/containers/Admin/AdminEditSub";
+import Contact from "./containers/Contact/Contact";
+import SubMannyLogo from "./assets/logos/SubMannyLogo.png";
+import About from "./containers/About/About";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <Router>
-      <Navbar logo={SubMannyLogo}/>
+      <Navbar logo={SubMannyLogo} />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={LoginPage} />
@@ -29,8 +29,8 @@ function App() {
         <Route exact path="/admin/dashboard" component={AdminDashboard} />
         <Route exact path="/admin/:id" component={AdminEditSub} />
       </Switch>
+      <Footer logo={SubMannyLogo} />
     </Router>
-  
   );
 }
 
