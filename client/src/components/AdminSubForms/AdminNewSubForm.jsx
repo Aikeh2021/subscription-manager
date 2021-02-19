@@ -31,9 +31,6 @@ const AdminNewSubForm = ({ handleFormSubmit }) => {
       });
   };
 
-  // useEffect(() => {
-  //   uploadImage();
-  // })
 
   return (
     <div>

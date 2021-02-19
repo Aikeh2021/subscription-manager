@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import API from "../../Utils/Api";
 
 const Dashboard = () => {
   //Defining User's Subscription array on state and It's setState
@@ -8,7 +8,7 @@ const Dashboard = () => {
 
   // Getting a single user's array of subscriptions from the database:
 const getUsersSubs = () => {
-  axios.get("/api/users/subscriptions").then((response) => {
+  API.get("/users/subscriptions").then((response) => {
     console.log(response);
     setUsersSubs(response.data);
   });
@@ -19,7 +19,13 @@ const getUsersSubs = () => {
     getUsersSubs();
   }, []);
 
-
+//Deleting a subscription from a user's array of subscriptions
+const deleteUsersSub = (id) => {
+  API.delete(`/users/${id}`).then((response) => {
+    console.log(response.data);
+    getUsersSubs();
+  })
+}
 
 
   // Elements in component styles
@@ -70,6 +76,9 @@ const getUsersSubs = () => {
                       <button
                         className="waves-effect waves-light btn-small"
                         style={styles.buttons}
+                        onClick={() => {
+                          deleteUsersSub(usersSub._id);
+                        }}
                       >
                         <i className="material-icons left">delete</i>DELETE
                       </button>

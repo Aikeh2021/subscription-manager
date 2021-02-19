@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const jwt = require('jsonwebtoken');
 
 const app = express();
 
@@ -9,12 +10,19 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
-//Creating a way (for now) to authenticate a user: DELETE THIS WHEN YOU SET UP JASON WEB TOKENS
-app.use((req, res, next)=>{
-	req.user = {id: '602e91146f880678205413b8'}; 
+//Token authorization
+app.use((req, res, next) => {
+  // console.log(req.headers)
+  if(req.headers.authorization){
+    const authorization = req.headers.authorization.split(" ")
+    const decoded = jwt.verify(authorization[1], "123456")
+    console.log(decoded.data);
+    req.user = decoded.data
+      next()
+  }else{
     next()
-});
+  }
+})
 
 
 mongoose.connect(

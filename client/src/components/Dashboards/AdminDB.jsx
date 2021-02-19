@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import API from "../../Utils/Api";
 
 // Elements in component styles
 const styles = {
@@ -29,8 +29,8 @@ const AdminDB = () => {
 
   // Function def that triggers the API call to get all subs in the sub in the database
   const getSubs = () => {
-    axios
-      .get("/api/subscriptions")
+    API
+      .get("/subscriptions")
       .then((response) => {
         // console.log(response.data);
         setSubscriptions(response.data);
@@ -43,9 +43,9 @@ const AdminDB = () => {
   // Function def that triggers the API call to delete sub from database
   const deleteSub = (id) => {
     // console.log("You deleted me :(");
-    console.log(id);
-    axios
-      .delete(`/api/subscriptions/${id}`)
+    // console.log(id);
+    API
+      .delete(`/subscriptions/${id}`)
       .then((response) => {
         // console.log(response.data);
         getSubs();

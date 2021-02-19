@@ -12,27 +12,17 @@ const LoginPage = (props) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    axios
-      .get(`/api/users/${email}`, {
-        
-      //  Added state to this component and pulled values from state into the POST body.
-        email,
-        password,
-      })
-      .then((response) => {
-        //redirect to another page
-        // console.log(email,password)
-        if (email === "submannysupport@gmail.com" && password === "admin") {
-          alert("Welcome back, Admin!");
-          history.push("/admin/dashboard");
-        } else {
-          alert("Welcome back!");
-          history.push("/dashboard");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    axios.post("/api/users/login", {email, password}).then((response) => {
+      localStorage.setItem("user", JSON.stringify(response.data.user))
+      localStorage.setItem("token", response.data.token)
+      console.log(response.data);
+      if(email === 'submannysupport@gmail.com'){history.push("/admin/dashboard")}
+      else{history.push("/dashboard")}
+    }).catch((err) => {
+      console.log(err);
+    });
+
+  
   };
   return (
     <>

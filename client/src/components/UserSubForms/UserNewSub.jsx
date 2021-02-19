@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from 'react-router-dom';
+import API from '../../Utils/Api';
 // import M from "materialize-css";
 
 
@@ -29,11 +30,12 @@ const UserNewSub = () => {
   }, []);
 
   const getAdminSubs = () => {
-    axios
-      .get("/api/subscriptions")
+    API
+      .get("/subscriptions")
       .then((response) => {
         console.log(response.data);
         setSubs(response.data);
+        setValueState(response.data[0]._id)
       })
       .catch((err) => {
         console.log(err);
@@ -46,8 +48,8 @@ const UserNewSub = () => {
   const addSubscription = (e) => {
     e.preventDefault();
     console.log(valueState);
-    axios.post("/api/users/subscriptions", {subscriptionId: valueState}).then(() => {
-      history.push("/dashboard");
+    API.post("/users/subscriptions", {subscriptionId: valueState}).then(() => {
+      history.push("/dashboard")
     })
 
   }
@@ -60,13 +62,10 @@ const UserNewSub = () => {
       <label style={{ fontFamily: "Roboto", fontSize: 30, color: "black"}}>
         Select A Subscription To Track
       </label>
-      <select className="browser-default" defaultValue={'DEFAULT'} value={valueState} onChange={(e) => {
+      <select className="browser-default" value={valueState} onChange={(e) => {
         const selectedSub=e.target.value;
         setValueState(selectedSub);
       }} >
-        <option value="DEFAULT" disabled selected>
-          Choose your subscription
-        </option>
         {subs.map((sub) => (
           <option
             className="left"

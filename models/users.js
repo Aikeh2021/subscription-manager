@@ -18,7 +18,12 @@ const UserSchema = new Schema({
 
   subscriptions: [
 
-  ]
+  ],
+  
+  isAdmin: {
+    type: Boolean,
+    default: false
+  }
   
 });
 
