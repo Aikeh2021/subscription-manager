@@ -27,6 +27,9 @@ View the live Sub Manny site [here](https://boiling-journey-74144.herokuapp.com/
 - Canva
 - Cloudinary
 - Cloudinary React
+- Bcrypt
+- JSONwebtoken
+
 
 ## Contents
 
@@ -79,6 +82,9 @@ After you have been informed, it is up to you to access your personal subscripti
 - [Uploading Images to Cloudinary](https://www.youtube.com/watch?v=Y-VgaRwWS3o)
 - [FileInput in React](https://reactjs.org/docs/uncontrolled-components.html#the-file-input-tag)
 - [Cloudinary-React NPM](https://www.npmjs.com/package/cloudinary-react)
+- [Jsonwebtoken NPM](https://www.npmjs.com/package/jsonwebtoken)
+- [Bcrypt](https://www.npmjs.com/package/bcrypt)
+
 
 ## License
 

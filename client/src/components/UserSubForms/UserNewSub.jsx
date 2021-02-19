@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { useHistory } from 'react-router-dom';
 import API from '../../Utils/Api';
-// import M from "materialize-css";
 
 
 const UserNewSub = () => {
@@ -33,7 +31,7 @@ const UserNewSub = () => {
     API
       .get("/subscriptions")
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setSubs(response.data);
         setValueState(response.data[0]._id)
       })
@@ -47,7 +45,7 @@ const UserNewSub = () => {
   //Function to submit a subscription to the user's dashboard
   const addSubscription = (e) => {
     e.preventDefault();
-    console.log(valueState);
+    // console.log(valueState);
     API.post("/users/subscriptions", {subscriptionId: valueState}).then(() => {
       history.push("/dashboard")
     })
