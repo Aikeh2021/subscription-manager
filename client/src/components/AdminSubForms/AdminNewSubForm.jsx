@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Image } from "cloudinary-react";
-import axios from "axios";
+import API from '../../Utils/Api';
 
 const AdminNewSubForm = ({ handleFormSubmit }) => {
   const [subscription_name, setSubscription_name] = useState("");
@@ -18,7 +18,7 @@ const AdminNewSubForm = ({ handleFormSubmit }) => {
     formData.append("file", fileSelection);
     formData.append("upload_preset", "ovmknpts");
 
-    axios
+    API
       .post(
         "https://api.cloudinary.com/v1_1/elephante-freshamonte/image/upload",
         formData

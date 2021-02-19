@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import M from "materialize-css";
-// import axios from 'axios';
 
 const Navbar = ({logo}) => {
 
@@ -70,7 +69,7 @@ M.Sidenav.init(sidePiece, options2);
     <li><Link to="/signup" className="sidenav-close">Signup</Link></li>
     <li><Link to="/about" className="sidenav-close">About</Link></li>
     <li><Link to="/contact" className="sidenav-close">Contact Us</Link></li>
-    <li><Link className="waves-effect sidenav-close" to="/">Sign Out</Link></li>
+    <li><Link className="waves-effect sidenav-close" to="/" onClick={window.localStorage.clear()}>Sign Out</Link></li>
   </ul>
         </div>
     );

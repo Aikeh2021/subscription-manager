@@ -9,7 +9,7 @@ const Dashboard = () => {
   // Getting a single user's array of subscriptions from the database:
 const getUsersSubs = () => {
   API.get("/users/subscriptions").then((response) => {
-    console.log(response);
+    // console.log(response);
     setUsersSubs(response.data);
   });
 }
@@ -22,7 +22,7 @@ const getUsersSubs = () => {
 //Deleting a subscription from a user's array of subscriptions
 const deleteUsersSub = (id) => {
   API.delete(`/users/${id}`).then((response) => {
-    console.log(response.data);
+    // console.log(response.data);
     getUsersSubs();
   })
 }

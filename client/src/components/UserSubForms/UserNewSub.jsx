@@ -82,7 +82,7 @@ const UserNewSub = () => {
       <br />
       <div className="row">
         {/* <Link className="col s12 center valign" to="/dashboard"> */}
-        <button className="waves-effect waves-light btn-large" style={styles.buttons} type="submit"><i className="material-icons left">add</i>Add to my dashboard</button>
+        <button className="waves-effect waves-light btn-large center valign" style={styles.buttons} type="submit"><i className="material-icons left">add</i>Add to my dashboard</button>
         {/* </Link> */}
       </div>
       </form>

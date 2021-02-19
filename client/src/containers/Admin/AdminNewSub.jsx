@@ -1,5 +1,5 @@
 import React from "react";
-import axios from 'axios';
+import API from '../../Utils/Api';
 import { useHistory } from "react-router-dom";
 import AdminNewSubForm from '../../components/AdminSubForms/AdminNewSubForm';
 
@@ -11,7 +11,7 @@ const history = useHistory();
 
 const handleFormSubmit = (e, subscriptionData) => {
   e.preventDefault();
-  axios.post("/api/subscriptions", subscriptionData).then((response) => {
+  API.post("/subscriptions", subscriptionData).then((response) => {
     // console.log(response.data)
     history.push("/admin/dashboard")
   }).catch((err) => {

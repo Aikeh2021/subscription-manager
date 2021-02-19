@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
-import {useHistory} from 'react-router-dom';
-
-
+import API from "../../Utils/Api";
+import { useHistory } from "react-router-dom";
 
 const LoginPage = (props) => {
   const [email, setEmail] = useState("");
@@ -12,17 +10,20 @@ const LoginPage = (props) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    axios.post("/api/users/login", {email, password}).then((response) => {
-      localStorage.setItem("user", JSON.stringify(response.data.user))
-      localStorage.setItem("token", response.data.token)
-      console.log(response.data);
-      if(email === 'submannysupport@gmail.com'){history.push("/admin/dashboard")}
-      else{history.push("/dashboard")}
-    }).catch((err) => {
-      console.log(err);
-    });
-
-  
+    API.post("/users/login", { email, password })
+      .then((response) => {
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+        localStorage.setItem("token", response.data.token);
+        // console.log(response.data);
+        if (email === "submannysupport@gmail.com") {
+          history.push("/admin/dashboard");
+        } else {
+          history.push("/dashboard");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <>
