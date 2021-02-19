@@ -2,6 +2,9 @@
 
 # Sub Manny
 
+![Sub Manny Demo](client/src/assets/demoGif/submannydemo.gif)
+
+
 ## Description
 
 Nowadays many people pay for at least one subscription. They provide us with services like meal prep ingredients, music and podcasts, and the TV shows and movies we know and love. But no one likes to be surprised by random price increases. Oftentimes we only notice after reviewing our bank statement and realizing the total is a little less than we expected.
