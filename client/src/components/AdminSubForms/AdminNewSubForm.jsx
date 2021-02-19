@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Image } from "cloudinary-react";
-import axios from "axios";
+import API from '../../Utils/Api';
 
 const AdminNewSubForm = ({ handleFormSubmit }) => {
   const [subscription_name, setSubscription_name] = useState("");
@@ -18,18 +18,19 @@ const AdminNewSubForm = ({ handleFormSubmit }) => {
     formData.append("file", fileSelection);
     formData.append("upload_preset", "ovmknpts");
 
-    axios
+    API
       .post(
         "https://api.cloudinary.com/v1_1/elephante-freshamonte/image/upload",
         formData
       )
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setPublicIds(response.data.public_id);
-        console.log(response.data.secure_url);
+        // console.log(response.data.secure_url);
         setSubscription_thumbnail("" + response.data.secure_url);
       });
   };
+
 
   return (
     <div>
@@ -96,39 +97,6 @@ const AdminNewSubForm = ({ handleFormSubmit }) => {
               src={subscription_thumbnail}
             />
           </div>
-          {/* Will need to edit this later to accept a url for when admin wants to add a thumbnail sized logo */}
-          {/* <div className="row">
-            <div className="input-field col s10">
-              <input
-              placeholder="Subscription Logo"
-                id="subscription_thumbnail"
-                type="text"
-                value={subscription_thumbnail}
-                onChange={(e) => {
-                  setSubscription_thumbnail(e.target.value);
-                }}
-              />
-            </div>
-          </div> */}
-          {/* <div className="row">
-            <div className="col s10">
-              <UploadComponent />
-            </div>
-          </div> */}
-          {/* Original code in case this doesn't work */}
-          {/* <div className="row">
-            <div className="input-field col s10">
-              <input
-              placeholder="Subscription Logo"
-                id="subscription_thumbnail"
-                type="text"
-                value={subscription_thumbnail}
-                onChange={(e) => {
-                  setSubscription_thumbnail(e.target.value);
-                }}
-              />
-            </div>
-          </div> */}
           <div className="row">
             <div className="input-field col s10">
               <input

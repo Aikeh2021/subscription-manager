@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import API from "../../Utils/Api";
 
 // Elements in component styles
 const styles = {
@@ -19,16 +19,18 @@ const styles = {
 };
 
 const AdminDB = () => {
+  // Defining the state for the subscriptions in the database to live on
   const [subscriptions, setSubscriptions] = useState([]);
 
+  //useEffect with function call to get the subscriptions from database
   useEffect(() => {
     getSubs();
   }, []);
 
   // Function def that triggers the API call to get all subs in the sub in the database
   const getSubs = () => {
-    axios
-      .get("/api/subscriptions")
+    API
+      .get("/subscriptions")
       .then((response) => {
         // console.log(response.data);
         setSubscriptions(response.data);
@@ -41,9 +43,9 @@ const AdminDB = () => {
   // Function def that triggers the API call to delete sub from database
   const deleteSub = (id) => {
     // console.log("You deleted me :(");
-    console.log(id);
-    axios
-      .delete(`/api/subscriptions/${id}`)
+    // console.log(id);
+    API
+      .delete(`/subscriptions/${id}`)
       .then((response) => {
         // console.log(response.data);
         getSubs();
@@ -76,6 +78,7 @@ const AdminDB = () => {
                     <th>Delete Subscription</th>
                   </tr>
                 </thead>
+                {/* Mapping over the table body to create a row for each subscription in the database */}
                 <tbody>
                   {subscriptions.map((subscription) => (
                     <tr key={subscription._id}>
@@ -89,6 +92,7 @@ const AdminDB = () => {
                       </td>
                       <td>{`$ ${subscription.subscription_price}`}</td>
                       <td>{subscription.subscription_category}</td>
+                      {/* Linking the id to the buttons and taking them to the correct page on the button click to either update/delete a subscription */}
                       <td>
                         <Link to={`/admin/${subscription._id}`}>
                           <button

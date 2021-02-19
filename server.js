@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const jwt = require('jsonwebtoken');
 
 const app = express();
 
@@ -8,6 +9,20 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+//Token authorization
+app.use((req, res, next) => {
+  // console.log(req.headers)
+  if(req.headers.authorization){
+    const authorization = req.headers.authorization.split(" ")
+    const decoded = jwt.verify(authorization[1], "123456")
+    console.log(decoded.data);
+    req.user = decoded.data
+      next()
+  }else{
+    next()
+  }
+})
 
 
 mongoose.connect(

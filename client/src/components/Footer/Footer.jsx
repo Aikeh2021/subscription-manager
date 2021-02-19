@@ -1,34 +1,31 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./Footer.css";
-// import SubMannyLogo from "client/src/assets/logos/SubMannyLogo.png";
 
 const Footer = ({ logo }) => {
   return (
-    // <footer>
-    //     <div className="footer-nav">Copyright© Subscription Manager</div>
-    //     <h1>
-    //         Privacy Statement: We take steps to protect your Personal Information from unauthorized access and against unlawful processing, accidental loss, destruction and damage.
-    //     </h1>
-    // </footer>
     <footer
       className="page-footer"
       id="site-footer"
-      style={{ fontSize: 10, font: "Roboto", backgroundColor: "#4B0082" }}
+      style={{ fontSize: 11, font: "Roboto", backgroundColor: "#4B0082" }}
     >
       <div className="container">
         <div className="row">
           <div className="col s12">
-            <h5 className="white-text">Privacy Statement</h5>
+            <h5 className="white-text" style={{fontFamily: 'Monoton', }}>Privacy Statement</h5>
             <div className="row">
               <div className="col s12">
                 <div className="col s4">
-                  <img id="footer-logo" src={logo} alt="Site Logo" />
+                  <img id="footer-logo" src={logo} alt="Site Logo" style={{ height: '60%', width: '60%', borderRadius: 30}}/>
                 </div>
                 <p className="col s2">
                   <NavLink to="/login" style={{ color: "white" }}>
                     Admin Portal
                   </NavLink>
+                  <br/>
+                  <br/>
+                  <a href="https://mailchimp.com/features/email/" target="_blank" rel="noopener noreferrer" style={{ color: "white" }}>
+                    Need to Contact Users?
+                  </a>
                 </p>
                 <p className="white-text text-lighten-4 col s3">
                   We take steps to protect your Personal Information from
@@ -54,10 +51,9 @@ const Footer = ({ logo }) => {
           </div>
         </div>
       </div>
-      <div class="footer-copyright">
-        <div class="container">
+      <div className="footer-copyright">
+        <div className="container center valign">
           © 2021 Copyright
-          {/* <a class="grey-text text-lighten-4 right" href="#!">More Links</a> */}
         </div>
       </div>
     </footer>

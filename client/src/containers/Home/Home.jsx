@@ -45,14 +45,14 @@ const Home = () => {
         account? Login to alter your tracked subscriptions.{" "}
       </p>
       <div className="row">
-        <div className="col s8 center m12">
+        <div className="col s12 center">
           <Link
             to="/login"
-            className="waves-effect waves-light btn-large"
+            className="waves-effect waves-light btn-large center valign"
             style={{
               borderRadius: 30,
               backgroundColor: "#008000",
-              fontFamily: "Roboto",
+              fontFamily: "Roboto"
             }}
           >
             Login to Account
@@ -60,11 +60,11 @@ const Home = () => {
           <span style={{ padding: 100 }}></span>
           <Link
             to="/signup"
-            className="waves-effect waves-light btn-large"
+            className="waves-effect waves-light btn-large center valign"
             style={{
               borderRadius: 30,
               backgroundColor: "#008000",
-              fontFamily: "Roboto",
+              fontFamily: "Roboto"
             }}
           >
             Create an Account

@@ -2,6 +2,9 @@
 
 # Sub Manny
 
+![Sub Manny Demo](client/src/assets/demoGif/submannydemo.gif)
+
+
 ## Description
 
 Nowadays many people pay for at least one subscription. They provide us with services like meal prep ingredients, music and podcasts, and the TV shows and movies we know and love. But no one likes to be surprised by random price increases. Oftentimes we only notice after reviewing our bank statement and realizing the total is a little less than we expected.
@@ -16,7 +19,6 @@ View the live Sub Manny site [here](https://boiling-journey-74144.herokuapp.com/
 - Materialize
 - React
 - React Responsive Carousel
-- Nodemailer
 - Axios
 - React-Router-Dom
 - Express
@@ -28,6 +30,9 @@ View the live Sub Manny site [here](https://boiling-journey-74144.herokuapp.com/
 - Canva
 - Cloudinary
 - Cloudinary React
+- Bcrypt
+- JSONwebtoken
+
 
 ## Contents
 
@@ -80,6 +85,9 @@ After you have been informed, it is up to you to access your personal subscripti
 - [Uploading Images to Cloudinary](https://www.youtube.com/watch?v=Y-VgaRwWS3o)
 - [FileInput in React](https://reactjs.org/docs/uncontrolled-components.html#the-file-input-tag)
 - [Cloudinary-React NPM](https://www.npmjs.com/package/cloudinary-react)
+- [Jsonwebtoken NPM](https://www.npmjs.com/package/jsonwebtoken)
+- [Bcrypt](https://www.npmjs.com/package/bcrypt)
+
 
 ## License
 

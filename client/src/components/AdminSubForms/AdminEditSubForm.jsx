@@ -1,26 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import API from '../../Utils/Api';
 
 const AdminEditSubForm = ({ handleFormSubmit }) => {
 
 
 const [subscription_name, setSubscription_name] = useState("");
 const [subscription_price, setSubscription_price] = useState("");
-// const [subscription_thumbnail, setSubscription_thumbnail] = useState("");
 const [subscription_category, setSubscription_category] = useState("");
 
 
 const { id } = useParams();
 
 useEffect(() => {
-    console.log(id)
+    // console.log(id)
     if(id){
-        axios.get(`/api/subscriptions/${id}`).then((response) => {
-            console.log(response.data);
+        API.get(`/subscriptions/${id}`).then((response) => {
+            // console.log(response.data);
             setSubscription_name(response.data.subscription_name);
             setSubscription_price(response.data.subscription_price);
-            // setSubscription_thumbnail(response.data.subscription_thumbnail);
             setSubscription_category(response.data.subscription_category);
         }).catch((err) => {
             console.log(err);
@@ -38,7 +36,6 @@ return (
               subscription_name: subscription_name,
               subscription_price: 
                 subscription_price,
-              // subscription_thumbnail: subscription_thumbnail,
               subscription_category: subscription_category,
             }, id);
           }}
@@ -71,20 +68,6 @@ return (
             </div>
           </div>
         </div>
-        {/* This is the old input for the original edit page */}
-        {/* <div className="row">
-          <div className="input-field col s10">
-            <input
-            placeholder="Subscription Logo"
-              id="subscription_thumbnail"
-              type="text"
-              value={subscription_thumbnail}
-              onChange={(e) => {
-                setSubscription_thumbnail(e.target.value);
-              }}
-            />
-          </div>
-        </div> */}
         <div className="row">
           <div className="input-field col s10">
             <input

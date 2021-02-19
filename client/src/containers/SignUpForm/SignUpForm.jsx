@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
-// import { Component } from "materialize-css";
+import API from '../../Utils/Api';
 import { useHistory } from "react-router-dom";
 
 
@@ -16,11 +15,9 @@ const SignUpForm = (props) => {
       const handleFormSubmit = (e) => {
 
             e.preventDefault();
-            axios
-              .post("/api/users/user", {
-                
+            API
+              .post("/users", {
               //  Added state to this component and pulled values from state into the POST body.
-                
                 firstName,
                 lastName,
                 email,
@@ -28,7 +25,7 @@ const SignUpForm = (props) => {
               })
               .then((response) => {
                 //redirect to another page
-                alert("Welcome to Sub Manny");
+                alert("Welcome to Sub Manny. Please login to continue");
                 history.push("/login");
               })
               .catch((err) => {

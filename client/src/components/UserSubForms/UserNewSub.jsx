@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Link } from 'react-router-dom';
-// import M from "materialize-css";
+import { useHistory } from 'react-router-dom';
+import API from '../../Utils/Api';
+
 
 const UserNewSub = () => {
   const [subs, setSubs] = useState([]);
-  // const [valueState, setValueState] = useState("");
+  const [valueState, setValueState] = useState("");
   const styles = {
     thead: {
       backgroundColor: "#DCDCDC",
@@ -28,58 +28,62 @@ const UserNewSub = () => {
   }, []);
 
   const getAdminSubs = () => {
-    axios
-      .get("/api/subscriptions")
+    API
+      .get("/subscriptions")
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setSubs(response.data);
+        setValueState(response.data[0]._id)
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  // To set the selection the user chooses
-  // useEffect(() => {
-  //   let elems = document.querySelectorAll('select');
-  //   M.FormSelect.init(elems);
-  // }, []);
+  const history = useHistory();
 
-//To Accept whatever input the user choose from the dropdown
-// const handleChange = (e) => {
-//   console.log("we're trying to change something");
+  //Function to submit a subscription to the user's dashboard
+  const addSubscription = (e) => {
+    e.preventDefault();
+    // console.log(valueState);
+    API.post("/users/subscriptions", {subscriptionId: valueState}).then(() => {
+      history.push("/dashboard")
+    })
 
-// }
+  }
+  
+
 
   return (
     <div>
-      <form action="" className="col s12">
+      <form onSubmit={addSubscription} className="col s12">
       <label style={{ fontFamily: "Roboto", fontSize: 30, color: "black"}}>
         Select A Subscription To Track
       </label>
-      <select className="browser-default">
-        <option value="" disabled selected>
-          Choose your subscription
-        </option>
+      <select className="browser-default" value={valueState} onChange={(e) => {
+        const selectedSub=e.target.value;
+        setValueState(selectedSub);
+      }} >
         {subs.map((sub) => (
           <option
-            // data-icon={sub.subscription_thumbnail}
             className="left"
             key={sub._id}
-            value={`${sub.subscription_name} ${sub.subscription_price}`}
+            value={sub._id}
           >
             {sub.subscription_name}--{`$${sub.subscription_price}`}
           </option>
         ))}
       </select>
+      {/* Checking to make sure the correct option is being selected and set onChange */}
+      {/* {valueState} */}
       <br />
       <br />
       <br />
       <br />
       <div className="row">
-        <Link className="col s12 center valign" to="/dashboard">
-        <button className="waves-effect waves-light btn-large" style={styles.buttons}><i className="material-icons left">add</i>Add to my dashboard</button>
-        </Link>
+        {/* <Link className="col s12 center valign" to="/dashboard"> */}
+        <button className="waves-effect waves-light btn-large center valign" style={styles.buttons} type="submit"><i className="material-icons left">add</i>Add to my dashboard</button>
+        {/* </Link> */}
       </div>
       </form>
     </div>
